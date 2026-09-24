@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НМТ · Комплекс 1 · Модуль 1.1 — Confusing Words: Travel & Transport</title>
+<style>
+  :root{
+    --ink:#1f2933; --muted:#5b6770; --line:#d8dee4;
+    --blue:#1d4ed8; --blue-soft:#e8effc;
+    --green:#157347; --green-soft:#e7f6ee;
+    --red:#b42318;  --red-soft:#fdecea;
+    --amber:#92610e; --amber-soft:#fff6dd;
+    --paper:#ffffff; --bg:#f4f6f8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.55}
+  .page{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+
+  .test-head{background:linear-gradient(135deg,#12294d,#1d4ed8);color:#fff;border-radius:14px;
+             padding:22px 26px;margin-bottom:12px}
+  .test-head .crumb{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.75;font-family:Arial,sans-serif}
+  .test-head h1{margin:6px 0 4px;font-size:26px;font-family:Arial,sans-serif;font-weight:700}
+  .test-head p{margin:0;font-size:15px;opacity:.9;font-family:Arial,sans-serif}
+
+  .nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-family:Arial,sans-serif}
+  .nav a{display:inline-block;padding:8px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);
+         color:var(--blue);text-decoration:none;font-size:14px;font-weight:700}
+  .nav a:hover{border-color:var(--blue)}
+  .nav a.here{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .nav a.home{background:#eef2f7;color:#33475b}
+
+  /* ----- кольорові рамки ----- */
+  .instr{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--blue);
+         border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .instr h2{margin:0 0 8px;font-family:Arial,sans-serif;font-size:17px;color:var(--blue)}
+  .instr p{margin:6px 0}
+  .instr .en{font-style:italic;color:#243b53;background:#f0f6ff;padding:2px 6px;border-radius:4px}
+  .tip{margin-top:12px;background:var(--amber-soft);border:1px solid #f0dfa8;border-radius:10px;
+       padding:12px 16px;font-family:Arial,sans-serif;font-size:14.5px;color:#57430a}
+  .tip b{color:var(--amber)}
+  .trap{margin-top:8px;background:var(--amber-soft);border:1px solid #f0dfa8;border-radius:8px;
+        padding:8px 12px;font-family:Arial,sans-serif;font-size:14px;color:#57430a}
+  .trap b{color:var(--amber)}
+
+  details{margin-top:10px}
+  summary{cursor:pointer;font-family:Arial,sans-serif;font-weight:700;color:var(--blue);font-size:15px}
+  .steps{counter-reset:step;margin:12px 0 4px;padding:0;list-style:none}
+  .steps li{position:relative;padding:8px 0 8px 52px;border-bottom:1px dashed var(--line);font-family:Arial,sans-serif;font-size:15px}
+  .steps li:last-child{border-bottom:none}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:8px;
+    width:34px;height:34px;border-radius:50%;background:var(--blue-soft);color:var(--blue);
+    font-weight:700;display:flex;align-items:center;justify-content:center}
+
+  /* ----- довідник ----- */
+  .ref{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .ref h2{margin:0 0 4px;font-family:Arial,sans-serif;font-size:18px;color:#102a43}
+  .ref .gloss{color:var(--muted);font-size:14.5px;font-family:Arial,sans-serif;margin-bottom:8px}
+  .ref table{border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14.5px;margin-top:6px}
+  .ref td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+  .ref td.word{font-weight:700;color:var(--blue);width:130px;white-space:nowrap}
+  .ref td .ex{display:block;font-style:italic;color:#243b53;margin-top:4px}
+  .ref td .tr{display:block;font-size:12.5px;color:var(--muted)}
+  mark.hl{background:#fff1a8;padding:0 3px;border-radius:3px}
+  .pairbox{background:#f0f6ff;border:1px solid #c7dbf7;border-radius:10px;padding:10px 14px;margin-top:10px;
+           font-family:Arial,sans-serif;font-size:14.5px}
+  .pairbox .lbl{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:4px}
+
+  /* ----- частини модуля ----- */
+  .part{font-family:Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+        color:var(--muted);margin:26px 0 10px}
+  .part-anchor{scroll-margin-top:16px}
+
+  /* ----- завдання з одиничними реченнями ----- */
+  .q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+  .q .q-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .q .q-num{font-family:Arial,sans-serif;font-weight:700;font-size:13px;color:var(--muted)}
+  .q .q-tag{font-family:Arial,sans-serif;font-size:11.5px;font-weight:700;background:var(--blue-soft);color:var(--blue);
+            border-radius:99px;padding:2px 10px}
+  .q .sent{margin:8px 0 10px;font-size:17px}
+  select.gap{max-width:170px;padding:3px 8px;margin:0 3px;border-radius:8px;border:2px dashed var(--blue);
+      background:var(--blue-soft);color:var(--blue);font-family:Arial,sans-serif;font-weight:700;font-size:14px;
+      cursor:pointer;vertical-align:middle}
+  select.gap.ok{border-style:solid;border-color:var(--green);background:var(--green-soft);color:var(--green);cursor:default}
+  select.gap.bad{border-style:solid;border-color:var(--red);background:var(--red-soft);color:var(--red);
+      animation:shake .3s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+  mark.q{background:#d3f9d8;padding:1px 4px;border-radius:3px}
+
+  .expl{display:none;margin:4px 0 14px;border:1px solid var(--line);border-radius:10px;background:#fbfcfd;padding:12px 16px}
+  .expl.show{display:block}
+  .expl .ans-line{font-family:Arial,sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;color:var(--green)}
+  .expl .lbl{display:block;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .expl .quote{font-style:italic;background:#fff;border-left:3px solid var(--green);padding:6px 10px;border-radius:0 6px 6px 0;margin-top:4px;font-size:15.5px}
+  .expl p.note{font-family:Arial,sans-serif;font-size:14.5px;margin:6px 0 0}
+  .expl table{border-collapse:collapse;margin-top:6px;font-family:Arial,sans-serif;font-size:14px;width:100%}
+  .expl td{border:1px solid var(--line);padding:5px 10px;vertical-align:top}
+  .expl td.no{color:var(--red);font-weight:700;width:110px}
+
+  /* ----- cloze-текст ----- */
+  .gtext{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:14px}
+  .gtext h3{margin:0 0 4px;font-family:Arial,sans-serif;font-size:20px;color:#102a43;text-align:center}
+  .gtext p{margin:12px 0;font-size:16.5px;text-align:justify}
+
+  /* ----- error clinic ----- */
+  .clinic{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--red);
+          border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .clinic h2{margin:0 0 8px;font-family:Arial,sans-serif;font-size:17px;color:var(--red)}
+  .clinic-item{border-bottom:1px dashed var(--line);padding:10px 0;font-family:Arial,sans-serif;font-size:14.5px}
+  .clinic-item:last-child{border-bottom:none}
+  .clinic-item .sent-wrong{font-style:italic;color:#243b53}
+  .clinic-item .rule-line{display:block;margin-top:4px;color:#57430a;background:var(--amber-soft);border-radius:6px;padding:4px 8px}
+  .clinic-empty{font-family:Arial,sans-serif;color:var(--green);font-weight:700}
+
+  .controls{position:sticky;bottom:12px;margin-top:18px;background:var(--paper);border:1px solid var(--line);
+            border-radius:14px;padding:14px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+            box-shadow:0 6px 24px rgba(16,42,67,.12);z-index:10}
+  .controls .btn{border:none;border-radius:10px;padding:12px 26px;font-family:Arial,sans-serif;
+                 font-weight:700;font-size:16px;cursor:pointer}
+  #resetBtn{background:#eef2f7;color:#33475b}
+  #resetBtn:hover{background:#e2e8f0}
+  .controls a.btn{background:var(--blue);color:#fff;text-decoration:none}
+  #score{font-family:Arial,sans-serif;font-weight:700;font-size:16px;margin-left:auto;color:var(--muted)}
+  #score.good{color:var(--green)} #score.mid{color:var(--amber)} #score.low{color:var(--red)}
+
+  @media print{
+    body{background:#fff}
+    .controls,.tip,details,.nav{display:none}
+    .expl{display:block !important}
+  }
+  @media(max-width:560px){
+    .test-head h1{font-size:21px}
+    select.gap{max-width:130px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="test-head">
+    <div class="crumb">НМТ · Англійська мова · Комплекс 1 «Подорожі та дозвілля» · Модуль 1.1</div>
+    <h1>Confusing Words: Travel &amp; Transport</h1>
+    <p>Довідник → 14 завдань → 2 тексти формату НМТ → Error Clinic · Рівень B2 · British English</p>
+  </div>
+
+  <nav class="nav">
+    <a class="home" href="../index.html">⌂ Усі комплекси</a>
+    <a class="here" href="#ref1">📖 Довідник</a>
+    <a href="#part1">✏️ Тренажер 1–14</a>
+    <a href="#text1">📰 Текст 1 (1–7)</a>
+    <a href="#text2">📰 Текст 2 (8–14)</a>
+    <a href="#clinic">🔁 Error Clinic</a>
+  </nav>
+
+  <div class="instr">
+    <h2>Як працювати з модулем</h2>
+    <p><b>Крок 1.</b> Прочитайте <b>довідник</b>: сім груп слів, які НМТ постійно плутає. Зверніть увагу на рамки «⚠️ Пастка» — там типові помилки українців.</p>
+    <p><b>Крок 2.</b> Виконайте <b>14 одиничних завдань</b> — обирайте слово у випадаючому списку. Правильна відповідь <b>з першої спроби</b> йде в залік; помилка підсвічується червоним.</p>
+    <p><b>Крок 3.</b> Два <b>тексти у форматі НМТ</b>: ті самі слова, але вже у зв'язному контексті.</p>
+    <p><b>Крок 4.</b> У кінці — <b>Error Clinic</b>: усі ваші помилки з правилами для повторення.</p>
+    <div class="tip"><b>Головне правило модуля:</b> англійська обирає слово не за перекладом («подорож»), а за <b>ТИПОМ подорожі</b>: як довго, яким транспортом і чи повертаєтесь ви назад. Навчіться ставити ці три запитання — і половина помилок зникне.</div>
+  </div>
+
+  <!-- ================= ДОВІДНИК ================= -->
+  <div class="part part-anchor" id="ref1">📖 Довідник — сім груп контрастів</div>
+
+  <div class="ref" id="ref-g1">
+    <h2>1. journey / trip / voyage / travel / excursion</h2>
+    <div class="gloss">Усі п'ять — «подорож» українською. Англійська обирає слово за <b>типом подорожі</b>.</div>
+    <table>
+      <tr><td class="word">journey</td><td>сам шлях, процес пересування з А в Б (переважно сушею)
+        <span class="ex">The <mark class="hl">journey</mark> through the Alps took two days.</span><span class="tr">Подорож Альпами зайняла два дні.</span></td></tr>
+      <tr><td class="word">trip</td><td>коротка поїздка ТУДИ Й НАЗАД (a day trip, a business trip, a school trip)
+        <span class="ex">We're planning a weekend <mark class="hl">trip</mark> to Bath.</span><span class="tr">Ми плануємо поїздку на вихідні до Бата.</span></td></tr>
+      <tr><td class="word">voyage</td><td>подорож МОРЕМ або в космосі
+        <span class="ex">The ship set out on its maiden <mark class="hl">voyage</mark>.</span><span class="tr">Корабель вирушив у свій перший рейс.</span></td></tr>
+      <tr><td class="word">travel</td><td>НЕЗЛІЧУВАНИЙ: подорожування як явище — ніколи з артиклем <b>a</b>
+        <span class="ex"><mark class="hl">Travel</mark> broadens the mind.</span><span class="tr">Подорожі розширюють кругозір.</span></td></tr>
+      <tr><td class="word">excursion</td><td>коротка ОРГАНІЗОВАНА поїздка групи (екскурсія)
+        <span class="ex">The school organised an <mark class="hl">excursion</mark> to the Science Museum.</span><span class="tr">Школа організувала екскурсію до Музею науки.</span></td></tr>
+    </table>
+    <div class="pairbox"><span class="lbl">Порівняйте</span>
+      The <mark class="hl">journey</mark> to Edinburgh takes four hours by train. <i>(сам шлях)</i><br>
+      We went on a day <mark class="hl">trip</mark> to Edinburgh. <i>(поїздка туди-назад)</i>
+    </div>
+    <div class="trap"><b>⚠️ Пастка:</b> ланцюжок-формула: go on a <b>trip</b> (коротко) → go on a <b>journey</b> (довго) → go on a <b>voyage</b> (морем). А <b>travel</b> — ніколи з «a»: не «a travel», а просто travel.</div>
+  </div>
+
+  <div class="ref" id="ref-g2">
+    <h2>2. view / sight</h2>
+    <div class="gloss">Панорама З точки vs видовище / визначне місце.</div>
+    <table>
+      <tr><td class="word">view</td><td>краєвид, панорама з певного місця (a view <b>of/from</b>)
+        <span class="ex">Our room had a splendid <mark class="hl">view</mark> of the harbour.</span><span class="tr">З кімнати відкривався краєвид на гавань.</span></td></tr>
+      <tr><td class="word">sight</td><td>1) видовище; 2) <b>the sights</b> — визначні місця міста
+        <span class="ex">We spent the morning seeing the <mark class="hl">sights</mark> of York.</span><span class="tr">Ми оглядали визначні місця Йорка.</span></td></tr>
+    </table>
+    <div class="pairbox"><span class="lbl">Порівняйте</span>
+      There's a wonderful <mark class="hl">view</mark> from the top of the hill. <i>(панорама з точки)</i><br>
+      The sunset over the sea was a beautiful <mark class="hl">sight</mark>. <i>(видовище)</i>
+    </div>
+    <div class="trap"><b>⚠️ Пастка:</b> формули туриста — see the <b>sights</b>, go <b>sightseeing</b>. «Scenery» — красоти місцевості ЗАГАЛОМ (незлічуваний): the scenery in Wales. Панорама з конкретної точки — тільки <b>view</b>.</div>
+  </div>
+
+  <div class="ref" id="ref-g3">
+    <h2>3. miss / lose</h2>
+    <div class="gloss">Не встигнути / пропустити vs втратити річ.</div>
+    <table>
+      <tr><td class="word">miss</td><td>не встигнути (на транспорт), пропустити (урок, шанс); сумувати
+        <span class="ex">Hurry up, or we'll <mark class="hl">miss</mark> the train.</span><span class="tr">Поспішай, або ми не встигнемо на потяг.</span></td></tr>
+      <tr><td class="word">lose</td><td>втратити, загубити предмет; програти (гру, матч)
+        <span class="ex">I've <mark class="hl">lost</mark> my boarding pass.</span><span class="tr">Я загубив посадковий талон.</span></td></tr>
+    </table>
+    <div class="pairbox"><span class="lbl">Порівняйте</span>
+      She <mark class="hl">missed</mark> the last bus home. <i>(не встигла)</i><br>
+      She <mark class="hl">lost</mark> her bus pass. <i>(загубила проїзний)</i>
+    </div>
+    <div class="trap"><b>⚠️ Пастка:</b> українською «не втратимо потяг» звучить нормально — англійською ні! Втрачаємо речі (<b>lose</b> keys), не встигаємо на транспорт і події (<b>miss</b> the train). Ви <b>FORGET</b> your ticket, але <b>MISS</b> your train.</div>
+  </div>
+
+  <div class="ref" id="ref-g4">
+    <h2>4. take / bring</h2>
+    <div class="gloss">Напрямок вирішує все: дивіться на дієслово руху — <b>come</b> чи <b>go</b>.</div>
+    <table>
+      <tr><td class="word">take</td><td>брати з собою ТУДИ, від мовця (пари з <b>go</b>)
+        <span class="ex"><mark class="hl">Take</mark> an umbrella with you — it's going to rain.</span><span class="tr">Візьми парасолю — буде дощ.</span></td></tr>
+      <tr><td class="word">bring</td><td>приносити СЮДИ, до мовця (пари з <b>come</b>)
+        <span class="ex">When you come, <mark class="hl">bring</mark> your camera with you.</span><span class="tr">Коли прийдеш, принеси фотоапарат.</span></td></tr>
+    </table>
+    <div class="pairbox"><span class="lbl">Порівняйте</span>
+      <mark class="hl">Take</mark> this map with you when you <b>go</b>. <i>(від мене)</i><br>
+      <mark class="hl">Bring</mark> the map back when you <b>come</b>. <i>(до мене)</i>
+    </div>
+    <div class="trap"><b>⚠️ Пастка:</b> спочатку знайдіть дієслово руху в реченні. <b>come → bring</b> (сюди), <b>go → take</b> (туди). «Carry» — просто нести, без напрямку — це класичний distractor.</div>
+  </div>
+
+  <div class="ref" id="ref-g5">
+    <h2>5. arrive / reach</h2>
+    <div class="gloss">Граматична пастка: прийменник вирішує все.</div>
+    <table>
+      <tr><td class="word">arrive</td><td>arrive <b>AT</b> (аеропорт, станція, готель) / <b>IN</b> (місто, країна)
+        <span class="ex">We <mark class="hl">arrived at</mark> the hotel just before midnight.</span><span class="tr">Ми прибули до готелю перед північчю.</span></td></tr>
+      <tr><td class="word">reach</td><td>досягти місця — одразу + місце, БЕЗ прийменника
+        <span class="ex">They finally <mark class="hl">reached</mark> the summit at noon.</span><span class="tr">Нарешті вони досягли вершини опівдні.</span></td></tr>
+    </table>
+    <div class="pairbox"><span class="lbl">Порівняйте</span>
+      We <mark class="hl">arrived at</mark> the station on time. <i>(з прийменником)</i><br>
+      We <mark class="hl">reached</mark> the station on time. <i>(без прийменника)</i>
+    </div>
+    <div class="trap"><b>⚠️ Пастка:</b> «reach at» — груба помилка, її обожнює НМТ. Алгоритм: бачите <b>at/in</b> після пропуску → <b>arrive</b>. Прийменника немає → <b>reach</b>. <b>To</b> → get/come.</div>
+  </div>
+
+  <div class="ref" id="ref-g6">
+    <h2>6. border / edge / line</h2>
+    <div class="gloss">Політична межа vs фізичний край vs лінія.</div>
+    <table>
+      <tr><td class="word">border</td><td>кордон між країнами чи регіонами
+        <span class="ex">You'll need your passport to cross the <mark class="hl">border</mark>.</span><span class="tr">Потрібен паспорт, щоб перетнути кордон.</span></td></tr>
+      <tr><td class="word">edge</td><td>фізичний край (стола, скелі, лісу, води)
+        <span class="ex">Don't stand so close to the <mark class="hl">edge</mark> of the cliff!</span><span class="tr">Не стій так близько до краю скелі!</span></td></tr>
+      <tr><td class="word">line</td><td>лінія (на папері, дорозі); образно — межа дозволеного
+        <span class="ex">There's a yellow <mark class="hl">line</mark> along the platform edge.</span><span class="tr">Уздовж краю платформи — жовта лінія.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> паспорт / митниця / дві країни → <b>border</b>. Край предмета → <b>edge</b>. Образна межа («перейти межу») → cross the <b>line</b>.</div>
+  </div>
+
+  <div class="ref" id="ref-g7">
+    <h2>7. live / stay</h2>
+    <div class="gloss">Жити ПОСТІЙНО vs зупинитися ТИМЧАСОВО.</div>
+    <table>
+      <tr><td class="word">live</td><td>жити постійно, мешкати (ваша адреса)
+        <span class="ex">My cousin <mark class="hl">lives</mark> in a small village in Wales.</span><span class="tr">Мій двоюрідний брат живе в селі в Уельсі.</span></td></tr>
+      <tr><td class="word">stay</td><td>тимчасово зупинятися (готель, друзі, відпустка)
+        <span class="ex">We <mark class="hl">stayed</mark> in a cosy bed-and-breakfast near the lake.</span><span class="tr">Ми зупинилися в міні-готелі біля озера.</span></td></tr>
+    </table>
+    <div class="pairbox"><span class="lbl">Порівняйте</span>
+      She <mark class="hl">lives</mark> in Brighton. <i>(постійно)</i><br>
+      She's <mark class="hl">staying</mark> in Brighton for a week. <i>(тимчасово)</i>
+    </div>
+    <div class="trap"><b>⚠️ Пастка:</b> готель / відпустка / «кілька днів» → <b>stay</b>. Постійна адреса → <b>live</b>. «Stay in a hotel» — улюблена колокація НМТ.</div>
+  </div>
+
+  <!-- ================= ТРЕНАЖЕР: 14 ОДИНИЧНИХ РЕЧЕНЬ ================= -->
+  <div class="part part-anchor" id="part1">✏️ Тренажер — завдання 1–14 (одиничні речення)</div>
+
+  <div class="instr">
+    <p><span class="en">For questions (1–14) choose the correct answer (A, B, C or D).</span></p>
+    <details>
+      <summary>📋 Стратегія: як обирати між схожими словами</summary>
+      <ol class="steps">
+        <li><b>Не перекладайте — аналізуйте контекст.</b> Українською всі варіанти звучать однаково («подорож», «втратити»). Англійська дивиться на тип дії.</li>
+        <li><b>Шукайте слово-сусіда, яке вирішує все.</b> Артикль <b>an</b> перед пропуском? Слово має починатися з голосного. Прийменник <b>at</b> після пропуску? Це <b>arrive</b>, а не reach.</li>
+        <li><b>Розкладайте пари за формулами:</b> come → bring / go → take; miss + the train / lose + keys; live (постійно) / stay (тимчасово).</li>
+        <li><b>Підставте варіант і прочитайте речення цілком</b> — неправильні «скриплять» навіть на слух.</li>
+      </ol>
+      <div class="tip"><b>Залік іде за першу спробу.</b> Помилка підсвітиться червоним — це сигнал зупинитися, перечитати рамку-правило і лише тоді пробувати далі.</div>
+    </details>
+  </div>
+
+  <div id="singles"></div>
+
+  <!-- ================= ТЕКСТ 1 ================= -->
+  <div class="part part-anchor" id="text1">📰 Текст 1 — завдання 1–7 (формат НМТ)</div>
+
+  <div class="instr">
+    <p><span class="en">Read the text below. For questions (1–7) choose the correct answer (A, B, C or D).</span></p>
+    <p>Спочатку прочитайте <b>весь текст</b>, не зупиняючись на пропусках, — зрозумійте сюжет. Потім поверніться до кожного пропуска.</p>
+  </div>
+
+  <div class="gtext">
+    <h3>A Trip to the Lake District</h3>
+    <p>Last June, my family and I went on a short <select class="gap" data-block="t1" data-gap="1"></select> to the Lake District. The <select class="gap" data-block="t1" data-gap="2"></select> by car took about four hours, so we left home at six in the morning. Mum asked me to <select class="gap" data-block="t1" data-gap="3"></select> sandwiches with us, because the cafés on the motorway were always expensive. We <select class="gap" data-block="t1" data-gap="4"></select> at our small family hotel just before noon, left our bags and went straight to the lake.</p>
+    <div class="expl" id="expl-t1-1"></div><div class="expl" id="expl-t1-2"></div><div class="expl" id="expl-t1-3"></div><div class="expl" id="expl-t1-4"></div>
+
+    <p>The <select class="gap" data-block="t1" data-gap="5"></select> from our window was so beautiful that we took a hundred photos before dinner. On the second day, Dad wanted to see the <select class="gap" data-block="t1" data-gap="6"></select> of Kendal, the nearest town — a castle, two museums and a famous chocolate shop. On the way back, we nearly <select class="gap" data-block="t1" data-gap="7"></select> the last bus to the village, but a kind driver waited for us.</p>
+    <div class="expl" id="expl-t1-5"></div><div class="expl" id="expl-t1-6"></div><div class="expl" id="expl-t1-7"></div>
+  </div>
+
+  <!-- ================= ТЕКСТ 2 ================= -->
+  <div class="part part-anchor" id="text2">📰 Текст 2 — завдання 8–14 (формат НМТ)</div>
+
+  <div class="instr">
+    <p><span class="en">Read the text below. For questions (8–14) choose the correct answer (A, B, C or D).</span></p>
+    <p>Другий текст — трохи складніший: ті самі групи слів, але з сильнішими дистракторами. Пам'ятайте про <b>слова-сусіди</b> навколо пропусків.</p>
+  </div>
+
+  <div class="gtext">
+    <h3>Crossing the Channel</h3>
+    <p>Last summer, my friends and I decided to go on a cycling <select class="gap" data-block="t2" data-gap="8"></select> around northern France. After a long <select class="gap" data-block="t2" data-gap="9"></select> by ferry across the Channel, we finally <select class="gap" data-block="t2" data-gap="10"></select> the port of Calais at nine in the evening, tired but happy. We had planned to <select class="gap" data-block="t2" data-gap="11"></select> in a cheap hostel for two nights before cycling further south.</p>
+    <div class="expl" id="expl-t2-8"></div><div class="expl" id="expl-t2-9"></div><div class="expl" id="expl-t2-10"></div><div class="expl" id="expl-t2-11"></div>
+
+    <p>On the first morning, Mark realised he had <select class="gap" data-block="t2" data-gap="12"></select> his wallet somewhere between the ferry and the hostel. Without money or cards, he was afraid the police would stop us at the <select class="gap" data-block="t2" data-gap="13"></select> when we cycled on to Belgium. In the end, everything was fine: we rode to the <select class="gap" data-block="t2" data-gap="14"></select> of the cliffs above the sea, looked at the white line of the English coast far away, and the wallet was found in his backpack's side pocket — where else?</p>
+    <div class="expl" id="expl-t2-12"></div><div class="expl" id="expl-t2-13"></div><div class="expl" id="expl-t2-14"></div>
+  </div>
+
+  <!-- ================= ERROR CLINIC ================= -->
+  <div class="part part-anchor" id="clinic">🔁 Error Clinic — ваші помилки для повторення</div>
+
+  <div class="clinic">
+    <h2>Error Clinic</h2>
+    <p style="font-family:Arial,sans-serif;font-size:14.5px;color:var(--muted);margin:0 0 10px">Тут автоматично збираються всі завдання, де ви помилилися хоча б раз. Перечитайте правило, потім натисніть «Спробувати знову» — і пройдіть модуль ще раз.</p>
+    <div id="clinicList"><span class="clinic-empty">✓ Поки що помилок немає. Чудово!</span></div>
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="resetBtn">Спробувати знову</button>
+    <a class="btn" href="modul-1-2.html">Модуль 1.2 · Sport &amp; Hobbies →</a>
+    <span id="score">Розв’язано: 0 / 28</span>
+  </div>
+
+</div>
+<script>
+/* ================= ДАНІ: 14 ОДИНИЧНИХ РЕЧЕНЬ ================= */
+const SINGLES = [
+{id:'s1', ref:'g1', tag:'journey / trip / voyage', sent:'The ___ from London to Edinburgh takes about four and a half hours by train.',
+ opts:[['A','travel'],['B','journey'],['C','voyage'],['D','excursion']], ans:'B',
+ why:'<b>journey</b> = сам шлях з пункту А в пункт Б сушею. «The journey takes…» — класична колокація про тривалість дороги.',
+ no:[['travel','незлічуваний: означає подорожування взагалі; з артиклем the про конкретну поїздку не вживається'],
+     ['voyage','подорож морем або в космосі — потяг не може бути voyage'],
+     ['excursion','коротка організована поїздка групи (екскурсія), а не шлях між містами']],
+ trap:'Питайте себе: що описує речення — сам ШЛЯХ (journey), поїздку туди-назад (trip), морську подорож (voyage) чи екскурсію (excursion)?'},
+{id:'s2', ref:'g1', tag:'go on a trip', sent:'We\'re going on a day ___ to the seaside on Saturday.',
+ opts:[['A','voyage'],['B','travel'],['C','trip'],['D','journey']], ans:'C',
+ why:'<b>trip</b> = коротка поїздка туди й назад. «Go on a (day) trip» — стійка колокація, яку тестує НМТ.',
+ no:[['voyage','морська чи космічна подорож; день на узбережжі — не voyage'],
+     ['travel','незлічуваний; конструкції «go on a travel» не існує'],
+     ['journey','це сам шлях, а не поїздка з поверненням; «go on a day journey» не кажуть']],
+ trap:'Формула: <b>go on a trip (to a place)</b> — поїздка з поверненням додому. A day out = a day trip.'},
+{id:'s3', ref:'g1', tag:'voyage', sent:'The Titanic sank on its maiden ___ in 1912.',
+ opts:[['A','trip'],['B','journey'],['C','excursion'],['D','voyage']], ans:'D',
+ why:'<b>voyage</b> = морська подорож. «Maiden voyage» (перший рейс судна) — сталий вислів.',
+ no:[['trip','коротка поїздка туди-назад; рейс через Атлантику — занадто масштабний для trip'],
+     ['journey','переважно про сушу; для суден є точніше слово'],
+     ['excursion','розважальна поїздка групи; трагічний рейс лайнера — не екскурсія']],
+ trap:'Море чи космос → <b>voyage</b>. «Maiden voyage» вчіть як формулу — на іспиті зустрічається часто.'},
+{id:'s4', ref:'g1', tag:'travel (незлічуваний)', sent:'___ broadens the mind, as the saying goes.',
+ opts:[['A','Trip'],['B','Journey'],['C','Travel'],['D','Excursion']], ans:'C',
+ why:'<b>travel</b> = незлічуваний, подорожування як явище. У прислів\'ї саме Travel — без артикля, без множини.',
+ no:[['Trip','злічуваний: потребує артикля (a trip) і означає одну конкретну поїздку'],
+     ['Journey','так само злічуваний; тут потрібне узагальнення без артикля'],
+     ['Excursion','конкретна організована поїздка; не «подорожування взагалі»']],
+ trap:'Узагальнення без артикля → <b>travel</b> (uncountable). Конкретна поїздка → trip/journey з артиклем.'},
+{id:'s5', ref:'g1', tag:'excursion', sent:'Our class went on an ___ to the local history museum.',
+ opts:[['A','excursion'],['B','voyage'],['C','journey'],['D','travel']], ans:'A',
+ why:'<b>excursion</b> = організована коротка поїздка групи з освітньою метою. «Go on an excursion» — колокація.',
+ no:[['voyage','морська подорож; музей не досягають морем'],
+     ['journey','довгий шлях; і зверніть увагу: артикль <b>an</b> не поєднується з journey (треба a)'],
+     ['travel','незлічуваний, з артиклем an не вживається взагалі']],
+ trap:'Клас/група + музей/визначні місця → <b>excursion</b>. Артикль <b>an</b> — додаткова підказка: шукайте слово на голосний!'},
+{id:'s6', ref:'g2', tag:'view / sight', sent:'The hotel room had a wonderful ___ of the mountains.',
+ opts:[['A','sight'],['B','view'],['C','scene'],['D','look']], ans:'B',
+ why:'<b>view</b> = краєвид, що відкривається З певного місця. «A view of…» — точне влучання.',
+ no:[['sight','видовище чи визначне місце; «a sight of the mountains» не кажуть'],
+     ['scene','сцена, картина події (зазвичай із дією, людьми), а не панорама з вікна'],
+     ['look','погляд (have a look); граматично сюди не пасує']],
+ trap:'Кімната / вікно / балкон + <b>of</b> → <b>view</b>. Визначні місця міста → the <b>sights</b>.'},
+{id:'s7', ref:'g2', tag:'see the sights', sent:'When we were in Rome, we spent a whole day seeing the ___.',
+ opts:[['A','views'],['B','sights'],['C','scenes'],['D','landscapes']], ans:'B',
+ why:'<b>sights</b> — «see the sights» означає оглядати визначні місця. Сама формула туриста.',
+ no:[['views','краєвиди з окремих точок; «see the views» — не сталий вислів'],
+     ['scenes','сцени, епізоди; не туристичні об\'єкти'],
+     ['landscapes','природні ландшафти; у Римі туристи дивляться пам\'ятки, а не ландшафти']],
+ trap:'Формули туриста: see the <b>sights</b>, go <b>sightseeing</b>. Sightseeing — незлічуваний!'},
+{id:'s8', ref:'g3', tag:'miss / lose', sent:'Hurry up, or we\'ll ___ the train!',
+ opts:[['A','lose'],['B','miss'],['C','fail'],['D','drop']], ans:'B',
+ why:'<b>miss</b> = не встигнути. «Miss the train/bus/flight» — саме ця колокація.',
+ no:[['lose','втратити предмет (lose your keys) або програти (lose a game). Транспорт не «втрачають»'],
+     ['fail','провалити іспит чи спробу; з транспортом не вживається'],
+     ['drop','впустити чи кинути щось; зовсім інше значення']],
+ trap:'<b>miss</b> + the bus/train/flight = не встигнути. <b>lose</b> + keys/wallet/game = втратити, програти.'},
+{id:'s9', ref:'g3', tag:'lose / leave', sent:'I\'ve ___ my passport — I can\'t find it anywhere.',
+ opts:[['A','missed'],['B','lost'],['C','failed'],['D','left']], ans:'B',
+ why:'<b>lost</b> — загубив предмет. «I\'ve lost my passport» — класична фраза мандрівника.',
+ no:[['missed','не встигнути, пропустити, сумувати; документ не «пропускають»'],
+     ['failed','зазнати невдачі (іспит, спроба); до паспорта не стосується'],
+     ['left','залишив десь — але тоді МІСЦЕ обов\'язкове: «I\'ve left my passport at home». Без місця — тільки lost']],
+ trap:'Загубив предмет → <b>lose</b> (lost–lost). Залишив десь → <b>leave</b> + МІСЦЕ (left it at home).'},
+{id:'s10', ref:'g4', tag:'take / bring', sent:'When you come to my house tonight, ___ your guitar with you.',
+ opts:[['A','take'],['B','bring'],['C','carry'],['D','hold']], ans:'B',
+ why:'<b>bring</b> = принести ДО мовця. Напрямок збігається з <b>come</b> — це і є ключ.',
+ no:[['take','рух ВІД мовця (туди). Але тут гість рухається ДО мовця — дивіться на come!'],
+     ['carry','нести (фізична дія), без напрямку до/від; тест перевіряє саме напрямок'],
+     ['hold','тримати в руках; не про переміщення']],
+ trap:'<b>come → bring</b> (сюди), <b>go → take</b> (туди). Спочатку знайдіть дієслово руху — воно підкаже напрямок.'},
+{id:'s11', ref:'g5', tag:'arrive / reach', sent:'We ___ at the airport just in time for check-in.',
+ opts:[['A','reached'],['B','arrived'],['C','got'],['D','came']], ans:'B',
+ why:'<b>arrived</b> — arrive <b>AT</b> + аеропорт/станція/готель. Прийменник at уже стоїть у реченні — це підказка.',
+ no:[['reached','ніколи не вживається з at: reach the airport (без прийменника). «Reach at» — типова помилка'],
+     ['got','потребує to: got to the airport. З at не поєднується'],
+     ['came','потребує to: came to the airport. З at не поєднується']],
+ trap:'Алгоритм: бачите <b>at/in</b> після пропуску → <b>arrive</b>. Прийменника немає → <b>reach</b>. <b>To</b> → get/come.'},
+{id:'s12', ref:'g5', tag:'arrive / reach', sent:'After three days of walking, they finally ___ the summit.',
+ opts:[['A','arrived'],['B','reached'],['C','got'],['D','came']], ans:'B',
+ why:'<b>reached</b> — reach + місце одразу, БЕЗ прийменника. Саме цього вимагає структура речення.',
+ no:[['arrived','потребує at/in: arrived at the summit було б правильно, але прийменника в реченні немає'],
+     ['got','без to не працює: потрібно got to the summit'],
+     ['came','без to не працює: потрібно came to the summit']],
+ trap:'Та сама перевірка з іншого боку: немає прийменника → <b>reach</b>. Є at/in → <b>arrive</b>.'},
+{id:'s13', ref:'g6', tag:'border / edge / line', sent:'You need a valid passport to cross the ___ between the two countries.',
+ opts:[['A','edge'],['B','line'],['C','border'],['D','side']], ans:'C',
+ why:'<b>border</b> = офіційна межа між країнами. «Cross the border» — стійка колокація.',
+ no:[['edge','фізичний край предмета (стола, скелі); між країнами — не edge'],
+     ['line','«cross the line» означає «перейти межу дозволеного» (образно), а не кордон'],
+     ['side','сторона, бік; кордон не є side']],
+ trap:'Паспорт / митниця / дві країни → <b>border</b>. Край предмета → <b>edge</b>. Образна межа → <b>line</b>.'},
+{id:'s14', ref:'g7', tag:'live / stay', sent:'We ___ in a small family-run hotel near the harbour during our holiday.',
+ opts:[['A','lived'],['B','stayed'],['C','inhabited'],['D','dwelt']], ans:'B',
+ why:'<b>stayed</b> = тимчасово зупинитися. «Stay in a hotel» — саме та колокація, яку любить НМТ.',
+ no:[['lived','жити постійно (live in London); відпустка — тимчасова подія'],
+     ['inhabited','населяти (про народи чи тварин: the island is inhabited by…); не про туристів'],
+     ['dwelt','старомодне літературне «мешкати»; у сучасному контексті не вживається']],
+ trap:'Готель / відпустка / кілька днів → <b>stay</b>. Постійна адреса → <b>live</b>.'}
+];
+
+/* ================= ДАНІ: ТЕКСТ 1 (НМТ-формат) ================= */
+const TEXT1 = {
+  1:{ans:'D', word:'trip',
+     opts:[['A','travel'],['B','journey'],['C','voyage'],['D','trip']],
+     quote:'…my family and I went on a short <mark class="q">trip</mark> to the Lake District.',
+     why:'<b>trip</b> = коротка поїздка туди й назад. Підказки: <b>went on a short</b> + «to the Lake District» — формула go on a trip to a place.',
+     no:[['travel','незлічуваний; «a short travel» граматично неможливо'],
+         ['journey','сам шлях (довгий процес); «go on a short journey» — не та формула'],
+         ['voyage','морська подорож; Lake District — озера й пагорби, їдуть машиною']],
+     trap:'Колокація <b>go on a trip</b> не розривається. Бачите go on a … → шукайте trip.'},
+  2:{ans:'B', word:'journey',
+     opts:[['A','voyage'],['B','journey'],['C','trip'],['D','excursion']],
+     quote:'The <mark class="q">journey</mark> by car took about four hours…',
+     why:'<b>journey</b> = сам шлях. «The journey takes/took + час» — стандартна конструкція про тривалість дороги.',
+     no:[['voyage','морем; «by car» виключає voyage'],
+         ['trip','поїздка цілком (туди-назад), а тут йдеться про ДОРОГУ в один бік — «took four hours»'],
+         ['excursion','організована екскурсія групи; сім\'я їде сама']],
+     trap:'Різниця trip/journey у мініатюрі: пропуск 1 — поїздка (trip), пропуск 2 — дорога (journey). НМТ обожнює ставити пару в одному тексті.'},
+  3:{ans:'A', word:'take',
+     opts:[['A','take'],['B','bring'],['C','carry'],['D','fetch']],
+     quote:'…Mum asked me to <mark class="q">take</mark> sandwiches with us…',
+     why:'<b>take</b> = брати з собою ТУДИ. Сім\'я вирушає ГЕТЬ з дому — напрямок «від», тому take … with us.',
+     no:[['bring','принести СЮДИ, до мовця; але мама їде РАЗОМ і рух «від дому» — потрібен take'],
+         ['carry','нести фізично; без напрямку — граматично можливо, але тест перевіряє take/bring'],
+         ['fetch','сходити й принести (go and bring back) — тут ніхто нікуди не повертається']],
+     trap:'«With us» збиває з пантелику, але ключ — напрямок подорожі: з дому НА озера = <b>take</b>. Bring був би, якби хтось приходив ДО мами.'},
+  4:{ans:'C', word:'arrived',
+     opts:[['A','reached'],['B','got'],['C','arrived'],['D','came']],
+     quote:'We <mark class="q">arrived at</mark> our small family hotel just before noon…',
+     why:'<b>arrive AT</b> + готель. Прийменник <b>at</b> уже стоїть після пропуску — це сигнал обрати arrive.',
+     no:[['reached','без прийменника: reached our hotel. «Reached at» — груба помилка'],
+         ['got','потребує to: got to our hotel'],
+         ['came','потребує to: came to our hotel']],
+     trap:'Дивіться ОДРАЗУ після пропуску: <b>at</b> → arrive. Це найшвидший тип завдання — не витрачайте на нього час на іспиті.'},
+  5:{ans:'A', word:'view',
+     opts:[['A','view'],['B','sight'],['C','scene'],['D','look']],
+     quote:'The <mark class="q">view</mark> from our window was so beautiful…',
+     why:'<b>view</b> = панорама З певного місця. «The view from our window» — класика.',
+     no:[['sight','видовище/визначне місце; «the sight from our window» не кажуть'],
+         ['scene','сцена з дією; панорама з вікна — не scene'],
+         ['look','погляд; граматично не пасує']],
+     trap:'Вікно / балкон / вершина + <b>from/of</b> → <b>view</b>. Запам\'ятайте пару: a room with a view.'},
+  6:{ans:'D', word:'sights',
+     opts:[['A','views'],['B','scenes'],['C','landscapes'],['D','sights']],
+     quote:'…Dad wanted to see the <mark class="q">sights</mark> of Kendal, the nearest town — a castle, two museums…',
+     why:'<b>sights</b> — «see the sights of + місто» = оглядати визначні місця. Перелік (замок, музеї) — підтвердження.',
+     no:[['views','панорами; замки й музеї — не «views»'],
+         ['scenes','сцени, епізоди; не туристичні об\'єкти'],
+         ['landscapes','природні ландшафти; замок і шоколадна крамниця — не ландшафт']],
+     trap:'Після пропуску — перелік визначних місць (a castle, two museums, a shop). Це «відповідь на питання» прямо в тексті: sights.'},
+  7:{ans:'B', word:'missed',
+     opts:[['A','lost'],['B','missed'],['C','dropped'],['D','failed']],
+     quote:'…we nearly <mark class="q">missed</mark> the last bus to the village…',
+     why:'<b>miss</b> = не встигнути на транспорт. «Nearly missed the last bus» — типова ситуація мандрівника.',
+     no:[['lost','втратити річ; автобус — не річ, яку гублять'],
+         ['dropped','впустити; інше значення'],
+         ['failed','провалити; з транспортом не вживається']],
+     trap:'Транспорт = <b>miss</b>. Речі = <b>lose</b>. Цю межу НМТ перевіряє майже щороку.'}
+};
+
+/* ================= ДАНІ: ТЕКСТ 2 (НМТ-формат) ================= */
+const TEXT2 = {
+  8:{ans:'B', word:'trip',
+     opts:[['A','travel'],['B','trip'],['C','voyage'],['D','journey']],
+     quote:'…my friends and I decided to go on a cycling <mark class="q">trip</mark> around northern France.',
+     why:'<b>trip</b> — поїздка з поверненням, з метою (велосипедна). «Go on a (cycling) trip» — формула.',
+     no:[['travel','незлічуваний; «a cycling travel» неможливо'],
+         ['voyage','морем; велосипеди — не voyage'],
+         ['journey','наголошує на шляху; тут — поїздка з планом і поверненням']],
+     trap:'Go on a … trip — прикметник між артиклем і словом може бути будь-яким: a cycling trip, a business trip, a school trip. Формула та сама.'},
+  9:{ans:'D', word:'voyage',
+     opts:[['A','travel'],['B','excursion'],['C','trip'],['D','voyage']],
+     quote:'After a long <mark class="q">voyage</mark> by ferry across the Channel…',
+     why:'<b>voyage</b> = морська подорож. «By ferry across the Channel» — море, отже voyage.',
+     no:[['travel','незлічуваний, з артиклем a не вживається'],
+         ['excursion','організована екскурсія; пором — не екскурсія'],
+         ['trip','trip уже був у попередньому реченні про всю поїздку; тут конкретно морський перехід']],
+     trap:'Транспорт-підказка: <b>by ferry/ship</b> → voyage. <b>By car/train/coach</b> → journey.'},
+  10:{ans:'A', word:'reached',
+     opts:[['A','reached'],['B','arrived'],['C','got'],['D','came']],
+     quote:'…we finally <mark class="q">reached</mark> the port of Calais at nine in the evening…',
+     why:'<b>reach</b> + місце одразу, БЕЗ прийменника. Після пропуску — одразу «the port», тому reach.',
+     no:[['arrived','потребує at: arrived at the port — прийменника немає'],
+         ['got','потребує to: got to the port'],
+         ['came','потребує to: came to the port']],
+     trap:'Дзеркальне завдання до пропуска 4 у Тексті 1: там був at → arrive, тут прийменника немає → <b>reach</b>. НМТ перевіряє обидва боки однієї монети.'},
+  11:{ans:'C', word:'stay',
+     opts:[['A','live'],['B','reside'],['C','stay'],['D','lodge']],
+     quote:'We had planned to <mark class="q">stay</mark> in a cheap hostel for two nights…',
+     why:'<b>stay</b> = тимчасово зупинитися. «For two nights» — явна тимчасовість. Stay in a hostel/hotel — колокація.',
+     no:[['live','постійне проживання; «for two nights» виключає live'],
+         ['reside','формальне «проживати» (офіційні документи); занадто книжне для розповіді'],
+         ['lodge','«розміщуватися» — рідкісне й переважно в пасиві/формальному стилі; не вживається з «for two nights» у цьому значенні так природно, як stay']],
+     trap:'Тимчасовість — ключ: <b>for two nights / during the holiday / this week</b> → <b>stay</b>. Без часової межі, «ваша адреса» → live.'},
+  12:{ans:'D', word:'lost',
+     opts:[['A','missed'],['B','dropped'],['C','forgot'],['D','lost']],
+     quote:'…Mark realised he had <mark class="q">lost</mark> his wallet somewhere between the ferry and the hostel.',
+     why:'<b>lost</b> = загубив річ. Гаманець — предмет, тому lose. «Somewhere between…» — він не знає, де саме.',
+     no:[['missed','не встигнути/пропустити; гаманець не «пропускають»'],
+         ['dropped','впустив — але dropped означає, що він БАЧИВ, як упустив; тут він не знає, де загубив'],
+         ['forgot','забув — тоді потрібне місце: had forgotten his wallet at home; і forgot ≠ «загубив», це «не взяв з собою»']],
+     trap:'<b>Lose</b> = річ зникла, не знаю де. <b>Forget</b> = не взяв із собою (тоді додайте місце: at home). <b>Drop</b> = впустив на очах.'},
+  13:{ans:'B', word:'border',
+     opts:[['A','edge'],['B','border'],['C','line'],['D','side']],
+     quote:'…the police would stop us at the <mark class="q">border</mark> when we cycled on to Belgium.',
+     why:'<b>border</b> = кордон між країнами. «On to Belgium» — перетин між France і Belgium, тому border.',
+     no:[['edge','фізичний край предмета; між країнами — не edge'],
+         ['line','«at the line» — не кажуть про кордон; cross the line — образно «переборщити»'],
+         ['side','сторона; кордон — не side']],
+     trap:'Дві країни + поліція + документи → <b>border</b>. У тексті завжди є маркер (тут: Belgium).'},
+  14:{ans:'A', word:'edge',
+     opts:[['A','edge'],['B','border'],['C','line'],['D','coast']],
+     quote:'…we rode to the <mark class="q">edge</mark> of the cliffs above the sea…',
+     why:'<b>edge</b> = фізичний край. «The edge of the cliffs» — край скель. Підказка: of the cliffs.',
+     no:[['border','політична межа; скелі не мають «кордону»'],
+         ['line','лінія; «the line of the cliffs» не кажуть у цьому значенні'],
+         ['coast','узбережжя — але тоді «rode to the coast» без «of the cliffs»; конструкція the ___ of the cliffs вимагає edge']],
+     trap:'Дивіться на структуру: <b>the ___ of the cliffs/forest/water</b> → edge. <b>the ___ between two countries</b> → border.'}
+};
+</script>
+</script>
+<script>
+/* ================= РУШІЙ ================= */
+const TOTAL = SINGLES.length + Object.keys(TEXT1).length + Object.keys(TEXT2).length; // 14+7+7=28
+const attempts = {};   // id -> кількість невдалих спроб
+const solved = {};     // id -> true
+const mistakeIds = []; // порядок помилок
+
+/* ---- побудова одиничних речень ---- */
+const singlesBox = document.getElementById('singles');
+SINGLES.forEach((q,i)=>{
+  const div = document.createElement('div');
+  div.className = 'q';
+  div.innerHTML = `
+    <div class="q-top">
+      <span class="q-num">Завдання ${i+1} з 14</span>
+      <span class="q-tag">${q.tag}</span>
+    </div>
+    <div class="sent">${q.sent.replace('___',`<select class="gap" data-block="s" data-gap="${q.id}"></select>`)}
+      <a href="#ref-${q.ref}" style="font-family:Arial,sans-serif;font-size:12.5px;color:var(--blue);text-decoration:none;margin-left:8px" title="Відкрити довідник">📖 довідник</a>
+    </div>
+    <div class="expl" id="expl-s-${q.id}"></div>`;
+  singlesBox.appendChild(div);
+});
+
+/* ---- заповнення select-ів ---- */
+function buildGap(sel){
+  const block = sel.dataset.block, id = sel.dataset.gap;
+  let opts;
+  if(block==='s') opts = SINGLES.find(q=>q.id===id).opts;
+  else opts = (block==='t1'?TEXT1:TEXT2)[id].opts;
+  sel.innerHTML='';
+  const ph=document.createElement('option'); ph.value=''; ph.textContent=`(оберіть)`;
+  sel.appendChild(ph);
+  opts.forEach(([L,w])=>{
+    const o=document.createElement('option'); o.value=L; o.textContent=`${L} ${w}`;
+    sel.appendChild(o);
+  });
+}
+
+function getData(block,id){
+  if(block==='s') return SINGLES.find(q=>q.id===id);
+  return (block==='t1'?TEXT1:TEXT2)[id];
+}
+
+function explId(block,id){ return `expl-${block}-${id}`; }
+
+/* ---- обробка відповіді ---- */
+document.querySelectorAll('select.gap').forEach(sel=>{
+  buildGap(sel);
+  sel.addEventListener('change', ()=>{
+    const block=sel.dataset.block, id=sel.dataset.gap;
+    const key = block+'-'+id;
+    if(solved[key]) return;
+    const d = getData(block,id);
+    if(!sel.value){ sel.classList.remove('bad'); return; }
+    if(sel.value === d.ans){
+      solved[key]=true;
+      sel.classList.remove('bad'); sel.classList.add('ok');
+      sel.disabled = true;
+      const word = d.opts.find(o=>o[0]===sel.value)[1];
+      sel.querySelector(`option[value="${sel.value}"]`).textContent = word;
+      const ex = document.getElementById(explId(block,id));
+      let noRows = d.no.map(([w,why])=>`<tr><td class="no">✗ ${w}</td><td>${why}</td></tr>`).join('');
+      let quoteRow = d.quote ? `<span class="lbl">📌 Речення з правильним словом</span><div class="quote">${d.quote}</div>` : '';
+      ex.innerHTML = `
+        <div class="ans-line">✓ Правильно: ${sel.value} (${d.word || word})</div>
+        ${quoteRow}
+        <p class="note">${d.why}</p>
+        <span class="lbl">🚫 Чому НЕ підходять інші варіанти</span>
+        <table>${noRows}</table>
+        <div class="trap"><b>⚠️ Пастка:</b> ${d.trap}</div>`;
+      ex.classList.add('show');
+      refreshScore();
+    } else {
+      attempts[key]=(attempts[key]||0)+1;
+      if(!mistakeIds.includes(key)) mistakeIds.push(key);
+      sel.classList.remove('bad'); void sel.offsetWidth;
+      sel.classList.add('bad');
+      renderClinic();
+    }
+  });
+});
+
+/* ---- лічильник ---- */
+function refreshScore(){
+  const solvedCount = Object.keys(solved).length;
+  let first = 0;
+  for(const k in solved) if((attempts[k]||0)===0) first++;
+  const sc = document.getElementById('score');
+  if(solvedCount < TOTAL){
+    sc.textContent = `Розв’язано: ${solvedCount} / ${TOTAL}`;
+    sc.className = '';
+  } else {
+    sc.textContent = `Результат: ${first} / ${TOTAL} з першої спроби`;
+    sc.className = first>=TOTAL*0.85?'good':first>=TOTAL*0.6?'mid':'low';
+  }
+}
+
+/* ---- Error Clinic ---- */
+function renderClinic(){
+  const box = document.getElementById('clinicList');
+  if(!mistakeIds.length){
+    box.innerHTML = '<span class="clinic-empty">✓ Поки що помилок немає. Чудово!</span>';
+    return;
+  }
+  box.innerHTML = mistakeIds.map(key=>{
+    const [block,id] = key.split('-');
+    const d = getData(block,id);
+    const label = block==='s' ? `Завдання ${SINGLES.findIndex(q=>q.id===id)+1}` : `Текст ${block==='t1'?'1':'2'}, пропуск ${id}`;
+    const sent = d.sent ? d.sent.replace('___','<b>___</b>') : d.quote;
+    return `<div class="clinic-item">
+      <b>${label}</b> — <span class="sent-wrong">${sent}</span>
+      <span class="rule-line">💡 ${d.trap.replace(/<[^>]+>/g,'').slice(0,0)||''}${d.trap.replace(/<b>|<\/b>/g,'')}</span>
+    </div>`;
+  }).join('');
+}
+
+/* ---- reset ---- */
+document.getElementById('resetBtn').onclick = ()=>{
+  for(const k in attempts) delete attempts[k];
+  for(const k in solved) delete solved[k];
+  mistakeIds.length = 0;
+  document.querySelectorAll('select.gap').forEach(sel=>{
+    sel.disabled=false; sel.classList.remove('ok','bad');
+    buildGap(sel);
+  });
+  document.querySelectorAll('.expl').forEach(e=>{e.className='expl'; e.innerHTML='';});
+  renderClinic();
+  refreshScore();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+refreshScore();
+</script>
+</body>
+</html>
