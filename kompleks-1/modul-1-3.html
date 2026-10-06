@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НМТ · Комплекс 1 · Модуль 1.3 — Phrasal Verbs: Travel & Free Time</title>
+<style>
+  :root{
+    --ink:#1f2933; --muted:#5b6770; --line:#d8dee4;
+    --blue:#1d4ed8; --blue-soft:#e8effc;
+    --green:#157347; --green-soft:#e7f6ee;
+    --red:#b42318;  --red-soft:#fdecea;
+    --amber:#92610e; --amber-soft:#fff6dd;
+    --paper:#ffffff; --bg:#f4f6f8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.55}
+  .page{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+
+  .test-head{background:linear-gradient(135deg,#12294d,#1d4ed8);color:#fff;border-radius:14px;
+             padding:22px 26px;margin-bottom:12px}
+  .test-head .crumb{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.75;font-family:Arial,sans-serif}
+  .test-head h1{margin:6px 0 4px;font-size:26px;font-family:Arial,sans-serif;font-weight:700}
+  .test-head p{margin:0;font-size:15px;opacity:.9;font-family:Arial,sans-serif}
+
+  .nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-family:Arial,sans-serif}
+  .nav a{display:inline-block;padding:8px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);
+         color:var(--blue);text-decoration:none;font-size:14px;font-weight:700}
+  .nav a:hover{border-color:var(--blue)}
+  .nav a.here{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .nav a.home{background:#eef2f7;color:#33475b}
+
+  .instr{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--blue);
+         border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .instr h2{margin:0 0 8px;font-family:Arial,sans-serif;font-size:17px;color:var(--blue)}
+  .instr p{margin:6px 0}
+  .instr .en{font-style:italic;color:#243b53;background:#f0f6ff;padding:2px 6px;border-radius:4px}
+  .tip{margin-top:12px;background:var(--amber-soft);border:1px solid #f0dfa8;border-radius:10px;
+       padding:12px 16px;font-family:Arial,sans-serif;font-size:14.5px;color:#57430a}
+  .tip b{color:var(--amber)}
+  .trap{margin-top:8px;background:var(--amber-soft);border:1px solid #f0dfa8;border-radius:8px;
+        padding:8px 12px;font-family:Arial,sans-serif;font-size:14px;color:#57430a}
+  .trap b{color:var(--amber)}
+
+  details{margin-top:10px}
+  summary{cursor:pointer;font-family:Arial,sans-serif;font-weight:700;color:var(--blue);font-size:15px}
+  .steps{counter-reset:step;margin:12px 0 4px;padding:0;list-style:none}
+  .steps li{position:relative;padding:8px 0 8px 52px;border-bottom:1px dashed var(--line);font-family:Arial,sans-serif;font-size:15px}
+  .steps li:last-child{border-bottom:none}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:8px;
+    width:34px;height:34px;border-radius:50%;background:var(--blue-soft);color:var(--blue);
+    font-weight:700;display:flex;align-items:center;justify-content:center}
+
+  .ref{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .ref h2{margin:0 0 4px;font-family:Arial,sans-serif;font-size:18px;color:#102a43}
+  .ref .gloss{color:var(--muted);font-size:14.5px;font-family:Arial,sans-serif;margin-bottom:8px}
+  .ref table{border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14.5px;margin-top:6px}
+  .ref td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+  .ref td.word{font-weight:700;color:var(--blue);width:150px;white-space:nowrap}
+  .ref td .ex{display:block;font-style:italic;color:#243b53;margin-top:4px}
+  .ref td .tr{display:block;font-size:12.5px;color:var(--muted)}
+  mark.hl{background:#fff1a8;padding:0 3px;border-radius:3px}
+  .pairbox{background:#f0f6ff;border:1px solid #c7dbf7;border-radius:10px;padding:10px 14px;margin-top:10px;
+           font-family:Arial,sans-serif;font-size:14.5px}
+  .pairbox .lbl{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:4px}
+
+  .part{font-family:Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+        color:var(--muted);margin:26px 0 10px}
+  .part-anchor{scroll-margin-top:16px}
+
+  /* ----- matching ----- */
+  .match-box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:12px}
+  .match-col{display:flex;flex-direction:column;gap:8px}
+  .match-item{border:1.5px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;
+              font-family:Arial,sans-serif;font-size:14.5px;background:#fff;transition:border-color .15s,background .15s;
+              user-select:none;text-align:left}
+  .match-item.verb{font-weight:700;color:var(--blue)}
+  .match-item.sel{border-color:var(--blue);background:var(--blue-soft);box-shadow:0 0 0 2px var(--blue-soft)}
+  .match-item.done{border-color:var(--green);background:var(--green-soft);color:var(--green);cursor:default;opacity:.85}
+  .match-item.err{border-color:var(--red);background:var(--red-soft);animation:shake .3s}
+  .match-score{font-family:Arial,sans-serif;font-weight:700;font-size:14.5px;color:var(--muted);margin-top:10px}
+  .match-score.good{color:var(--green)}
+
+  .q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+  .q .q-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .q .q-num{font-family:Arial,sans-serif;font-weight:700;font-size:13px;color:var(--muted)}
+  .q .q-tag{font-family:Arial,sans-serif;font-size:11.5px;font-weight:700;background:var(--blue-soft);color:var(--blue);
+            border-radius:99px;padding:2px 10px}
+  .q .sent{margin:8px 0 10px;font-size:17px}
+  select.gap{max-width:190px;padding:3px 8px;margin:0 3px;border-radius:8px;border:2px dashed var(--blue);
+      background:var(--blue-soft);color:var(--blue);font-family:Arial,sans-serif;font-weight:700;font-size:14px;
+      cursor:pointer;vertical-align:middle}
+  select.gap.ok{border-style:solid;border-color:var(--green);background:var(--green-soft);color:var(--green);cursor:default}
+  select.gap.bad{border-style:solid;border-color:var(--red);background:var(--red-soft);color:var(--red);
+      animation:shake .3s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+  mark.q{background:#d3f9d8;padding:1px 4px;border-radius:3px}
+
+  .expl{display:none;margin:4px 0 14px;border:1px solid var(--line);border-radius:10px;background:#fbfcfd;padding:12px 16px}
+  .expl.show{display:block}
+  .expl .ans-line{font-family:Arial,sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;color:var(--green)}
+  .expl .lbl{display:block;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .expl .quote{font-style:italic;background:#fff;border-left:3px solid var(--green);padding:6px 10px;border-radius:0 6px 6px 0;margin-top:4px;font-size:15.5px}
+  .expl p.note{font-family:Arial,sans-serif;font-size:14.5px;margin:6px 0 0}
+  .expl table{border-collapse:collapse;margin-top:6px;font-family:Arial,sans-serif;font-size:14px;width:100%}
+  .expl td{border:1px solid var(--line);padding:5px 10px;vertical-align:top}
+  .expl td.no{color:var(--red);font-weight:700;width:130px}
+
+  .gtext{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:14px}
+  .gtext h3{margin:0 0 4px;font-family:Arial,sans-serif;font-size:20px;color:#102a43;text-align:center}
+  .gtext p{margin:12px 0;font-size:16.5px;text-align:justify}
+
+  .clinic{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--red);
+          border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .clinic h2{margin:0 0 8px;font-family:Arial,sans-serif;font-size:17px;color:var(--red)}
+  .clinic-item{border-bottom:1px dashed var(--line);padding:10px 0;font-family:Arial,sans-serif;font-size:14.5px}
+  .clinic-item:last-child{border-bottom:none}
+  .clinic-item .sent-wrong{font-style:italic;color:#243b53}
+  .clinic-item .rule-line{display:block;margin-top:4px;color:#57430a;background:var(--amber-soft);border-radius:6px;padding:4px 8px}
+  .clinic-empty{font-family:Arial,sans-serif;color:var(--green);font-weight:700}
+
+  .controls{position:sticky;bottom:12px;margin-top:18px;background:var(--paper);border:1px solid var(--line);
+            border-radius:14px;padding:14px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+            box-shadow:0 6px 24px rgba(16,42,67,.12);z-index:10}
+  .controls .btn{border:none;border-radius:10px;padding:12px 26px;font-family:Arial,sans-serif;
+                 font-weight:700;font-size:16px;cursor:pointer}
+  #resetBtn{background:#eef2f7;color:#33475b}
+  #resetBtn:hover{background:#e2e8f0}
+  .controls a.btn{background:var(--blue);color:#fff;text-decoration:none}
+  .controls a.btn.back{background:#eef2f7;color:#33475b}
+  #score{font-family:Arial,sans-serif;font-weight:700;font-size:16px;margin-left:auto;color:var(--muted)}
+  #score.good{color:var(--green)} #score.mid{color:var(--amber)} #score.low{color:var(--red)}
+
+  @media print{
+    body{background:#fff}
+    .controls,.tip,details,.nav{display:none}
+    .expl{display:block !important}
+  }
+  @media(max-width:560px){
+    .test-head h1{font-size:21px}
+    select.gap{max-width:150px}
+    .match-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="test-head">
+    <div class="crumb">НМТ · Англійська мова · Комплекс 1 «Подорожі та дозвілля» · Модуль 1.3</div>
+    <h1>Phrasal Verbs: Travel &amp; Free Time</h1>
+    <p>Довідник → Matching → 14 завдань → 2 тексти формату НМТ → Error Clinic · Рівень B2 · British English</p>
+  </div>
+
+  <nav class="nav">
+    <a class="home" href="../index.html">⌂ Усі комплекси</a>
+    <a class="here" href="#ref1">📖 Довідник</a>
+    <a href="#match">🎯 Matching</a>
+    <a href="#part1">✏️ Тренажер 1–14</a>
+    <a href="#text1">📰 Текст 1 (1–7)</a>
+    <a href="#text2">📰 Текст 2 (8–14)</a>
+    <a href="#clinic">🔁 Error Clinic</a>
+  </nav>
+
+  <div class="instr">
+    <h2>Як працювати з модулем</h2>
+    <p><b>Крок 1.</b> Прочитайте <b>довідник</b>: 16 фразових дієслів зі значеннями та прикладами. Зверніть увагу на рамки «⚠️ Пастка».</p>
+    <p><b>Крок 2.</b> Розминка <b>🎯 Matching</b>: з'єднайте дієслово зі значенням — це підготовка до тренажера.</p>
+    <p><b>Крок 3.</b> <b>14 одиничних завдань</b> + <b>2 тексти НМТ</b>: у більшості завдань ви обираєте <b>частинку</b> (in/off/up/on) — саме так НМТ перевіряє фразові дієслова.</p>
+    <p><b>Крок 4.</b> <b>Error Clinic</b> — повторення помилок.</p>
+    <div class="tip"><b>Головне правило модуля:</b> фразове дієслово — це <b>одне слово з двох частин</b>. Не перекладайте частинку окремо: «put off» не має жодного стосунку ані до put, ані до off окремо — це «відкладати». Вчіть дієслова <b>цілими шматками разом зі значенням і прикладом</b>.</div>
+  </div>
+
+  <!-- ================= ДОВІДНИК ================= -->
+  <div class="part part-anchor" id="ref1">📖 Довідник — 16 фразових дієслів</div>
+
+  <div class="ref" id="ref-travel">
+    <h2>Travel — подорожі та транспорт</h2>
+    <div class="gloss">Unit 2, Destination B2. Зверніть увагу: багато дієслів мають <b>два значення</b>.</div>
+    <table>
+      <tr><td class="word">set off / set out</td><td>вирушити, почати подорож
+        <span class="ex">We <mark class="hl">set off</mark> at dawn to avoid the traffic.</span><span class="tr">Ми вирушили на світанку, щоб уникнути заторів.</span></td></tr>
+      <tr><td class="word">check in</td><td>зареєструватися (в аеропорту, готелі)
+        <span class="ex">We <mark class="hl">checked in</mark> online the night before the flight.</span><span class="tr">Ми зареєструвалися онлайн напередодні рейсу.</span></td></tr>
+      <tr><td class="word">check out</td><td>1) виїхати з готелю; 2) перевірити, розглянути
+        <span class="ex">You must <mark class="hl">check out</mark> of your room by 11 a.m.</span><span class="tr">З номера треба виписатися до 11 ранку.</span></td></tr>
+      <tr><td class="word">drop off</td><td>1) висадити когось з машини; 2) задрімати
+        <span class="ex">Dad <mark class="hl">dropped me off</mark> outside the terminal.</span><span class="tr">Тато висадив мене біля терміналу.</span></td></tr>
+      <tr><td class="word">pick up</td><td>підібрати когось машиною, заїхати по когось
+        <span class="ex">I'll <mark class="hl">pick you up</mark> from the station at six.</span><span class="tr">Я заберу тебе зі станції о шостій.</span></td></tr>
+      <tr><td class="word">see off</td><td>проводжати (на вокзалі, в аеропорту)
+        <span class="ex">The whole family came to the airport to <mark class="hl">see us off</mark>.</span><span class="tr">Вся родина прийшла в аеропорт нас проводити.</span></td></tr>
+      <tr><td class="word">take off</td><td>1) злетіти (про літак); 2) зняти (одяг)
+        <span class="ex">The plane <mark class="hl">took off</mark> twenty minutes late.</span><span class="tr">Літак злетів на двадцять хвилин пізніше.</span></td></tr>
+      <tr><td class="word">get back</td><td>повернутися (з місця)
+        <span class="ex">We <mark class="hl">got back</mark> from Edinburgh late on Sunday.</span><span class="tr">Ми повернулися з Единбурга пізно в неділю.</span></td></tr>
+      <tr><td class="word">go away</td><td>поїхати (у відпустку, відлучитися)
+        <span class="ex">We're <mark class="hl">going away</mark> for the bank holiday weekend.</span><span class="tr">Ми їдемо на вихідні з додатковим вихідним.</span></td></tr>
+      <tr><td class="word">turn round</td><td>розвернутися, поїхати назад
+        <span class="ex">We'd missed the turning, so we had to <mark class="hl">turn round</mark>.</span><span class="tr">Ми проїхали поворот, довелося розвернутися.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> <b>drop off</b> (висадити) і <b>pick up</b> (підібрати) — дзеркальна пара, їх плутають найчастіше. Дивіться на напрямок: відвезли й пішли → drop off; приїхали й забрали → pick up.</div>
+  </div>
+
+  <div class="ref" id="ref-freetime">
+    <h2>Free Time — дозвілля та хобі</h2>
+    <div class="gloss">Unit 4, Destination B2. Ці дієслова — чемпіони НМТ за частотністю.</div>
+    <table>
+      <tr><td class="word">take up</td><td>почати (хобі, спорт)
+        <span class="ex">I've recently <mark class="hl">taken up</mark> photography.</span><span class="tr">Я нещодавно захопився фотографією.</span></td></tr>
+      <tr><td class="word">carry on</td><td>продовжувати (= continue)
+        <span class="ex">Despite the rain, they <mark class="hl">carried on</mark> playing.</span><span class="tr">Попри дощ, вони продовжували грати.</span></td></tr>
+      <tr><td class="word">put off</td><td>відкласти, перенести (= postpone)
+        <span class="ex">The match was <mark class="hl">put off</mark> until the following week.</span><span class="tr">Матч перенесли на наступний тиждень.</span></td></tr>
+      <tr><td class="word">join in</td><td>приєднатися, взяти участь
+        <span class="ex">Everyone was singing, so I <mark class="hl">joined in</mark>.</span><span class="tr">Усі співали, тож я приєднався.</span></td></tr>
+      <tr><td class="word">knock out</td><td>1) вибити з турніру; 2) знепритомніти
+        <span class="ex">Our team was <mark class="hl">knocked out</mark> in the semi-final.</span><span class="tr">Наша команда вибула у півфіналі.</span></td></tr>
+      <tr><td class="word">put up with</td><td>миритися, терпіти (= tolerate)
+        <span class="ex">I can't <mark class="hl">put up with</mark> this noise any longer.</span><span class="tr">Я більше не можу терпіти цей шум.</span></td></tr>
+    </table>
+    <div class="pairbox"><span class="lbl">Порівняйте</span>
+      I <mark class="hl">took up</mark> tennis last year. <i>(почав займатися)</i><br>
+      I <mark class="hl">carried on</mark> playing even in winter. <i>(продовжував)</i>
+    </div>
+    <div class="trap"><b>⚠️ Пастка:</b> <b>put off</b> ≠ «виключити»! Put off = відкласти на потім. «Виключити світло» = turn/switch off. А <b>go off</b> взагалі означає «перестати подобатися»: I've gone off coffee.</div>
+  </div>
+
+  <!-- ================= MATCHING ================= -->
+  <div class="part part-anchor" id="match">🎯 Matching — розминка: дієслово ↔ значення</div>
+
+  <div class="match-box">
+    <p style="font-family:Arial,sans-serif;font-size:14.5px;color:var(--muted);margin:0"><b>Як грати:</b> клацніть дієслово ліворуч, потім — його значення праворуч. Правильна пара стане зеленою. Помилка — червоний спалах, пробуйте далі.</p>
+    <div class="match-grid">
+      <div class="match-col" id="matchVerbs"></div>
+      <div class="match-col" id="matchDefs"></div>
+    </div>
+    <div class="match-score" id="matchScore">Знайдено пар: 0 / 8</div>
+  </div>
+
+  <!-- ================= ТРЕНАЖЕР: 14 ОДИНИЧНИХ РЕЧЕНЬ ================= -->
+  <div class="part part-anchor" id="part1">✏️ Тренажер — завдання 1–14 (одиничні речення)</div>
+
+  <div class="instr">
+    <p><span class="en">For questions (1–14) choose the correct answer (A, B, C or D).</span></p>
+    <details>
+      <summary>📋 Стратегія: як працювати з фразовими дієсловами на НМТ</summary>
+      <ol class="steps">
+        <li><b>Знайдіть базове дієслово перед пропуском.</b> НМТ майже завжди дає дієслово і просить частинку: «set ___», «put ___». Спочатку прочитайте пару цілком.</li>
+        <li><b>Не перекладайте частинку.</b> Off у «take off», «set off», «put off» — три різні дієслова з трьома різними значеннями. Частинка сама нічого не означає.</li>
+        <li><b>Згадайте значення цілого дієслова</b> і підставте його в речення: «The match was postponed» = «put off». Пасує за змістом? Тоді це воно.</li>
+        <li><b>Контекст вирішує все:</b> аеропорт/готель → check in/out, plane → take off, машина → drop off / pick up, хобі → take up.</li>
+      </ol>
+      <div class="tip"><b>Залік іде за першу спробу.</b> Якщо помилилися — перечитайте рамку-правило: у ній завжди є формула, як відрізнити дієслова між собою.</div>
+    </details>
+  </div>
+
+  <div id="singles"></div>
+
+  <!-- ================= ТЕКСТ 1 ================= -->
+  <div class="part part-anchor" id="text1">📰 Текст 1 — завдання 1–7 (формат НМТ)</div>
+
+  <div class="instr">
+    <p><span class="en">Read the text below. For questions (1–7) choose the correct answer (A, B, C or D).</span></p>
+    <p>Усі пропуски — частинки фразових дієслів. Дивіться на дієслово <b>перед</b> пропуском і на контекст <b>після</b> нього.</p>
+  </div>
+
+  <div class="gtext">
+    <h3>An Early Start</h3>
+    <p>Our flight to Edinburgh was at seven in the morning, so we set <select class="gap" data-block="t1" data-gap="1"></select> from home at half past four. My aunt drove us to the airport and dropped us <select class="gap" data-block="t1" data-gap="2"></select> right outside the terminal. Inside, we checked <select class="gap" data-block="t1" data-gap="3"></select> at the desk, handed over our suitcases and went through security. My little cousins came with us to see us <select class="gap" data-block="t1" data-gap="4"></select> — they waved until we disappeared round the corner.</p>
+    <div class="expl" id="expl-t1-1"></div><div class="expl" id="expl-t1-2"></div><div class="expl" id="expl-t1-3"></div><div class="expl" id="expl-t1-4"></div>
+
+    <p>There was a short delay, but in the end the plane took <select class="gap" data-block="t1" data-gap="5"></select> only fifteen minutes late. The weekend in Scotland flew by, and when we got <select class="gap" data-block="t1" data-gap="6"></select> on Sunday night, Dad was already waiting at the airport to pick us <select class="gap" data-block="t1" data-gap="7"></select>. “Same trip next year?” he asked. Nobody even thought of saying no.</p>
+    <div class="expl" id="expl-t1-5"></div><div class="expl" id="expl-t1-6"></div><div class="expl" id="expl-t1-7"></div>
+  </div>
+
+  <!-- ================= ТЕКСТ 2 ================= -->
+  <div class="part part-anchor" id="text2">📰 Текст 2 — завдання 8–14 (формат НМТ)</div>
+
+  <div class="instr">
+    <p><span class="en">Read the text below. For questions (8–14) choose the correct answer (A, B, C or D).</span></p>
+    <p>Другий текст — про хобі. Тут дієслова з групи Free Time; пам'ятайте, що деякі з них мають два значення.</p>
+  </div>
+
+  <div class="gtext">
+    <h3>A New Hobby</h3>
+    <p>Last winter, my friend Mia decided to take <select class="gap" data-block="t2" data-gap="8"></select> photography. She had put <select class="gap" data-block="t2" data-gap="9"></select> buying a camera for months — they are not cheap — but finally found a second-hand one online. At first she just watched video lessons alone, but in March she joined <select class="gap" data-block="t2" data-gap="10"></select> a local photography club, where members meet every Thursday.</p>
+    <div class="expl" id="expl-t2-8"></div><div class="expl" id="expl-t2-9"></div><div class="expl" id="expl-t2-10"></div>
+
+    <p>At the first meeting, Mia was too shy to join <select class="gap" data-block="t2" data-gap="11"></select> the discussion, but everyone was so friendly that she soon forgot about being nervous. She carried <select class="gap" data-block="t2" data-gap="12"></select> practising every weekend, even when the weather was awful. “I can't put <select class="gap" data-block="t2" data-gap="13"></select> with boring weekends at home any more,” she laughs. In June, the club entered a national competition. Nobody expected to win — but their team was not knocked <select class="gap" data-block="t2" data-gap="14"></select> until the very final round, which already feels like a victory.</p>
+    <div class="expl" id="expl-t2-11"></div><div class="expl" id="expl-t2-12"></div><div class="expl" id="expl-t2-13"></div><div class="expl" id="expl-t2-14"></div>
+  </div>
+
+  <!-- ================= ERROR CLINIC ================= -->
+  <div class="part part-anchor" id="clinic">🔁 Error Clinic — ваші помилки для повторення</div>
+
+  <div class="clinic">
+    <h2>Error Clinic</h2>
+    <p style="font-family:Arial,sans-serif;font-size:14.5px;color:var(--muted);margin:0 0 10px">Тут автоматично збираються всі завдання, де ви помилилися хоча б раз. Перечитайте правило, потім натисніть «Спробувати знову» — і пройдіть модуль ще раз.</p>
+    <div id="clinicList"><span class="clinic-empty">✓ Поки що помилок немає. Чудово!</span></div>
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="resetBtn">Спробувати знову</button>
+    <a class="btn back" href="modul-1-2.html">← Модуль 1.2</a>
+    <a class="btn" href="modul-1-4.html">Модуль 1.4 · Collocations →</a>
+    <span id="score">Розв’язано: 0 / 28</span>
+  </div>
+
+</div>
+<script>
+/* ================= MATCHING ================= */
+const MATCH_PAIRS = [
+  ['set off','begin a journey'],
+  ['check in','register at a hotel or airport'],
+  ['drop off','let someone get out of a vehicle'],
+  ['pick up','collect somebody in a vehicle'],
+  ['take off','leave the ground (a plane)'],
+  ['put off','delay something until later'],
+  ['take up','start a new hobby or sport'],
+  ['carry on','continue doing something']
+];
+const MATCH_TR = {
+  'set off':'вирушити в подорож','check in':'зареєструватися','drop off':'висадити з машини',
+  'pick up':'підібрати машиною','take off':'злетіти','put off':'відкласти','take up':'почати хобі','carry on':'продовжувати'
+};
+(function buildMatch(){
+  const verbsBox = document.getElementById('matchVerbs');
+  const defsBox = document.getElementById('matchDefs');
+  const verbs = MATCH_PAIRS.map((p,i)=>({text:p[0], i}));
+  const defs = MATCH_PAIRS.map((p,i)=>({text:p[1], i})).sort(()=>Math.random()-0.5);
+  let selVerb = null, found = 0;
+  verbs.forEach(v=>{
+    const el=document.createElement('button');
+    el.className='match-item verb'; el.textContent=v.text; el.dataset.i=v.i;
+    el.onclick=()=>{
+      if(el.classList.contains('done')) return;
+      document.querySelectorAll('#matchVerbs .match-item').forEach(e=>e.classList.remove('sel'));
+      el.classList.add('sel'); selVerb=v.i;
+    };
+    verbsBox.appendChild(el);
+  });
+  defs.forEach(d=>{
+    const el=document.createElement('button');
+    el.className='match-item'; el.textContent=d.text; el.dataset.i=d.i;
+    el.onclick=()=>{
+      if(el.classList.contains('done')) return;
+      if(selVerb===null) return;
+      const vel=document.querySelector(`#matchVerbs .match-item[data-i="${selVerb}"]`);
+      if(selVerb===d.i){
+        el.classList.add('done'); vel.classList.add('done'); vel.classList.remove('sel');
+        el.textContent += ' — ' + MATCH_TR[MATCH_PAIRS[d.i][0]];
+        selVerb=null; found++;
+        const sc=document.getElementById('matchScore');
+        sc.textContent=`Знайдено пар: ${found} / 8`;
+        if(found===8){ sc.textContent='✓ Усі 8 пар знайдено! Переходьте до тренажера.'; sc.classList.add('good'); }
+      } else {
+        el.classList.add('err'); vel.classList.add('err');
+        setTimeout(()=>{ el.classList.remove('err'); vel.classList.remove('err'); }, 400);
+      }
+    };
+    defsBox.appendChild(el);
+  });
+})();
+
+/* ================= ДАНІ: 14 ОДИНИЧНИХ РЕЧЕНЬ ================= */
+const SINGLES = [
+{id:'s1', ref:'ref-travel', tag:'set off', sent:'We set ___ early in the morning to avoid the traffic.',
+ opts:[['A','up'],['B','off'],['C','in'],['D','about']], ans:'B',
+ why:'<b>set off</b> = вирушити, почати подорож. Речення про початок поїздки — це саме воно.',
+ no:[['set up','заснувати, встановити: set up a company — не про подорож'],
+     ['set in','наступити, встановитися (про погоду): winter has set in'],
+     ['set about','взятися за справу: set about doing sth — потребує -ing і не про виїзд']],
+ trap:'<b>set off/out</b> = почати подорож. Запам\'ятайте пару: вирушили — set off, прибули — arrived.'},
+{id:'s2', ref:'ref-travel', tag:'check in / check out', sent:'You have to check ___ of your room by 11 a.m., or the hotel charges for another night.',
+ opts:[['A','in'],['B','out'],['C','up'],['D','on']], ans:'B',
+ why:'<b>check out</b> = виїхати з готелю. «By 11 a.m.» і «charges for another night» — контекст виїзду.',
+ no:[['check in','зареєструватися при ЗАЇЗДІ; тут, навпаки, йдеться про виїзд'],
+     ['check up','check up on = перевіряти когось; не готельна формула'],
+     ['check on','перевірити стан; не про виїзд з готелю']],
+ trap:'<b>in</b> = заїхали, <b>out</b> = виїхали. «By + час» у готелі майже завжди = check out.'},
+{id:'s3', ref:'ref-travel', tag:'drop off / pick up', sent:'Could you drop me ___ at the station? My train leaves in twenty minutes.',
+ opts:[['A','up'],['B','off'],['C','in'],['D','back']], ans:'B',
+ why:'<b>drop off</b> = висадити когось з машини. Вас везуть і висаджають біля станції — drop off.',
+ no:[['pick up','підібрати (забрати когось); тут навпаки — вас ВИСАДЖУЮТЬ'],
+     ['drop in','завітати ненадовго: drop in on a friend — не про транспорт'],
+     ['drop back','відстати (у перегонах); не те значення']],
+ trap:'Дзеркальна пара: відвезли й пішли → <b>drop off</b>; приїхали й забрали → <b>pick up</b>. Дивіться на напрямок дії.'},
+{id:'s4', ref:'ref-travel', tag:'pick up', sent:'Don\'t worry about a taxi — I\'ll pick you ___ from the airport.',
+ opts:[['A','off'],['B','on'],['C','up'],['D','out']], ans:'C',
+ why:'<b>pick up</b> = заїхати по когось, забрати машиною. «Don\'t worry about a taxi» — я сам приїду по тебе.',
+ no:[['pick off','зривати/відстрілювати по одному; не про людей у машині'],
+     ['pick on','цькувати: pick on someone — зовсім інше значення'],
+     ['pick out','вибрати, розпізнати: pick out a present — не «забрати з аеропорту»']],
+ trap:'<b>Pick up</b> має багато значень (підняти, навчитися, купити), але з людьми та транспортом = «забрати». Контекст airport → pick up.'},
+{id:'s5', ref:'ref-travel', tag:'see off', sent:'All her friends came to the port to see her ___ before the cruise.',
+ opts:[['A','away'],['B','out'],['C','off'],['D','over']], ans:'C',
+ why:'<b>see off</b> = проводжати того, хто вирушає в подорож. Порт + круїз = проводи.',
+ no:[['see away','такої фрази не існує'],
+     ['see out','дожити/дотерпіти до кінця: see out the year — інше значення'],
+     ['see over','оглянути (будинок перед купівлею): see over a house']],
+ trap:'<b>see off</b> — завжди про проводи на вокзалі/в аеропорту/порту. Класика НМТ.'},
+{id:'s6', ref:'ref-travel', tag:'take off', sent:'Our plane took ___ half an hour late because of the fog.',
+ opts:[['A','up'],['B','on'],['C','over'],['D','off']], ans:'D',
+ why:'<b>take off</b> = злетіти (про літак). Plane + late — типовий контекст зльоту.',
+ no:[['take up','почати хобі; літак хобі не «починає»'],
+     ['take on','брати на роботу / приймати виклик: take on staff'],
+     ['take over','перейняти контроль: take over a company']],
+ trap:'Літак злітає — <b>take off</b>. І друге значення: зняти одяг (took off his coat). Обидва любить НМТ.'},
+{id:'s7', ref:'ref-travel', tag:'get back', sent:'When did you get ___ from your trip to Italy?',
+ opts:[['A','away'],['B','back'],['C','off'],['D','round']], ans:'B',
+ why:'<b>get back</b> = повернутися. Питання про повернення з подорожі.',
+ no:[['get away','втекти, вирватися на вихідні: get away for the weekend — це ПОЧАТОК поїздки, а не повернення'],
+     ['get off','вийти з транспорту: get off the bus'],
+     ['get round','об\'їхати / поширитися (про чутки); не «повернутися»']],
+ trap:'<b>get away</b> — поїхали (від дому), <b>get back</b> — повернулися (додому). Напрямок вирішує.'},
+{id:'s8', ref:'ref-freetime', tag:'take up', sent:'My brother has taken ___ swimming — he goes to the pool three times a week.',
+ opts:[['A','off'],['B','up'],['C','on'],['D','over']], ans:'B',
+ why:'<b>take up</b> = почати займатися хобі/спортом. «Goes to the pool three times a week» — нове захоплення.',
+ no:[['take off','злетіти/зняти одяг; з плаванням не пов\'язано'],
+     ['take on','взяти на роботу, прийняти виклик'],
+     ['take over','перейняти контроль']],
+ trap:'<b>take up + hobby/sport</b> — одна з найчастіших колокацій НМТ. Почав займатися = took up.'},
+{id:'s9', ref:'ref-freetime', tag:'put off', sent:'The concert was put ___ until next Saturday because the singer was ill.',
+ opts:[['A','up'],['B','on'],['C','off'],['D','away']], ans:'C',
+ why:'<b>put off</b> = відкласти, перенести. «Until next Saturday» — пряма підказка перенесення.',
+ no:[['put up','поставити/розмістити/підняти ціну: put up a tent, put up prices'],
+     ['put on','одягнути / вмикати / поставити виставу: put on a play'],
+     ['put away','прибрати на місце: put away your things']],
+ trap:'<b>put off = postpone</b>, а не «скасувати»! Скасувати назавжди = <b>call off</b>. НМТ обожнює цю пару.'},
+{id:'s10', ref:'ref-freetime', tag:'carry on', sent:'Despite the heavy rain, the players carried ___ training.',
+ opts:[['A','on'],['B','out'],['C','off'],['D','over']], ans:'A',
+ why:'<b>carry on</b> = продовжувати. «Despite the rain» — вони НЕ зупинилися, продовжували.',
+ no:[['carry out','виконати (експеримент, план): carry out research — не «продовжувати»'],
+     ['carry off','виграти, здобути (приз): carried off the trophy'],
+     ['carry over','перенести (залишок): carried over to next year']],
+ trap:'<b>carry on = continue</b>, <b>carry out = perform</b>. Різниця в одну частинку — а значення протилежні за логікою завдання.'},
+{id:'s11', ref:'ref-freetime', tag:'join in', sent:'Everyone was dancing, so we decided to join ___.',
+ opts:[['A','in'],['B','up'],['C','on'],['D','to']], ans:'A',
+ why:'<b>join in</b> = приєднатися до активності, взяти участь. «Everyone was dancing» — ми приєдналися.',
+ no:[['join up','вступити до армії: join up — не про танці'],
+     ['join on','такої фрази не існує в цьому значенні'],
+     ['join to','приєднати фізично (предмет до предмета); не про участь']],
+ trap:'<b>join in</b> (взяти участь у тому, що вже відбувається) ≠ <b>join</b> (стати членом клубу). Join the club, але join in the game.'},
+{id:'s12', ref:'ref-freetime', tag:'knock out', sent:'Our team was knocked ___ in the semi-final, so we watched the final on TV.',
+ opts:[['A','down'],['B','out'],['C','off'],['D','over']], ans:'B',
+ why:'<b>knock out</b> = вибити з турніру. «Watched the final on TV» — значить, у фіналі нас уже не було.',
+ no:[['knock down','збити з ніг/знести будівлю: knocked down by a car'],
+     ['knock off','закінчити роботу / зменшити ціну; не про турнір'],
+     ['knock over','перекинути: knocked over a vase']],
+ trap:'У спорті <b>knock out</b> = вибути зі змагання (knockout stage — плей-оф). У боксі = нокаутувати.'},
+{id:'s13', ref:'ref-freetime', tag:'put up with', sent:'I don\'t know how she puts ___ with his constant complaining.',
+ opts:[['A','off'],['B','on'],['C','up'],['D','in']], ans:'C',
+ why:'<b>put up with</b> = миритися, терпіти. «His constant complaining» — те, що доводиться терпіти.',
+ no:[['put off with','такої комбінації немає'],
+     ['put on with','не існує'],
+     ['put in with','не існує']],
+ trap:'Це фразове дієслово з ТРЬОХ частин: <b>put up with</b>. На НМТ часто дають «put ___ with» — обидві частинки вже на місці, треба лише up.'},
+{id:'s14', ref:'ref-travel', tag:'turn round', sent:'We missed the exit on the motorway, so we had to turn ___ and drive back.',
+ opts:[['A','up'],['B','down'],['C','round'],['D','away']], ans:'C',
+ why:'<b>turn round</b> = розвернутися. «Drive back» — пряма підказка: поїхали назад.',
+ no:[['turn up','з\'явитися/зробити голосніше: he turned up late'],
+     ['turn down','відхилити/зробити тихіше: turn down an offer'],
+     ['turn away','відвернутися/не пустити: they were turned away at the door']],
+ trap:'<b>turn round = розвернутися і поїхати назад</b>. Маркери: missed the exit, drive back, wrong direction.'}
+];
+
+/* ================= ДАНІ: ТЕКСТ 1 ================= */
+const TEXT1 = {
+  1:{ans:'C', word:'off',
+     opts:[['A','up'],['B','in'],['C','off'],['D','about']],
+     quote:'…so we set <mark class="q">off</mark> from home at half past four.',
+     why:'<b>set off</b> = вирушили. «From home at half past four» — початок подорожі.',
+     no:[['set up','заснувати; не про виїзд'],
+         ['set in','наступити (про погоду); не про людей'],
+         ['set about','взятися за справу; потребує дієслова з -ing']],
+     trap:'Початок подорожі вранці = <b>set off</b>. Це речення — класичне відкриття розповіді про поїздку.'},
+  2:{ans:'B', word:'off',
+     opts:[['A','up'],['B','off'],['C','in'],['D','out']],
+     quote:'My aunt drove us to the airport and dropped us <mark class="q">off</mark> right outside the terminal.',
+     why:'<b>drop off</b> = висадила нас. «Outside the terminal» — місце висадки.',
+     no:[['drop up','не існує'],
+         ['drop in','завітати ненадовго; не про висадку з машини'],
+         ['drop out','кинути (навчання, змагання): drop out of school — зовсім інше!']],
+     trap:'<b>drop out</b> (кинути школу) — улюблений distractor. Тут контекст транспорту: drove us → drop off.'},
+  3:{ans:'A', word:'in',
+     opts:[['A','in'],['B','out'],['C','up'],['D','on']],
+     quote:'Inside, we checked <mark class="q">in</mark> at the desk, handed over our suitcases…',
+     why:'<b>check in</b> = зареєструвалися. «At the desk, handed over our suitcases» — реєстрація на рейс.',
+     no:[['check out','виїзд з готелю; тут аеропорт і ПОЧАТОК подорожі'],
+         ['check up','check up on = перевіряти когось'],
+         ['check on','перевірити стан чогось']],
+     trap:'Порядок подій у тексті — підказка: приїхали → <b>checked in</b> → security → зліт. Check out був би в КІНЦІ, у готелі.'},
+  4:{ans:'D', word:'off',
+     opts:[['A','away'],['B','out'],['C','over'],['D','off']],
+     quote:'My little cousins came with us to see us <mark class="q">off</mark> — they waved until we disappeared…',
+     why:'<b>see off</b> = проводжати. «They waved» — махали на прощання, класична картина проводів.',
+     no:[['see away','не існує'],
+         ['see out','дотерпіти до кінця'],
+         ['see over','оглянути (нерухомість)']],
+     trap:'«Waved until we disappeared» = проводи. НМТ любить see off саме в аеропортному контексті.'},
+  5:{ans:'B', word:'off',
+     opts:[['A','up'],['B','off'],['C','on'],['D','over']],
+     quote:'…the plane took <mark class="q">off</mark> only fifteen minutes late.',
+     why:'<b>take off</b> = злетів. Plane + delay = контекст зльоту.',
+     no:[['take up','почати хобі'],
+         ['take on','брати на роботу'],
+         ['take over','перейняти контроль']],
+     trap:'Літак у тексті = <b>take off</b> (злетів) / <b>land</b> (приземлився). Інші take-дієслова — дистрактори за звучанням.'},
+  6:{ans:'C', word:'back',
+     opts:[['A','away'],['B','off'],['C','back'],['D','round']],
+     quote:'…when we got <mark class="q">back</mark> on Sunday night, Dad was already waiting…',
+     why:'<b>get back</b> = повернулися. «On Sunday night» + тато чекає — повернення додому.',
+     no:[['get away','вирватися на вихідні — це початок, а не кінець вікенду'],
+         ['get off','вийти з транспорту'],
+         ['get round','об\'їхати; поширитися']],
+     trap:'Сюжетна лінія: set off (початок) → the weekend flew by → <b>got back</b> (фінал). Текст сам підказує хронологію.'},
+  7:{ans:'D', word:'up',
+     opts:[['A','off'],['B','on'],['C','out'],['D','up']],
+     quote:'…Dad was already waiting at the airport to pick us <mark class="q">up</mark>.',
+     why:'<b>pick up</b> = забрати нас (машиною). Дзеркально до «dropped us off» на початку тексту.',
+     no:[['pick off','відстрілювати по одному; не про аеропорт'],
+         ['pick on','цькувати'],
+         ['pick out','вибрати, розпізнати']],
+     trap:'Красива пара в одному тексті: <b>drop off</b> (висадили на початку) і <b>pick up</b> (забрали в кінці). Так НМТ перевіряє, чи ви бачите напрямок.'}
+};
+
+/* ================= ДАНІ: ТЕКСТ 2 ================= */
+const TEXT2 = {
+  8:{ans:'A', word:'up',
+     opts:[['A','up'],['B','off'],['C','on'],['D','over']],
+     quote:'…my friend Mia decided to take <mark class="q">up</mark> photography.',
+     why:'<b>take up</b> = почати займатися хобі. Photography — нове захоплення.',
+     no:[['take off','злетіти/зняти одяг'],
+         ['take on','взяти на роботу'],
+         ['take over','перейняти контроль']],
+     trap:'<b>take up + назва хобі/спорту</b>. Перше речення тексту про нове хобі майже завжди take up.'},
+  9:{ans:'C', word:'off',
+     opts:[['A','up'],['B','on'],['C','off'],['D','away']],
+     quote:'She had put <mark class="q">off</mark> buying a camera for months — they are not cheap…',
+     why:'<b>put off</b> = відкладала. «For months — they are not cheap» — вона довго відкладала покупку.',
+     no:[['put up','поставити/підняти; put up buying — не існує'],
+         ['put on','одягнути/вмикати'],
+         ['put away','прибрати']],
+     trap:'<b>put off + -ing</b>: put off buying/doing. Граматична підказка — герундій buying після пропуску.'},
+  10:{ans:'B', word:'— (без частинки)',
+     opts:[['A','in'],['B','—'],['C','up'],['D','for']],
+     quote:'…but in March she joined a local photography club…',
+     why:'Тут потрібен НУЛЬОВИЙ варіант: <b>join + організація</b> вживається БЕЗ частинки. Join a club — стала членом клубу.',
+     no:[['join in','приєднатися до АКТИВНОСТІ (join in the discussion); club — організація, а не активність'],
+         ['join up','вступити до армії'],
+         ['join for','не існує в цьому значенні']],
+     trap:'Найтонше місце модуля: <b>join a club</b> (членство, без частинки) vs <b>join in an activity</b> (участь). Див. пропуск 11 — там буде join in!'},
+  11:{ans:'A', word:'in',
+     opts:[['A','in'],['B','up'],['C','on'],['D','to']],
+     quote:'At the first meeting, Mia was too shy to join <mark class="q">in</mark> the discussion…',
+     why:'<b>join in</b> = взяти участь в активності. Discussion — активність, що вже триває.',
+     no:[['join up','до армії'],
+         ['join on','не існує'],
+         ['join to','приєднати фізично']],
+     trap:'Порівняйте з пропуском 10: club → join (без частинки), discussion → join <b>in</b>. НМТ ставить такі пари поруч навмисно.'},
+  12:{ans:'D', word:'on',
+     opts:[['A','out'],['B','off'],['C','over'],['D','on']],
+     quote:'She carried <mark class="q">on</mark> practising every weekend, even when the weather was awful.',
+     why:'<b>carry on</b> = продовжувала. «Even when the weather was awful» — не зупинялася.',
+     no:[['carry out','виконати (план, експеримент)'],
+         ['carry off','виграти приз'],
+         ['carry over','перенести залишок']],
+     trap:'<b>carry on + -ing</b> = продовжувати щось робити. «Even when» — маркер того, що дія НЕ припинилася.'},
+  13:{ans:'B', word:'up',
+     opts:[['A','off'],['B','up'],['C','on'],['D','in']],
+     quote:'“I can\'t put <mark class="q">up</mark> with boring weekends at home any more,” she laughs.',
+     why:'<b>put up with</b> = терпіти. «Boring weekends» + «any more» — терпіти більше не може.',
+     no:[['put off with','не існує'],
+         ['put on with','не існує'],
+         ['put in with','не існує']],
+     trap:'Частинка <b>with</b> уже стоїть у реченні після пропуску — це сигнал трьохчастинного дієслова: put ___ with → <b>up</b>.'},
+  14:{ans:'C', word:'out',
+     opts:[['A','down'],['B','off'],['C','out'],['D','over']],
+     quote:'…but their team was not knocked <mark class="q">out</mark> until the very final round…',
+     why:'<b>knock out</b> = вибути з турніру. «Until the very final round» — дійшли майже до кінця.',
+     no:[['knock down','збити з ніг / знести будівлю'],
+         ['knock off','закінчити робочий день'],
+         ['knock over','перекинути предмет']],
+     trap:'Змагання/турнір + раунди → <b>knock out</b>. «Not… until the final round» = пройшли далеко.'}
+};
+
+/* ================= РУШІЙ ================= */
+const TOTAL = SINGLES.length + Object.keys(TEXT1).length + Object.keys(TEXT2).length;
+const attempts = {};
+const solved = {};
+const mistakeIds = [];
+
+const singlesBox = document.getElementById('singles');
+SINGLES.forEach((q,i)=>{
+  const div = document.createElement('div');
+  div.className = 'q';
+  div.innerHTML = `
+    <div class="q-top">
+      <span class="q-num">Завдання ${i+1} з 14</span>
+      <span class="q-tag">${q.tag}</span>
+    </div>
+    <div class="sent">${q.sent.replace('___',`<select class="gap" data-block="s" data-gap="${q.id}"></select>`)}
+      <a href="#${q.ref}" style="font-family:Arial,sans-serif;font-size:12.5px;color:var(--blue);text-decoration:none;margin-left:8px" title="Відкрити довідник">📖 довідник</a>
+    </div>
+    <div class="expl" id="expl-s-${q.id}"></div>`;
+  singlesBox.appendChild(div);
+});
+
+function buildGap(sel){
+  const block = sel.dataset.block, id = sel.dataset.gap;
+  let opts;
+  if(block==='s') opts = SINGLES.find(q=>q.id===id).opts;
+  else opts = (block==='t1'?TEXT1:TEXT2)[id].opts;
+  sel.innerHTML='';
+  const ph=document.createElement('option'); ph.value=''; ph.textContent='(оберіть)';
+  sel.appendChild(ph);
+  opts.forEach(([L,w])=>{
+    const o=document.createElement('option'); o.value=L; o.textContent=w==='—'?`${L} — (без частинки)`:`${L} ${w}`;
+    sel.appendChild(o);
+  });
+}
+
+function getData(block,id){
+  if(block==='s') return SINGLES.find(q=>q.id===id);
+  return (block==='t1'?TEXT1:TEXT2)[id];
+}
+
+function explId(block,id){ return `expl-${block}-${id}`; }
+
+document.querySelectorAll('select.gap').forEach(sel=>{
+  buildGap(sel);
+  sel.addEventListener('change', ()=>{
+    const block=sel.dataset.block, id=sel.dataset.gap;
+    const key = block+'-'+id;
+    if(solved[key]) return;
+    const d = getData(block,id);
+    if(!sel.value){ sel.classList.remove('bad'); return; }
+    if(sel.value === d.ans){
+      solved[key]=true;
+      sel.classList.remove('bad'); sel.classList.add('ok');
+      sel.disabled = true;
+      const word = d.opts.find(o=>o[0]===sel.value)[1];
+      sel.querySelector(`option[value="${sel.value}"]`).textContent = word;
+      const ex = document.getElementById(explId(block,id));
+      let noRows = d.no.map(([w,why])=>`<tr><td class="no">✗ ${w}</td><td>${why}</td></tr>`).join('');
+      let quoteRow = d.quote ? `<span class="lbl">📌 Речення з правильним словом</span><div class="quote">${d.quote}</div>` : '';
+      ex.innerHTML = `
+        <div class="ans-line">✓ Правильно: ${sel.value} (${d.word || word})</div>
+        ${quoteRow}
+        <p class="note">${d.why}</p>
+        <span class="lbl">🚫 Чому НЕ підходять інші варіанти</span>
+        <table>${noRows}</table>
+        <div class="trap"><b>⚠️ Пастка:</b> ${d.trap}</div>`;
+      ex.classList.add('show');
+      refreshScore();
+    } else {
+      attempts[key]=(attempts[key]||0)+1;
+      if(!mistakeIds.includes(key)) mistakeIds.push(key);
+      sel.classList.remove('bad'); void sel.offsetWidth;
+      sel.classList.add('bad');
+      renderClinic();
+    }
+  });
+});
+
+function refreshScore(){
+  const solvedCount = Object.keys(solved).length;
+  let first = 0;
+  for(const k in solved) if((attempts[k]||0)===0) first++;
+  const sc = document.getElementById('score');
+  if(solvedCount < TOTAL){
+    sc.textContent = `Розв’язано: ${solvedCount} / ${TOTAL}`;
+    sc.className = '';
+  } else {
+    sc.textContent = `Результат: ${first} / ${TOTAL} з першої спроби`;
+    sc.className = first>=TOTAL*0.85?'good':first>=TOTAL*0.6?'mid':'low';
+  }
+}
+
+function renderClinic(){
+  const box = document.getElementById('clinicList');
+  if(!mistakeIds.length){
+    box.innerHTML = '<span class="clinic-empty">✓ Поки що помилок немає. Чудово!</span>';
+    return;
+  }
+  box.innerHTML = mistakeIds.map(key=>{
+    const [block,id] = key.split('-');
+    const d = getData(block,id);
+    const label = block==='s' ? `Завдання ${SINGLES.findIndex(q=>q.id===id)+1}` : `Текст ${block==='t1'?'1':'2'}, пропуск ${id}`;
+    const sent = d.sent ? d.sent.replace('___','<b>___</b>') : d.quote;
+    return `<div class="clinic-item">
+      <b>${label}</b> — <span class="sent-wrong">${sent}</span>
+      <span class="rule-line">💡 ${d.trap.replace(/<b>|<\/b>/g,'')}</span>
+    </div>`;
+  }).join('');
+}
+
+document.getElementById('resetBtn').onclick = ()=>{
+  for(const k in attempts) delete attempts[k];
+  for(const k in solved) delete solved[k];
+  mistakeIds.length = 0;
+  document.querySelectorAll('select.gap').forEach(sel=>{
+    sel.disabled=false; sel.classList.remove('ok','bad');
+    buildGap(sel);
+  });
+  document.querySelectorAll('.expl').forEach(e=>{e.className='expl'; e.innerHTML='';});
+  renderClinic();
+  refreshScore();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+refreshScore();
+</script>
+</body>
+</html>

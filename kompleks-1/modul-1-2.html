@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НМТ · Комплекс 1 · Модуль 1.2 — Confusing Words: Sport & Hobbies</title>
+<style>
+  :root{
+    --ink:#1f2933; --muted:#5b6770; --line:#d8dee4;
+    --blue:#1d4ed8; --blue-soft:#e8effc;
+    --green:#157347; --green-soft:#e7f6ee;
+    --red:#b42318;  --red-soft:#fdecea;
+    --amber:#92610e; --amber-soft:#fff6dd;
+    --paper:#ffffff; --bg:#f4f6f8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.55}
+  .page{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+
+  .test-head{background:linear-gradient(135deg,#12294d,#1d4ed8);color:#fff;border-radius:14px;
+             padding:22px 26px;margin-bottom:12px}
+  .test-head .crumb{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.75;font-family:Arial,sans-serif}
+  .test-head h1{margin:6px 0 4px;font-size:26px;font-family:Arial,sans-serif;font-weight:700}
+  .test-head p{margin:0;font-size:15px;opacity:.9;font-family:Arial,sans-serif}
+
+  .nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-family:Arial,sans-serif}
+  .nav a{display:inline-block;padding:8px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);
+         color:var(--blue);text-decoration:none;font-size:14px;font-weight:700}
+  .nav a:hover{border-color:var(--blue)}
+  .nav a.here{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .nav a.home{background:#eef2f7;color:#33475b}
+
+  .instr{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--blue);
+         border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .instr h2{margin:0 0 8px;font-family:Arial,sans-serif;font-size:17px;color:var(--blue)}
+  .instr p{margin:6px 0}
+  .instr .en{font-style:italic;color:#243b53;background:#f0f6ff;padding:2px 6px;border-radius:4px}
+  .tip{margin-top:12px;background:var(--amber-soft);border:1px solid #f0dfa8;border-radius:10px;
+       padding:12px 16px;font-family:Arial,sans-serif;font-size:14.5px;color:#57430a}
+  .tip b{color:var(--amber)}
+  .trap{margin-top:8px;background:var(--amber-soft);border:1px solid #f0dfa8;border-radius:8px;
+        padding:8px 12px;font-family:Arial,sans-serif;font-size:14px;color:#57430a}
+  .trap b{color:var(--amber)}
+
+  details{margin-top:10px}
+  summary{cursor:pointer;font-family:Arial,sans-serif;font-weight:700;color:var(--blue);font-size:15px}
+  .steps{counter-reset:step;margin:12px 0 4px;padding:0;list-style:none}
+  .steps li{position:relative;padding:8px 0 8px 52px;border-bottom:1px dashed var(--line);font-family:Arial,sans-serif;font-size:15px}
+  .steps li:last-child{border-bottom:none}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:8px;
+    width:34px;height:34px;border-radius:50%;background:var(--blue-soft);color:var(--blue);
+    font-weight:700;display:flex;align-items:center;justify-content:center}
+
+  .ref{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .ref h2{margin:0 0 4px;font-family:Arial,sans-serif;font-size:18px;color:#102a43}
+  .ref .gloss{color:var(--muted);font-size:14.5px;font-family:Arial,sans-serif;margin-bottom:8px}
+  .ref table{border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14.5px;margin-top:6px}
+  .ref td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+  .ref td.word{font-weight:700;color:var(--blue);width:130px;white-space:nowrap}
+  .ref td .ex{display:block;font-style:italic;color:#243b53;margin-top:4px}
+  .ref td .tr{display:block;font-size:12.5px;color:var(--muted)}
+  mark.hl{background:#fff1a8;padding:0 3px;border-radius:3px}
+  .pairbox{background:#f0f6ff;border:1px solid #c7dbf7;border-radius:10px;padding:10px 14px;margin-top:10px;
+           font-family:Arial,sans-serif;font-size:14.5px}
+  .pairbox .lbl{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:4px}
+
+  .part{font-family:Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+        color:var(--muted);margin:26px 0 10px}
+  .part-anchor{scroll-margin-top:16px}
+
+  .q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+  .q .q-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .q .q-num{font-family:Arial,sans-serif;font-weight:700;font-size:13px;color:var(--muted)}
+  .q .q-tag{font-family:Arial,sans-serif;font-size:11.5px;font-weight:700;background:var(--blue-soft);color:var(--blue);
+            border-radius:99px;padding:2px 10px}
+  .q .sent{margin:8px 0 10px;font-size:17px}
+  select.gap{max-width:180px;padding:3px 8px;margin:0 3px;border-radius:8px;border:2px dashed var(--blue);
+      background:var(--blue-soft);color:var(--blue);font-family:Arial,sans-serif;font-weight:700;font-size:14px;
+      cursor:pointer;vertical-align:middle}
+  select.gap.ok{border-style:solid;border-color:var(--green);background:var(--green-soft);color:var(--green);cursor:default}
+  select.gap.bad{border-style:solid;border-color:var(--red);background:var(--red-soft);color:var(--red);
+      animation:shake .3s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+  mark.q{background:#d3f9d8;padding:1px 4px;border-radius:3px}
+
+  .expl{display:none;margin:4px 0 14px;border:1px solid var(--line);border-radius:10px;background:#fbfcfd;padding:12px 16px}
+  .expl.show{display:block}
+  .expl .ans-line{font-family:Arial,sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;color:var(--green)}
+  .expl .lbl{display:block;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .expl .quote{font-style:italic;background:#fff;border-left:3px solid var(--green);padding:6px 10px;border-radius:0 6px 6px 0;margin-top:4px;font-size:15.5px}
+  .expl p.note{font-family:Arial,sans-serif;font-size:14.5px;margin:6px 0 0}
+  .expl table{border-collapse:collapse;margin-top:6px;font-family:Arial,sans-serif;font-size:14px;width:100%}
+  .expl td{border:1px solid var(--line);padding:5px 10px;vertical-align:top}
+  .expl td.no{color:var(--red);font-weight:700;width:110px}
+
+  .gtext{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:14px}
+  .gtext h3{margin:0 0 4px;font-family:Arial,sans-serif;font-size:20px;color:#102a43;text-align:center}
+  .gtext p{margin:12px 0;font-size:16.5px;text-align:justify}
+
+  .clinic{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--red);
+          border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .clinic h2{margin:0 0 8px;font-family:Arial,sans-serif;font-size:17px;color:var(--red)}
+  .clinic-item{border-bottom:1px dashed var(--line);padding:10px 0;font-family:Arial,sans-serif;font-size:14.5px}
+  .clinic-item:last-child{border-bottom:none}
+  .clinic-item .sent-wrong{font-style:italic;color:#243b53}
+  .clinic-item .rule-line{display:block;margin-top:4px;color:#57430a;background:var(--amber-soft);border-radius:6px;padding:4px 8px}
+  .clinic-empty{font-family:Arial,sans-serif;color:var(--green);font-weight:700}
+
+  .controls{position:sticky;bottom:12px;margin-top:18px;background:var(--paper);border:1px solid var(--line);
+            border-radius:14px;padding:14px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+            box-shadow:0 6px 24px rgba(16,42,67,.12);z-index:10}
+  .controls .btn{border:none;border-radius:10px;padding:12px 26px;font-family:Arial,sans-serif;
+                 font-weight:700;font-size:16px;cursor:pointer}
+  #resetBtn{background:#eef2f7;color:#33475b}
+  #resetBtn:hover{background:#e2e8f0}
+  .controls a.btn{background:var(--blue);color:#fff;text-decoration:none}
+  .controls a.btn.back{background:#eef2f7;color:#33475b}
+  #score{font-family:Arial,sans-serif;font-weight:700;font-size:16px;margin-left:auto;color:var(--muted)}
+  #score.good{color:var(--green)} #score.mid{color:var(--amber)} #score.low{color:var(--red)}
+
+  @media print{
+    body{background:#fff}
+    .controls,.tip,details,.nav{display:none}
+    .expl{display:block !important}
+  }
+  @media(max-width:560px){
+    .test-head h1{font-size:21px}
+    select.gap{max-width:140px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="test-head">
+    <div class="crumb">НМТ · Англійська мова · Комплекс 1 «Подорожі та дозвілля» · Модуль 1.2</div>
+    <h1>Confusing Words: Sport &amp; Hobbies</h1>
+    <p>Довідник → 14 завдань → 2 тексти формату НМТ → Error Clinic · Рівень B2 · British English</p>
+  </div>
+
+  <nav class="nav">
+    <a class="home" href="../index.html">⌂ Усі комплекси</a>
+    <a class="here" href="#ref1">📖 Довідник</a>
+    <a href="#part1">✏️ Тренажер 1–14</a>
+    <a href="#text1">📰 Текст 1 (1–7)</a>
+    <a href="#text2">📰 Текст 2 (8–14)</a>
+    <a href="#clinic">🔁 Error Clinic</a>
+  </nav>
+
+  <div class="instr">
+    <h2>Як працювати з модулем</h2>
+    <p><b>Крок 1.</b> Прочитайте <b>довідник</b>: вісім груп слів спортивної тематики, які НМТ плутає найчастіше.</p>
+    <p><b>Крок 2.</b> Виконайте <b>14 одиничних завдань</b> — відповідь <b>з першої спроби</b> йде в залік.</p>
+    <p><b>Крок 3.</b> Два <b>тексти у форматі НМТ</b> — ті самі слова у зв'язному контексті.</p>
+    <p><b>Крок 4.</b> <b>Error Clinic</b> — повторення помилок.</p>
+    <div class="tip"><b>Головне правило модуля:</b> у спортивній лексиці англійська шалено точна щодо <b>місця гри</b> (pitch/court/track), <b>ролі судді</b> (referee/umpire) і <b>результату</b> (win/beat/draw). Українською все це «поле», «суддя», «виграв» — англійською кожен спорт має своє слово. Вчіть пари «спорт → слово» як формули.</div>
+  </div>
+
+  <!-- ================= ДОВІДНИК ================= -->
+  <div class="part part-anchor" id="ref1">📖 Довідник — вісім груп контрастів</div>
+
+  <div class="ref" id="ref-g1">
+    <h2>1. pitch / track / court / course / ring / rink</h2>
+    <div class="gloss">Українською все — «поле» чи «майданчик». Англійською кожен спорт має <b>своє</b> місце гри.</div>
+    <table>
+      <tr><td class="word">pitch</td><td>поле для футболу, регбі, крікету, хокею на траві
+        <span class="ex">The players ran onto the <mark class="hl">pitch</mark>.</span><span class="tr">Гравці вибігли на поле.</span></td></tr>
+      <tr><td class="word">court</td><td>корт: теніс, баскетбол, волейбол, сквош, бадмінтон
+        <span class="ex">The tennis players waited by the <mark class="hl">court</mark>.</span><span class="tr">Тенісисти чекали біля корту.</span></td></tr>
+      <tr><td class="word">track</td><td>бігова доріжка (легка атлетика); трасса для перегонів
+        <span class="ex">She trains on the <mark class="hl">track</mark> every morning.</span><span class="tr">Вона тренується на доріжці щоранку.</span></td></tr>
+      <tr><td class="word">course</td><td>поле для ГОЛЬФУ; траса (ski course)
+        <span class="ex">They played a round at the golf <mark class="hl">course</mark>.</span><span class="tr">Вони зіграли раунд на полі для гольфу.</span></td></tr>
+      <tr><td class="word">ring</td><td>боксерський ринг
+        <span class="ex">The boxer climbed into the <mark class="hl">ring</mark>.</span><span class="tr">Боксер виліз на ринг.</span></td></tr>
+      <tr><td class="word">rink</td><td>ковзанка (лід) — ice rink; roller rink
+        <span class="ex">The children skated at the ice <mark class="hl">rink</mark>.</span><span class="tr">Діти каталися на ковзанці.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> вчіть формули «спорт → місце»: football → <b>pitch</b>, tennis → <b>court</b>, athletics → <b>track</b>, golf → <b>course</b>, boxing → <b>ring</b>, skating → <b>rink</b>. «Football court» — груба помилка!</div>
+  </div>
+
+  <div class="ref" id="ref-g2">
+    <h2>2. win / beat / score</h2>
+    <div class="gloss">Виграти ЩО vs перемогти КОГО vs набрати очки.</div>
+    <table>
+      <tr><td class="word">win</td><td>виграти <b>щось</b>: a match, a game, a prize, a medal, a competition
+        <span class="ex">She <mark class="hl">won</mark> the gold medal in 2024.</span><span class="tr">Вона виграла золоту медаль у 2024.</span></td></tr>
+      <tr><td class="word">beat</td><td>перемогти <b>когось</b>: beat + суперник (beat–beat–beaten)
+        <span class="ex">We <mark class="hl">beat</mark> the champions 3–1.</span><span class="tr">Ми перемогли чемпіонів 3:1.</span></td></tr>
+      <tr><td class="word">score</td><td>забити (гол), набрати (очки): score a goal / a point
+        <span class="ex">He <mark class="hl">scored</mark> twice in the final.</span><span class="tr">Він забив двічі у фіналі.</span></td></tr>
+    </table>
+    <div class="pairbox"><span class="lbl">Порівняйте</span>
+      We <mark class="hl">won</mark> the match. <i>(виграли ЩО — матч)</i><br>
+      We <mark class="hl">beat</mark> their team. <i>(перемогли КОГО — команду)</i>
+    </div>
+    <div class="trap"><b>⚠️ Пастка:</b> питання одне: після пропуску — <b>річ</b> (match, prize) → <b>win</b>; <b>людина/команда</b> → <b>beat</b>. «Win the opponent» — класична помилка українців!</div>
+  </div>
+
+  <div class="ref" id="ref-g3">
+    <h2>3. umpire / referee</h2>
+    <div class="gloss">Обидва — «суддя». Різниця — у виді спорту.</div>
+    <table>
+      <tr><td class="word">referee</td><td>суддя у футболі, регбі, баскетболі, боксі, хокеї
+        <span class="ex">The <mark class="hl">referee</mark> showed him a red card.</span><span class="tr">Суддя показав йому червону картку.</span></td></tr>
+      <tr><td class="word">umpire</td><td>суддя у тенісі, крікеті, бейсболі, бадмінтоні
+        <span class="ex">The <mark class="hl">umpire</mark> called the ball out.</span><span class="tr">Суддя зафіксував аут.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> формула: м'яч і ноги → <b>referee</b> (football, rugby); ракетка чи бита → <b>umpire</b> (tennis, cricket, baseball). Червона картка = referee!</div>
+  </div>
+
+  <div class="ref" id="ref-g4">
+    <h2>4. play / game</h2>
+    <div class="gloss">Гра як процес/вистава vs конкретна гра/матч.</div>
+    <table>
+      <tr><td class="word">game</td><td>конкретна гра, матч, партія (злічуваний): a game of tennis/chess
+        <span class="ex">Would you like a <mark class="hl">game</mark> of chess?</span><span class="tr">Хочеш партію в шахи?</span></td></tr>
+      <tr><td class="word">play</td><td>1) стиль/якість гри (незлічуваний); 2) вистава в театрі
+        <span class="ex">The team showed some excellent <mark class="hl">play</mark>.</span><span class="tr">Команда показала чудову гру.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> злічувана конкретна гра → <b>game</b> (a game of…). Якість гри взагалі → <b>play</b>. А ще play = п'єса: a play by Shakespeare — НМТ це обожнює!</div>
+  </div>
+
+  <div class="ref" id="ref-g5">
+    <h2>5. spectator / viewer</h2>
+    <div class="gloss">Глядач НА СТАДІОНІ vs глядач біля ЕКРАНА.</div>
+    <table>
+      <tr><td class="word">spectator</td><td>глядач на живій події (стадіон, змагання)
+        <span class="ex">Over 40,000 <mark class="hl">spectators</mark> watched the final.</span><span class="tr">Понад 40 000 глядачів дивилися фінал.</span></td></tr>
+      <tr><td class="word">viewer</td><td>глядач телебачення, онлайн-трансляції
+        <span class="ex">Millions of <mark class="hl">viewers</mark> saw the goal on TV.</span><span class="tr">Мільйони телеглядачів бачили гол.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> живий стадіон → <b>spectator</b> (spectator sport!). Екран/TV → <b>viewer</b>. «Audience» — публіка в театрі/на концерті, не на стадіоні.</div>
+  </div>
+
+  <div class="ref" id="ref-g6">
+    <h2>6. amateur / professional</h2>
+    <div class="gloss">Аматор (без грошей) vs професіонал (це його робота).</div>
+    <table>
+      <tr><td class="word">amateur</td><td>аматор; займається для задоволення, без оплати
+        <span class="ex">He plays in an <mark class="hl">amateur</mark> league at weekends.</span><span class="tr">Він грає в аматорській лізі на вихідних.</span></td></tr>
+      <tr><td class="word">professional</td><td>професіонал; спорт — його робота, за гроші
+        <span class="ex">She turned <mark class="hl">professional</mark> at sixteen.</span><span class="tr">Вона стала професіоналкою у шістнадцять.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> turn <b>professional</b> — сталий вислів «стати профі». «Semi-professional» теж існує. Не плутайте з competitor (учасник змагання) і opponent (суперник у конкретному матчі).</div>
+  </div>
+
+  <div class="ref" id="ref-g7">
+    <h2>7. final / finale / end / ending</h2>
+    <div class="gloss">Фінал змагання vs фінал шоу vs кінець vs закінчення історії.</div>
+    <table>
+      <tr><td class="word">final</td><td>фінал змагання, турніру (the World Cup final)
+        <span class="ex">Our team reached the <mark class="hl">final</mark>.</span><span class="tr">Наша команда вийшла до фіналу.</span></td></tr>
+      <tr><td class="word">finale</td><td>ефектна фінальна частина шоу, концерту, серіалу
+        <span class="ex">The show ended with a spectacular <mark class="hl">finale</mark>.</span><span class="tr">Шоу завершилося ефектним фіналом.</span></td></tr>
+      <tr><td class="word">end</td><td>кінець чогось (загальне слово): the end of the match/film
+        <span class="ex">The crowd cheered at the <mark class="hl">end</mark> of the match.</span><span class="tr">Натовп вигукував у кінці матчу.</span></td></tr>
+      <tr><td class="word">ending</td><td>закінчення книги, фільму, історії (сюжетне)
+        <span class="ex">The film has a surprising <mark class="hl">ending</mark>.</span><span class="tr">У фільму несподіване закінчення.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> турнір → <b>final</b> (або final<b>s</b> у значенні «фінальна стадія»). Шоу/концерт → <b>finale</b>. Сюжет книги/фільму → <b>ending</b>. «Happy end» — калька, англійською happy <b>ending</b>!</div>
+  </div>
+
+  <div class="ref" id="ref-g8">
+    <h2>8. draw / equal · bat / stick / racket</h2>
+    <div class="gloss">Нічия vs рівний рахунок · інвентар за видом спорту.</div>
+    <table>
+      <tr><td class="word">draw</td><td>нічия (результат): The match ended in a draw; they drew 2–2
+        <span class="ex">The game ended in a 1–1 <mark class="hl">draw</mark>.</span><span class="tr">Гра завершилася нічиєю 1:1.</span></td></tr>
+      <tr><td class="word">equal</td><td>рівний (про рахунок): The scores are equal
+        <span class="ex">At half time the scores were <mark class="hl">equal</mark>.</span><span class="tr">У перерві рахунок був рівний.</span></td></tr>
+      <tr><td class="word">bat</td><td>бита (бейсбол, крікет, пінг-понг)
+        <span class="ex">He swung the <mark class="hl">bat</mark> and missed.</span><span class="tr">Він замахнувся битою й промахнувся.</span></td></tr>
+      <tr><td class="word">racket</td><td>ракетка (теніс, бадмінтон, сквош)
+        <span class="ex">She broke her <mark class="hl">racket</mark> during the match.</span><span class="tr">Вона зламала ракетку під час матчу.</span></td></tr>
+      <tr><td class="word">stick</td><td>ключка (хокей)
+        <span class="ex">The player dropped his hockey <mark class="hl">stick</mark>.</span><span class="tr">Гравець упустив ключку.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> нічия як РЕЗУЛЬТАТ → <b>draw</b> (ended in a draw). «Equal» описує рахунок у моменті. Інвентар: tennis → <b>racket</b>, baseball/cricket → <b>bat</b>, hockey → <b>stick</b>.</div>
+  </div>
+
+  <!-- ================= ТРЕНАЖЕР: 14 ОДИНИЧНИХ РЕЧЕНЬ ================= -->
+  <div class="part part-anchor" id="part1">✏️ Тренажер — завдання 1–14 (одиничні речення)</div>
+
+  <div class="instr">
+    <p><span class="en">For questions (1–14) choose the correct answer (A, B, C or D).</span></p>
+    <details>
+      <summary>📋 Стратегія: як обирати спортивну лексику</summary>
+      <ol class="steps">
+        <li><b>Назвіть вид спорту про себе.</b> Футбол? Тоді поле — pitch, суддя — referee. Теніс? Тоді court і umpire. Спорт у реченні вирішує все.</li>
+        <li><b>Win чи beat — дивіться на наступне слово.</b> Річ (match, medal, prize) → win. Людина/команда → beat.</li>
+        <li><b>Глядач: стадіон чи екран?</b> Стадіон → spectator. Телевізор → viewer.</li>
+        <li><b>Остерігайтеся кальки:</b> «happy end» → happy <b>ending</b>; «виграти суперника» → <b>beat</b>, а не win.</li>
+      </ol>
+      <div class="tip"><b>Залік іде за першу спробу.</b> Помилка — це сигнал перечитати рамку-правило в поясненні.</div>
+    </details>
+  </div>
+
+  <div id="singles"></div>
+
+  <!-- ================= ТЕКСТ 1 ================= -->
+  <div class="part part-anchor" id="text1">📰 Текст 1 — завдання 1–7 (формат НМТ)</div>
+
+  <div class="instr">
+    <p><span class="en">Read the text below. For questions (1–7) choose the correct answer (A, B, C or D).</span></p>
+    <p>Спочатку прочитайте <b>весь текст</b>, не зупиняючись на пропусках. Потім поверніться до кожного пропуска й шукайте слово-сусіда, яке вирішує відповідь.</p>
+  </div>
+
+  <div class="gtext">
+    <h3>A Saturday to Remember</h3>
+    <p>When our school team reached the <select class="gap" data-block="t1" data-gap="1"></select> of the regional cup, the whole town got excited. On Saturday morning, over two thousand <select class="gap" data-block="t1" data-gap="2"></select> came to the stadium to support us. Our opponents were unbeaten all season, but our coach kept saying: “They are only an <select class="gap" data-block="t1" data-gap="3"></select> side — most of their players still study at university, just like you.”</p>
+    <div class="expl" id="expl-t1-1"></div><div class="expl" id="expl-t1-2"></div><div class="expl" id="expl-t1-3"></div>
+
+    <p>The first half was nervous. Their striker <select class="gap" data-block="t1" data-gap="4"></select> twice before the break, and at half time we were losing 0–2. But after the interval, everything changed. Our quick passing <select class="gap" data-block="t1" data-gap="5"></select> their defence completely, and by the seventieth minute the scores were <select class="gap" data-block="t1" data-gap="6"></select>. In the last minute, our captain hit the ball from twenty metres — and it flew into the top corner! The <select class="gap" data-block="t1" data-gap="7"></select> blew the final whistle, and the whole stadium exploded. We had won the cup!</p>
+    <div class="expl" id="expl-t1-4"></div><div class="expl" id="expl-t1-5"></div><div class="expl" id="expl-t1-6"></div><div class="expl" id="expl-t1-7"></div>
+  </div>
+
+  <!-- ================= ТЕКСТ 2 ================= -->
+  <div class="part part-anchor" id="text2">📰 Текст 2 — завдання 8–14 (формат НМТ)</div>
+
+  <div class="instr">
+    <p><span class="en">Read the text below. For questions (8–14) choose the correct answer (A, B, C or D).</span></p>
+    <p>Другий текст — про теніс і хокей. Тут перевіряються пари «спорт → місце гри» та «спорт → інвентар».</p>
+  </div>
+
+  <div class="gtext">
+    <h3>From the Court to the Rink</h3>
+    <p>My grandfather was a <select class="gap" data-block="t2" data-gap="8"></select> tennis player in the 1960s — he even played at Wimbledon once. He still keeps his old wooden <select class="gap" data-block="t2" data-gap="9"></select> in the garage and loves telling the story of his most famous match. “The <select class="gap" data-block="t2" data-gap="10"></select> called my best serve out,” he says, “and the match ended in a <select class="gap" data-block="t2" data-gap="11"></select> — we had to play again the next day.”</p>
+    <div class="expl" id="expl-t2-8"></div><div class="expl" id="expl-t2-9"></div><div class="expl" id="expl-t2-10"></div><div class="expl" id="expl-t2-11"></div>
+
+    <p>My younger brother chose a very different sport. Every winter evening he trains at the ice <select class="gap" data-block="t2" data-gap="12"></select> near our house, and his hockey <select class="gap" data-block="t2" data-gap="13"></select> is already twice as tall as our dog. Last week his team <select class="gap" data-block="t2" data-gap="14"></select> the champions 4–2, and Grandfather watched the whole match on TV like a nervous schoolboy. “Different sport,” he said, “same beautiful game.”</p>
+    <div class="expl" id="expl-t2-12"></div><div class="expl" id="expl-t2-13"></div><div class="expl" id="expl-t2-14"></div>
+  </div>
+
+  <!-- ================= ERROR CLINIC ================= -->
+  <div class="part part-anchor" id="clinic">🔁 Error Clinic — ваші помилки для повторення</div>
+
+  <div class="clinic">
+    <h2>Error Clinic</h2>
+    <p style="font-family:Arial,sans-serif;font-size:14.5px;color:var(--muted);margin:0 0 10px">Тут автоматично збираються всі завдання, де ви помилилися хоча б раз. Перечитайте правило, потім натисніть «Спробувати знову» — і пройдіть модуль ще раз.</p>
+    <div id="clinicList"><span class="clinic-empty">✓ Поки що помилок немає. Чудово!</span></div>
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="resetBtn">Спробувати знову</button>
+    <a class="btn back" href="modul-1-1.html">← Модуль 1.1</a>
+    <a class="btn" href="modul-1-3.html">Модуль 1.3 · Phrasal Verbs →</a>
+    <span id="score">Розв’язано: 0 / 28</span>
+  </div>
+
+</div>
+<script>
+/* ================= ДАНІ: 14 ОДИНИЧНИХ РЕЧЕНЬ ================= */
+const SINGLES = [
+{id:'s1', ref:'g1', tag:'pitch / court', sent:'The footballers walked onto the ___ five minutes before the match started.',
+ opts:[['A','court'],['B','pitch'],['C','track'],['D','course']], ans:'B',
+ why:'<b>pitch</b> = поле для футболу (а також регбі, крікету, хокею на траві). Формула: football → pitch.',
+ no:[['court','корт — для тенісу, баскетболу, волейболу; футбол на корті не грають'],
+     ['track','бігова доріжка (легка атлетика) чи трасса для перегонів'],
+     ['course','поле для гольфу (golf course) чи гірськолижна траса']],
+ trap:'Формула «спорт → місце»: football → <b>pitch</b>, tennis → <b>court</b>, athletics → <b>track</b>, golf → <b>course</b>.'},
+{id:'s2', ref:'g1', tag:'court', sent:'The tennis match was moved to the indoor ___ because of the rain.',
+ opts:[['A','pitch'],['B','ring'],['C','court'],['D','rink']], ans:'C',
+ why:'<b>court</b> = корт для тенісу. «Indoor court» — закритий корт. Теніс грають тільки на court.',
+ no:[['pitch','футбольне поле; теніс на pitch не грають'],
+     ['ring','боксерський ринг'],
+     ['rink','ковзанка; на льоду в теніс не грають']],
+ trap:'Ракетка в руках → <b>court</b>. М\'яч і ноги → pitch. Лід → rink.'},
+{id:'s3', ref:'g2', tag:'win / beat', sent:'Our team ___ the match 3–0 and went through to the next round.',
+ opts:[['A','beat'],['B','won'],['C','scored'],['D','earned']], ans:'B',
+ why:'<b>won</b> = виграти ЩОСЬ. Після пропуску — «the match» (річ), тому win.',
+ no:[['beat','перемогти КОГОСЬ: beat + суперник. «Beat the match» — неможливо'],
+     ['scored','забити гол/набрати очки: scored three goals — а не «the match»'],
+     ['earned','заробити (гроші, повагу); матч не «заробляють»']],
+ trap:'Питання одне: після пропуску <b>РІЧ</b> (match, prize, medal) → <b>win</b>; <b>ЛЮДИНА/КОМАНДА</b> → <b>beat</b>.'},
+{id:'s4', ref:'g2', tag:'win / beat', sent:'In the semi-final, we finally ___ our old rivals 2–1.',
+ opts:[['A','won'],['B','beat'],['C','scored'],['D','defeated the match']], ans:'B',
+ why:'<b>beat</b> = перемогти КОГОСЬ. Після пропуску — «our old rivals» (суперники, люди), тому beat.',
+ no:[['won','виграти ЩОСЬ: won the match. «Won our rivals» — типова помилка'],
+     ['scored','забити: scored two goals; суперника не «забивають»'],
+     ['defeated the match','defeat = перемогти когось (як beat), але додаток тут має бути суперник, а не match']],
+ trap:'Українською «виграли у суперників» — англійською <b>beat the rivals</b>. Win + rivals НЕ існує!'},
+{id:'s5', ref:'g2', tag:'score', sent:'Ronaldo ___ a brilliant goal in the last minute of the game.',
+ opts:[['A','won'],['B','beat'],['C','scored'],['D','gained']], ans:'C',
+ why:'<b>scored</b> = забити гол / набрати очки. «Score a goal» — базова колокація.',
+ no:[['won','виграти матч/приз; гол не «виграють»'],
+     ['beat','перемогти суперника; гол не є суперником'],
+     ['gained','отримати, здобути (gain experience/points у значенні «набрати» — рідко); стандарт — score a goal']],
+ trap:'<b>score a goal / a point / a try</b>. Запам\'ятайте: забивати можна тільки score.'},
+{id:'s6', ref:'g3', tag:'referee / umpire', sent:'The ___ showed the defender a red card for a dangerous tackle.',
+ opts:[['A','umpire'],['B','referee'],['C','judge'],['D','coach']], ans:'B',
+ why:'<b>referee</b> = суддя у футболі. Червона картка — це футбол, отже referee.',
+ no:[['umpire','суддя у тенісі/крікеті/бейсболі; карток там немає'],
+     ['judge','суддя в суді або на конкурсах (gymnastics judge); на футбольному полі — referee'],
+     ['coach','тренер; він не показує карток']],
+ trap:'М\'яч і ноги (football, rugby) → <b>referee</b>. Ракетка/бита (tennis, cricket) → <b>umpire</b>.'},
+{id:'s7', ref:'g3', tag:'umpire', sent:'The player argued with the ___ about whether the ball was in or out.',
+ opts:[['A','referee'],['B','umpire'],['C','goalkeeper'],['D','captain']], ans:'B',
+ why:'<b>umpire</b> = суддя у тенісі. «In or out» — тенісна термінологія, отже umpire.',
+ no:[['referee','футбольний суддя; у футболі немає ліній in/out для гравців у такому сенсі'],
+     ['goalkeeper','воротар; він грає, а не судить'],
+     ['captain','капітан команди; не суддя']],
+ trap:'Слова-маркери: <b>ball out / serve / line call</b> → теніс → <b>umpire</b>.'},
+{id:'s8', ref:'g5', tag:'spectator / viewer', sent:'Fifty thousand ___ filled the stadium to watch the cup final live.',
+ opts:[['A','viewers'],['B','spectators'],['C','audience'],['D','witnesses']], ans:'B',
+ why:'<b>spectators</b> = глядачі на живій події, на стадіоні. «Filled the stadium» — підказка.',
+ no:[['viewers','телеглядачі; вони вдома біля екранів, стадіон не заповнюють'],
+     ['audience','публіка в театрі/концерті/студії; на стадіоні — spectators'],
+     ['witnesses','свідки (події, злочину); не глядачі спорту']],
+ trap:'Стадіон/трибуни/live → <b>spectator</b>. TV/online → <b>viewer</b>. Театр → audience.'},
+{id:'s9', ref:'g5', tag:'viewer', sent:'Over ten million ___ watched the final on television last Sunday.',
+ opts:[['A','spectators'],['B','viewers'],['C','visitors'],['D','onlookers']], ans:'B',
+ why:'<b>viewers</b> = телеглядачі. «On television» — пряма підказка.',
+ no:[['spectators','глядачі на стадіоні; вони дивляться live, а не on television'],
+     ['visitors','відвідувачі (музею, міста); не про ТБ'],
+     ['onlookers','випадкові перехожі, що спостерігають за чимось; не телеаудиторія']],
+ trap:'Маркер <b>on TV / on television / broadcast</b> → <b>viewer</b>.'},
+{id:'s10', ref:'g6', tag:'amateur / professional', sent:'He played as an ___ for years before a big club offered him a contract.',
+ opts:[['A','professional'],['B','amateur'],['C','opponent'],['D','spectator']], ans:'B',
+ why:'<b>amateur</b> = гравець-аматор, без оплати. «Before a big club offered him a contract» — до контракту він був аматором.',
+ no:[['professional','професіонал — це ВЖЕ після контракту; суперечить логіці речення'],
+     ['opponent','суперник у конкретному матчі; не про статус гравця'],
+     ['spectator','глядач; він грав (played), а не дивився']],
+ trap:'Логіка часу: <b>amateur</b> → turn <b>professional</b> (після контракту). «Turn professional» — сталий вислів.'},
+{id:'s11', ref:'g7', tag:'final / ending', sent:'The film was quite boring, but it had a really surprising ___.',
+ opts:[['A','final'],['B','finale'],['C','ending'],['D','end of the match']], ans:'C',
+ why:'<b>ending</b> = закінчення книги/фільму/історії (сюжетне). «A surprising ending» — колокація.',
+ no:[['final','фінал ЗМАГАННЯ; фільм — не турнір'],
+     ['finale','ефектна фінальна частина ШОУ/концерту; про сюжет фільму кажуть ending'],
+     ['end of the match','матчу; а тут фільм']],
+ trap:'Українська калька «happy end» — англійською happy <b>ending</b>! Турнір → final, шоу → finale, сюжет → ending.'},
+{id:'s12', ref:'g7', tag:'final', sent:'Our school team reached the ___ of the national basketball competition.',
+ opts:[['A','ending'],['B','finale'],['C','final'],['D','finish']], ans:'C',
+ why:'<b>final</b> = фінал змагання. «Reach the final» — стандартна колокація.',
+ no:[['ending','закінчення історії/фільму; змагання — не сюжет'],
+     ['finale','фінал шоу/концерту; баскетбольний турнір — не шоу у цьому сенсі'],
+     ['finish','фініш (у перегонах) або кінець взагалі; «reach the finish» не кажуть про турнір']],
+ trap:'<b>reach the final</b>, <b>play in the final</b>, <b>the World Cup final</b> — вчіть як блоки.'},
+{id:'s13', ref:'g8', tag:'draw / equal', sent:'The match ended in a 2–2 ___, so both teams got one point.',
+ opts:[['A','equal'],['B','draw'],['C','tie-break'],['D','level']], ans:'B',
+ why:'<b>draw</b> = нічия як результат. «End in a draw» — стійка колокація.',
+ no:[['equal','прикметник: the scores were equal — а тут потрібен ІМЕННИК після «in a»'],
+     ['tie-break','тай-брейк — додаткова гра в тенісі, коли НЕ може бути нічиєї'],
+     ['level','рівень; «end in a level» не існує (можна: the teams were level)']],
+ trap:'Іменник після «in a …» → <b>draw</b>. Прикметник після «were …» → equal. Граматика речення підказує!'},
+{id:'s14', ref:'g8', tag:'bat / racket / stick', sent:'In ice hockey, players hit the puck with a ___.',
+ opts:[['A','racket'],['B','bat'],['C','stick'],['D','club']], ans:'C',
+ why:'<b>stick</b> = ключка. «Hockey stick» — єдиний правильний варіант для хокею.',
+ no:[['racket','ракетка (теніс, бадмінтон); у хокеї ракеток немає'],
+     ['bat','бита (бейсбол, крікет, пінг-понг); шайбу битою не б\'ють'],
+     ['club','клюшка для ГОЛЬФУ (golf club); не для хокею']],
+ trap:'Інвентар за спортом: tennis → <b>racket</b>, baseball → <b>bat</b>, hockey → <b>stick</b>, golf → <b>club</b>.'}
+];
+
+/* ================= ДАНІ: ТЕКСТ 1 ================= */
+const TEXT1 = {
+  1:{ans:'A', word:'final',
+     opts:[['A','final'],['B','ending'],['C','finale'],['D','finish']],
+     quote:'When our school team reached the <mark class="q">final</mark> of the regional cup…',
+     why:'<b>final</b> = фінал змагання. «Reach the final of the cup» — стандартна колокація.',
+     no:[['ending','закінчення історії/фільму; кубок — не сюжет'],
+         ['finale','фінал шоу/концерту; спортивний турнір — не шоу'],
+         ['finish','фініш у перегонах; «reach the finish of the cup» не кажуть']],
+     trap:'<b>reach the final</b> — вчіть як блок. Змагання = final, історія = ending, шоу = finale.'},
+  2:{ans:'C', word:'spectators',
+     opts:[['A','viewers'],['B','audience'],['C','spectators'],['D','witnesses']],
+     quote:'…over two thousand <mark class="q">spectators</mark> came to the stadium to support us.',
+     why:'<b>spectators</b> = глядачі на стадіоні, наживо. «Came to the stadium» — пряма підказка.',
+     no:[['viewers','телеглядачі; вони НЕ приходять на стадіон'],
+         ['audience','публіка в театрі/концерті; стадіон — не театр'],
+         ['witnesses','свідки події/злочину; не вболівальники']],
+     trap:'Стадіон + «came to support» → <b>spectators</b>. Згадайте: spectator sport — «видовищний спорт».'},
+  3:{ans:'D', word:'amateur',
+     opts:[['A','professional'],['B','equal'],['C','opponent'],['D','amateur']],
+     quote:'“They are only an <mark class="q">amateur</mark> side — most of their players still study at university…”',
+     why:'<b>amateur</b> = аматорський. Пояснення після тире («still study at university») — це доказ: гравці не профі.',
+     no:[['professional','суперечить поясненню: студенти без контрактів — не професіонали'],
+         ['equal','рівний (про рахунок); не описує команду'],
+         ['opponent','«an opponent side» граматично кульгає: opponent — іменник, не прикметник тут']],
+     trap:'Текст ПІСЛЯ тире завжди пояснює пропуск ПЕРЕД тире. «Only an ___ side» + «still study» → amateur.'},
+  4:{ans:'B', word:'scored',
+     opts:[['A','won'],['B','scored'],['C','beat'],['D','drew']],
+     quote:'Their striker <mark class="q">scored</mark> twice before the break…',
+     why:'<b>scored</b> = забив (двічі). «Scored twice» + «we were losing 0–2» — логічний ланцюжок.',
+     no:[['won','виграти матч; «won twice before the break» — матч ще не закінчився'],
+         ['beat','перемогти суперника; потрібен додаток-команда, а тут «twice»'],
+         ['drew','звів уніч; «drew twice» не має сенсу']],
+     trap:'Страйкер + twice + рахунок 0–2 → <b>scored</b>. Голи рахуємо словом score.'},
+  5:{ans:'A', word:'beat',
+     opts:[['A','beat'],['B','won'],['C','scored'],['D','broke']],
+     quote:'Our quick passing <mark class="q">beat</mark> their defence completely…',
+     why:'<b>beat</b> = подолали/перемогли їхній захист. Після пропуску — «their defence» (суперник/перешкода), тому beat.',
+     no:[['won','виграти ЩОСЬ (матч, приз); «won their defence» — не кажуть'],
+         ['scored','забити гол; «scored their defence» — неправильний додаток'],
+         ['broke','зламати; «broke their defence» можливо образно, але стандартна спортивна лексика — beat the defence']],
+     trap:'Додаток вирішує: <b>РІЧ</b> → win, <b>СУПЕРНИК/ЗАХИСТ</b> → beat. Тут «their defence» — це суперник.'},
+  6:{ans:'D', word:'equal',
+     opts:[['A','draw'],['B','drawn'],['C','level'],['D','equal']],
+     quote:'…by the seventieth minute the scores were <mark class="q">equal</mark>.',
+     why:'<b>equal</b> = рівний (про рахунок). «The scores were equal» — класична конструкція з ПРИКМЕТНИКОМ.',
+     no:[['draw','іменник: ended in a draw; після «were» потрібен прикметник'],
+         ['drawn','форма дієслова; «the scores were drawn» — не вживається'],
+         ['level','теж можливо (the scores were level), але подивіться варіанти: equal — канонічна відповідь НМТ для цієї конструкції; level радше «on level terms»']],
+     trap:'Після <b>were</b> — прикметник: <b>equal</b>. Після <b>in a</b> — іменник: <b>draw</b>. Граматика речення = підказка.'},
+  7:{ans:'C', word:'referee',
+     opts:[['A','umpire'],['B','coach'],['C','referee'],['D','captain']],
+     quote:'The <mark class="q">referee</mark> blew the final whistle, and the whole stadium exploded.',
+     why:'<b>referee</b> = футбольний суддя. «Blew the final whistle» + футбольний контекст усього тексту (pitch, cup, striker).',
+     no:[['umpire','тенісний/крікетний суддя; свисток і футбол — referee'],
+         ['coach','тренер; він не свистить фінальний свисток'],
+         ['captain','капітан; він грає, а не судить']],
+     trap:'Футбольні маркери тексту: cup, striker, defence, final whistle → суддя = <b>referee</b>.'}
+};
+
+/* ================= ДАНІ: ТЕКСТ 2 ================= */
+const TEXT2 = {
+  8:{ans:'B', word:'professional',
+     opts:[['A','amateur'],['B','professional'],['C','equal'],['D','retired']],
+     quote:'My grandfather was a <mark class="q">professional</mark> tennis player in the 1960s — he even played at Wimbledon once.',
+     why:'<b>professional</b> = професіонал. Доказ після тире: «played at Wimbledon» — туди аматорів того рівня не беруть просто так; це його кар\'єра.',
+     no:[['amateur','аматор; Wimbledon як головне досягнення кар\'єри вказує на професіонала'],
+         ['equal','рівний; не описує гравця'],
+         ['retired','у відставці — але «in the 1960s» описує період його гри, а не нинішній статус; і «a retired player in the 1960s» — суперечність']],
+     trap:'Тире = пояснення. «Even played at Wimbledon» → рівень профі → <b>professional</b>.'},
+  9:{ans:'A', word:'racket',
+     opts:[['A','racket'],['B','bat'],['C','stick'],['D','club']],
+     quote:'He still keeps his old wooden <mark class="q">racket</mark> in the garage…',
+     why:'<b>racket</b> = тенісна ракетка. Контекст: tennis player + Wimbledon → racket.',
+     no:[['bat','бита (бейсбол/крікет); теніс — не bat'],
+         ['stick','хокейна ключка; дідусь — тенісист'],
+         ['club','клюшка для гольфу; не теніс']],
+     trap:'Теніс → <b>racket</b>. Старі ракетки справді були дерев\'яними — текст реалістичний, і це ще одна підказка.'},
+  10:{ans:'D', word:'umpire',
+     opts:[['A','referee'],['B','judge'],['C','coach'],['D','umpire']],
+     quote:'“The <mark class="q">umpire</mark> called my best serve out,” he says…',
+     why:'<b>umpire</b> = тенісний суддя. «Called the serve out» — чиста тенісна термінологія.',
+     no:[['referee','футбольний суддя; подачі (serve) у футболі немає'],
+         ['judge','суддя в суді/на конкурсі; на тенісному корті — umpire'],
+         ['coach','тренер; він не виносить рішень про out']],
+     trap:'Маркери: <b>serve, out, court</b> → теніс → <b>umpire</b>. М\'яч+ноги → referee, ракетка → umpire.'},
+  11:{ans:'C', word:'draw',
+     opts:[['A','equal'],['B','level'],['C','draw'],['D','tie-break']],
+     quote:'“…and the match ended in a <mark class="q">draw</mark> — we had to play again the next day.”',
+     why:'<b>draw</b> = нічия. «Ended in a draw» + «had to play again» — логічно: при нічиєї потрібен перегравання.',
+     no:[['equal','прикметник; після «in a» потрібен ІМЕННИК'],
+         ['level','«ended in a level» — не існує такої конструкції'],
+         ['tie-break','тай-брейк якраз ВИРІШУЄ результат, а не «нічия з переграванням»; і «ended in a tie-break» — інша ситуація']],
+     trap:'«Ended in a ___» → іменник <b>draw</b>. «The scores were ___» → прикметник equal. Та сама нічия — різні конструкції!'},
+  12:{ans:'B', word:'rink',
+     opts:[['A','court'],['B','rink'],['C','pitch'],['D','track']],
+     quote:'Every winter evening he trains at the ice <mark class="q">rink</mark> near our house…',
+     why:'<b>rink</b> = ковзанка. «Ice rink» — сталий вислів; хокеїст тренується на льоді.',
+     no:[['court','корт (теніс/баскетбол); льоду на корті немає'],
+         ['pitch','футбольне поле; хокей — не на pitch'],
+         ['track','бігова доріжка; winter + ice → rink']],
+     trap:'Маркер <b>ice</b> перед пропуском → <b>rink</b>. Це найпростіша підказка — не прогавте її на іспиті.'},
+  13:{ans:'D', word:'stick',
+     opts:[['A','racket'],['B','bat'],['C','club'],['D','stick']],
+     quote:'…and his hockey <mark class="q">stick</mark> is already twice as tall as our dog.',
+     why:'<b>stick</b> = хокейна ключка. «Hockey stick» — єдина правильна пара.',
+     no:[['racket','тенісна ракетка; хокей — не racket'],
+         ['bat','бита; шайбу б\'ють ключкою, не битою'],
+         ['club','клюшка для гольфу; «hockey club» — це КЛУБ (організація), а не інвентар!']],
+     trap:'Пастка з club: «hockey club» існує, але це команда-організація. Тут інвентар, «twice as tall as our dog» → <b>stick</b>.'},
+  14:{ans:'A', word:'beat',
+     opts:[['A','beat'],['B','won'],['C','scored'],['D','drew']],
+     quote:'Last week his team <mark class="q">beat</mark> the champions 4–2…',
+     why:'<b>beat</b> = перемогли КОГОСЬ. Після пропуску — «the champions» (суперники), тому beat.',
+     no:[['won','виграти ЩОСЬ; «won the champions» — класична помилка українців'],
+         ['scored','забити; «scored the champions» — неправильний додаток'],
+         ['drew','звели уніч; але рахунок 4–2 — це перемога, не нічия']],
+     trap:'Фінальна перевірка модуля: <b>КОГО</b> перемогли (the champions) → <b>beat</b>. <b>ЩО</b> виграли (the match) → win.'}
+};
+
+/* ================= РУШІЙ ================= */
+const TOTAL = SINGLES.length + Object.keys(TEXT1).length + Object.keys(TEXT2).length;
+const attempts = {};
+const solved = {};
+const mistakeIds = [];
+
+const singlesBox = document.getElementById('singles');
+SINGLES.forEach((q,i)=>{
+  const div = document.createElement('div');
+  div.className = 'q';
+  div.innerHTML = `
+    <div class="q-top">
+      <span class="q-num">Завдання ${i+1} з 14</span>
+      <span class="q-tag">${q.tag}</span>
+    </div>
+    <div class="sent">${q.sent.replace('___',`<select class="gap" data-block="s" data-gap="${q.id}"></select>`)}
+      <a href="#ref-${q.ref}" style="font-family:Arial,sans-serif;font-size:12.5px;color:var(--blue);text-decoration:none;margin-left:8px" title="Відкрити довідник">📖 довідник</a>
+    </div>
+    <div class="expl" id="expl-s-${q.id}"></div>`;
+  singlesBox.appendChild(div);
+});
+
+function buildGap(sel){
+  const block = sel.dataset.block, id = sel.dataset.gap;
+  let opts;
+  if(block==='s') opts = SINGLES.find(q=>q.id===id).opts;
+  else opts = (block==='t1'?TEXT1:TEXT2)[id].opts;
+  sel.innerHTML='';
+  const ph=document.createElement('option'); ph.value=''; ph.textContent='(оберіть)';
+  sel.appendChild(ph);
+  opts.forEach(([L,w])=>{
+    const o=document.createElement('option'); o.value=L; o.textContent=`${L} ${w}`;
+    sel.appendChild(o);
+  });
+}
+
+function getData(block,id){
+  if(block==='s') return SINGLES.find(q=>q.id===id);
+  return (block==='t1'?TEXT1:TEXT2)[id];
+}
+
+function explId(block,id){ return `expl-${block}-${id}`; }
+
+document.querySelectorAll('select.gap').forEach(sel=>{
+  buildGap(sel);
+  sel.addEventListener('change', ()=>{
+    const block=sel.dataset.block, id=sel.dataset.gap;
+    const key = block+'-'+id;
+    if(solved[key]) return;
+    const d = getData(block,id);
+    if(!sel.value){ sel.classList.remove('bad'); return; }
+    if(sel.value === d.ans){
+      solved[key]=true;
+      sel.classList.remove('bad'); sel.classList.add('ok');
+      sel.disabled = true;
+      const word = d.opts.find(o=>o[0]===sel.value)[1];
+      sel.querySelector(`option[value="${sel.value}"]`).textContent = word;
+      const ex = document.getElementById(explId(block,id));
+      let noRows = d.no.map(([w,why])=>`<tr><td class="no">✗ ${w}</td><td>${why}</td></tr>`).join('');
+      let quoteRow = d.quote ? `<span class="lbl">📌 Речення з правильним словом</span><div class="quote">${d.quote}</div>` : '';
+      ex.innerHTML = `
+        <div class="ans-line">✓ Правильно: ${sel.value} (${d.word || word})</div>
+        ${quoteRow}
+        <p class="note">${d.why}</p>
+        <span class="lbl">🚫 Чому НЕ підходять інші варіанти</span>
+        <table>${noRows}</table>
+        <div class="trap"><b>⚠️ Пастка:</b> ${d.trap}</div>`;
+      ex.classList.add('show');
+      refreshScore();
+    } else {
+      attempts[key]=(attempts[key]||0)+1;
+      if(!mistakeIds.includes(key)) mistakeIds.push(key);
+      sel.classList.remove('bad'); void sel.offsetWidth;
+      sel.classList.add('bad');
+      renderClinic();
+    }
+  });
+});
+
+function refreshScore(){
+  const solvedCount = Object.keys(solved).length;
+  let first = 0;
+  for(const k in solved) if((attempts[k]||0)===0) first++;
+  const sc = document.getElementById('score');
+  if(solvedCount < TOTAL){
+    sc.textContent = `Розв’язано: ${solvedCount} / ${TOTAL}`;
+    sc.className = '';
+  } else {
+    sc.textContent = `Результат: ${first} / ${TOTAL} з першої спроби`;
+    sc.className = first>=TOTAL*0.85?'good':first>=TOTAL*0.6?'mid':'low';
+  }
+}
+
+function renderClinic(){
+  const box = document.getElementById('clinicList');
+  if(!mistakeIds.length){
+    box.innerHTML = '<span class="clinic-empty">✓ Поки що помилок немає. Чудово!</span>';
+    return;
+  }
+  box.innerHTML = mistakeIds.map(key=>{
+    const [block,id] = key.split('-');
+    const d = getData(block,id);
+    const label = block==='s' ? `Завдання ${SINGLES.findIndex(q=>q.id===id)+1}` : `Текст ${block==='t1'?'1':'2'}, пропуск ${id}`;
+    const sent = d.sent ? d.sent.replace('___','<b>___</b>') : d.quote;
+    return `<div class="clinic-item">
+      <b>${label}</b> — <span class="sent-wrong">${sent}</span>
+      <span class="rule-line">💡 ${d.trap.replace(/<b>|<\/b>/g,'')}</span>
+    </div>`;
+  }).join('');
+}
+
+document.getElementById('resetBtn').onclick = ()=>{
+  for(const k in attempts) delete attempts[k];
+  for(const k in solved) delete solved[k];
+  mistakeIds.length = 0;
+  document.querySelectorAll('select.gap').forEach(sel=>{
+    sel.disabled=false; sel.classList.remove('ok','bad');
+    buildGap(sel);
+  });
+  document.querySelectorAll('.expl').forEach(e=>{e.className='expl'; e.innerHTML='';});
+  renderClinic();
+  refreshScore();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+refreshScore();
+</script>
+</body>
+</html>

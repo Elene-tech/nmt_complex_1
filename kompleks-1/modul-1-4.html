@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НМТ · Комплекс 1 · Модуль 1.4 — Collocations: Free Time</title>
+<style>
+  :root{
+    --ink:#1f2933; --muted:#5b6770; --line:#d8dee4;
+    --blue:#1d4ed8; --blue-soft:#e8effc;
+    --green:#157347; --green-soft:#e7f6ee;
+    --red:#b42318;  --red-soft:#fdecea;
+    --amber:#92610e; --amber-soft:#fff6dd;
+    --paper:#ffffff; --bg:#f4f6f8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.55}
+  .page{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+
+  .test-head{background:linear-gradient(135deg,#12294d,#1d4ed8);color:#fff;border-radius:14px;
+             padding:22px 26px;margin-bottom:12px}
+  .test-head .crumb{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.75;font-family:Arial,sans-serif}
+  .test-head h1{margin:6px 0 4px;font-size:26px;font-family:Arial,sans-serif;font-weight:700}
+  .test-head p{margin:0;font-size:15px;opacity:.9;font-family:Arial,sans-serif}
+
+  .nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-family:Arial,sans-serif}
+  .nav a{display:inline-block;padding:8px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);
+         color:var(--blue);text-decoration:none;font-size:14px;font-weight:700}
+  .nav a:hover{border-color:var(--blue)}
+  .nav a.here{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .nav a.home{background:#eef2f7;color:#33475b}
+
+  .instr{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--blue);
+         border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .instr h2{margin:0 0 8px;font-family:Arial,sans-serif;font-size:17px;color:var(--blue)}
+  .instr p{margin:6px 0}
+  .instr .en{font-style:italic;color:#243b53;background:#f0f6ff;padding:2px 6px;border-radius:4px}
+  .tip{margin-top:12px;background:var(--amber-soft);border:1px solid #f0dfa8;border-radius:10px;
+       padding:12px 16px;font-family:Arial,sans-serif;font-size:14.5px;color:#57430a}
+  .tip b{color:var(--amber)}
+  .trap{margin-top:8px;background:var(--amber-soft);border:1px solid #f0dfa8;border-radius:8px;
+        padding:8px 12px;font-family:Arial,sans-serif;font-size:14px;color:#57430a}
+  .trap b{color:var(--amber)}
+
+  details{margin-top:10px}
+  summary{cursor:pointer;font-family:Arial,sans-serif;font-weight:700;color:var(--blue);font-size:15px}
+  .steps{counter-reset:step;margin:12px 0 4px;padding:0;list-style:none}
+  .steps li{position:relative;padding:8px 0 8px 52px;border-bottom:1px dashed var(--line);font-family:Arial,sans-serif;font-size:15px}
+  .steps li:last-child{border-bottom:none}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:8px;
+    width:34px;height:34px;border-radius:50%;background:var(--blue-soft);color:var(--blue);
+    font-weight:700;display:flex;align-items:center;justify-content:center}
+
+  .ref{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .ref h2{margin:0 0 4px;font-family:Arial,sans-serif;font-size:18px;color:#102a43}
+  .ref .gloss{color:var(--muted);font-size:14.5px;font-family:Arial,sans-serif;margin-bottom:8px}
+  .ref table{border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14.5px;margin-top:6px}
+  .ref td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+  .ref td.word{font-weight:700;color:var(--blue);width:150px;white-space:nowrap}
+  .ref td .ex{display:block;font-style:italic;color:#243b53;margin-top:4px}
+  .ref td .tr{display:block;font-size:12.5px;color:var(--muted)}
+  mark.hl{background:#fff1a8;padding:0 3px;border-radius:3px}
+  .pairbox{background:#f0f6ff;border:1px solid #c7dbf7;border-radius:10px;padding:10px 14px;margin-top:10px;
+           font-family:Arial,sans-serif;font-size:14.5px}
+  .pairbox .lbl{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:4px}
+
+  .part{font-family:Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+        color:var(--muted);margin:26px 0 10px}
+  .part-anchor{scroll-margin-top:16px}
+
+  /* ----- odd one out ----- */
+  .odd-box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .odd-round{border-top:1px dashed var(--line);padding:12px 0}
+  .odd-round:first-of-type{border-top:none}
+  .odd-q{font-family:Arial,sans-serif;font-size:14.5px;margin-bottom:8px}
+  .odd-q b{color:var(--blue)}
+  .odd-opts{display:flex;flex-wrap:wrap;gap:8px}
+  .odd-btn{border:1.5px solid var(--line);border-radius:10px;padding:7px 16px;cursor:pointer;
+           font-family:Arial,sans-serif;font-size:14.5px;font-weight:700;background:#fff;color:var(--ink);
+           transition:border-color .15s,background .15s;user-select:none}
+  .odd-btn:hover{border-color:var(--blue)}
+  .odd-btn.hit{border-color:var(--green);background:var(--green-soft);color:var(--green);cursor:default}
+  .odd-btn.keep{border-color:var(--line);background:#f4f6f8;color:var(--muted);cursor:default;font-weight:400}
+  .odd-btn.err{border-color:var(--red);background:var(--red-soft);color:var(--red);animation:shake .3s}
+  .odd-note{display:none;font-family:Arial,sans-serif;font-size:13px;color:var(--muted);margin-top:6px}
+  .odd-note.show{display:block}
+  .odd-score{font-family:Arial,sans-serif;font-weight:700;font-size:14.5px;color:var(--muted);margin-top:12px}
+  .odd-score.good{color:var(--green)}
+
+  .q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+  .q .q-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .q .q-num{font-family:Arial,sans-serif;font-weight:700;font-size:13px;color:var(--muted)}
+  .q .q-tag{font-family:Arial,sans-serif;font-size:11.5px;font-weight:700;background:var(--blue-soft);color:var(--blue);
+            border-radius:99px;padding:2px 10px}
+  .q .sent{margin:8px 0 10px;font-size:17px}
+  select.gap{max-width:190px;padding:3px 8px;margin:0 3px;border-radius:8px;border:2px dashed var(--blue);
+      background:var(--blue-soft);color:var(--blue);font-family:Arial,sans-serif;font-weight:700;font-size:14px;
+      cursor:pointer;vertical-align:middle}
+  select.gap.ok{border-style:solid;border-color:var(--green);background:var(--green-soft);color:var(--green);cursor:default}
+  select.gap.bad{border-style:solid;border-color:var(--red);background:var(--red-soft);color:var(--red);
+      animation:shake .3s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+  mark.q{background:#d3f9d8;padding:1px 4px;border-radius:3px}
+
+  .expl{display:none;margin:4px 0 14px;border:1px solid var(--line);border-radius:10px;background:#fbfcfd;padding:12px 16px}
+  .expl.show{display:block}
+  .expl .ans-line{font-family:Arial,sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;color:var(--green)}
+  .expl .lbl{display:block;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .expl .quote{font-style:italic;background:#fff;border-left:3px solid var(--green);padding:6px 10px;border-radius:0 6px 6px 0;margin-top:4px;font-size:15.5px}
+  .expl p.note{font-family:Arial,sans-serif;font-size:14.5px;margin:6px 0 0}
+  .expl table{border-collapse:collapse;margin-top:6px;font-family:Arial,sans-serif;font-size:14px;width:100%}
+  .expl td{border:1px solid var(--line);padding:5px 10px;vertical-align:top}
+  .expl td.no{color:var(--red);font-weight:700;width:130px}
+
+  .gtext{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:14px}
+  .gtext h3{margin:0 0 4px;font-family:Arial,sans-serif;font-size:20px;color:#102a43;text-align:center}
+  .gtext p{margin:12px 0;font-size:16.5px;text-align:justify}
+
+  .clinic{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--red);
+          border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .clinic h2{margin:0 0 8px;font-family:Arial,sans-serif;font-size:17px;color:var(--red)}
+  .clinic-item{border-bottom:1px dashed var(--line);padding:10px 0;font-family:Arial,sans-serif;font-size:14.5px}
+  .clinic-item:last-child{border-bottom:none}
+  .clinic-item .sent-wrong{font-style:italic;color:#243b53}
+  .clinic-item .rule-line{display:block;margin-top:4px;color:#57430a;background:var(--amber-soft);border-radius:6px;padding:4px 8px}
+  .clinic-empty{font-family:Arial,sans-serif;color:var(--green);font-weight:700}
+
+  .controls{position:sticky;bottom:12px;margin-top:18px;background:var(--paper);border:1px solid var(--line);
+            border-radius:14px;padding:14px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+            box-shadow:0 6px 24px rgba(16,42,67,.12);z-index:10}
+  .controls .btn{border:none;border-radius:10px;padding:12px 26px;font-family:Arial,sans-serif;
+                 font-weight:700;font-size:16px;cursor:pointer}
+  #resetBtn{background:#eef2f7;color:#33475b}
+  #resetBtn:hover{background:#e2e8f0}
+  .controls a.btn{background:var(--blue);color:#fff;text-decoration:none}
+  .controls a.btn.back{background:#eef2f7;color:#33475b}
+  #score{font-family:Arial,sans-serif;font-weight:700;font-size:16px;margin-left:auto;color:var(--muted)}
+  #score.good{color:var(--green)} #score.mid{color:var(--amber)} #score.low{color:var(--red)}
+
+  @media print{
+    body{background:#fff}
+    .controls,.tip,details,.nav{display:none}
+    .expl{display:block !important}
+  }
+  @media(max-width:560px){
+    .test-head h1{font-size:21px}
+    select.gap{max-width:150px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="test-head">
+    <div class="crumb">НМТ · Англійська мова · Комплекс 1 «Подорожі та дозвілля» · Модуль 1.4</div>
+    <h1>Collocations: Free Time</h1>
+    <p>Довідник → Odd One Out → 14 завдань → 2 тексти формату НМТ → Error Clinic · Рівень B2 · British English</p>
+  </div>
+
+  <nav class="nav">
+    <a class="home" href="../index.html">⌂ Усі комплекси</a>
+    <a class="here" href="#ref1">📖 Довідник</a>
+    <a href="#odd">🎯 Odd One Out</a>
+    <a href="#part1">✏️ Тренажер 1–14</a>
+    <a href="#text1">📰 Текст 1 (1–7)</a>
+    <a href="#text2">📰 Текст 2 (8–14)</a>
+    <a href="#clinic">🔁 Error Clinic</a>
+  </nav>
+
+  <div class="instr">
+    <h2>Як працювати з модулем</h2>
+    <p><b>Крок 1.</b> Прочитайте <b>довідник</b>: колокації — це слова, які «тримаються» разом. Дивіться на рамки «⚠️ Пастка»: там помилки, які роблять саме українці.</p>
+    <p><b>Крок 2.</b> Розминка <b>🎯 Odd One Out</b>: у кожному ряді одне слово НЕ поєднується з ключовим. Знайдіть його.</p>
+    <p><b>Крок 3.</b> <b>14 одиничних завдань</b> + <b>2 тексти НМТ</b> (по 7 пропусків A/B/C/D — як на іспиті).</p>
+    <p><b>Крок 4.</b> <b>Error Clinic</b> — повторення помилок.</p>
+    <div class="tip"><b>Головне правило модуля:</b> колокації <b>не перекладаються дослівно</b>. Українською ми «робимо все можливе», а англійською — <b>do</b> your best, не make! Єдиний спосіб — запам'ятати пару цілком: <b>дієслово + іменник</b> або <b>прикметник + прийменник</b>.</div>
+  </div>
+
+  <!-- ================= ДОВІДНИК ================= -->
+  <div class="part part-anchor" id="ref1">📖 Довідник — колокації дозвілля</div>
+
+  <div class="ref" id="ref-a">
+    <h2>best · chance · time</h2>
+    <div class="gloss">Unit 4, Destination B2. Три «чемпіони» НМТ — особливо <b>time</b> з його прийменниками.</div>
+    <table>
+      <tr><td class="word">do your best</td><td>старатися з усіх сил
+        <span class="ex">I don't expect to win — I'll just <mark class="hl">do my best</mark>.</span><span class="tr">Не сподіваюся виграти — просто старатимуся з усіх сил.</span></td></tr>
+      <tr><td class="word">make the best of</td><td>витягти максимум з (поганої ситуації)
+        <span class="ex">It rained all weekend, but we <mark class="hl">made the best of</mark> it and played board games.</span><span class="tr">Усе свято йшов дощ, але ми витягли з цього максимум і грали в настільні ігри.</span></td></tr>
+      <tr><td class="word">the best at</td><td>найкращий у (чомусь)
+        <span class="ex">She is <mark class="hl">the best at</mark> solving chess puzzles.</span><span class="tr">Вона найкраща у розв'язанні шахових задач.</span></td></tr>
+      <tr><td class="word">have / get a chance to do</td><td>мати нагоду щось зробити
+        <span class="ex">I finally <mark class="hl">got a chance to</mark> try paragliding.</span><span class="tr">Нарешті я мав нагоду спробувати парапланеризм.</span></td></tr>
+      <tr><td class="word">take a chance (on)</td><td>ризикнути (кимось/чимось)
+        <span class="ex">The coach <mark class="hl">took a chance on</mark> the young player.</span><span class="tr">Тренер ризикнув і поставив молодого гравця.</span></td></tr>
+      <tr><td class="word">the chance of a lifetime</td><td>нагода, яка буває раз у житті
+        <span class="ex">Winning a trip to London is <mark class="hl">the chance of a lifetime</mark>.</span><span class="tr">Виграти поїздку до Лондона — нагода, що трапляється раз у житті.</span></td></tr>
+      <tr><td class="word">on time</td><td>вчасно, за розкладом (точно о котрійсь)
+        <span class="ex">The 9.03 train left exactly <mark class="hl">on time</mark>.</span><span class="tr">Потяг на 9:03 вирушив точно за розкладом.</span></td></tr>
+      <tr><td class="word">in time</td><td>встигнути (до якоїсь події)
+        <span class="ex">We arrived <mark class="hl">in time</mark> for the kick-off.</span><span class="tr">Ми встигли до початку матчу.</span></td></tr>
+      <tr><td class="word">spend time doing</td><td>проводити час, роблячи щось
+        <span class="ex">He <mark class="hl">spends hours</mark> repairing old radios.</span><span class="tr">Він годинами ремонтує старі радіоприймачі.</span></td></tr>
+      <tr><td class="word">take your time</td><td>не поспішати
+        <span class="ex">«<mark class="hl">Take your time</mark> — the game hasn't started yet.»</span><span class="tr">«Не поспішай — гра ще не почалася.»</span></td></tr>
+      <tr><td class="word">(it's) high time</td><td>давно вже час (пора б)
+        <span class="ex">It's <mark class="hl">high time</mark> you started training.</span><span class="tr">Тобі давно вже час почати тренуватися.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка №1 модуля:</b> «робити все можливе» = <b>do</b> your best, НЕ make! А <b>make the best of</b> = знайти позитив у поганій ситуації. Два різні вирази, два різні дієслова.</div>
+    <div class="trap"><b>⚠️ Пастка №2:</b> <b>on time</b> = за розкладом (точно о 9:03). <b>in time</b> = встигнути до події (in time <i>for</i> the match). «Вчасно» українською одне — англійською дві різні фрази!</div>
+  </div>
+
+  <div class="ref" id="ref-b">
+    <h2>go · turn · pleasure</h2>
+    <div class="gloss">Невеликі слова з великими значеннями — перевіряйте прийменники й конструкції.</div>
+    <table>
+      <tr><td class="word">have a go (at)</td><td>спробувати (щось нове)
+        <span class="ex">I've never played darts, but I'll <mark class="hl">have a go</mark>.</span><span class="tr">Я ніколи не грав у дартс, але спробую.</span></td></tr>
+      <tr><td class="word">your go</td><td>твій хід (у грі)
+        <span class="ex">It's <mark class="hl">your go</mark> — roll the dice!</span><span class="tr">Твій хід — кидай кубики!</span></td></tr>
+      <tr><td class="word">take turns (to do)</td><td>робити по черзі
+        <span class="ex">We <mark class="hl">take turns to</mark> choose the film on movie night.</span><span class="tr">Ми по черзі обираємо фільм на кіновечір.</span></td></tr>
+      <tr><td class="word">take it in turns</td><td>по черзі (з іншими людьми)
+        <span class="ex">The children <mark class="hl">took it in turns</mark> to be the goalkeeper.</span><span class="tr">Діти по черзі стояли у воротах.</span></td></tr>
+      <tr><td class="word">take pleasure in</td><td>отримувати задоволення (роблячи щось)
+        <span class="ex">My grandfather <mark class="hl">takes great pleasure in</mark> growing roses.</span><span class="tr">Мій дідусь отримує велике задоволення, вирощуючи троянди.</span></td></tr>
+      <tr><td class="word">get pleasure from</td><td>отримувати задоволення від
+        <span class="ex">She <mark class="hl">gets real pleasure from</mark> teaching children chess.</span><span class="tr">Вона отримує справжнє задоволення від навчання дітей шахам.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> <b>take pleasure <u>in</u> doing</b>, але <b>get pleasure <u>from</u> doing</b>. Прийменник залежить від дієслова — це і перевіряє НМТ.</div>
+  </div>
+
+  <div class="ref" id="ref-c">
+    <h2>mad · popular · talent · heights</h2>
+    <div class="gloss">Прикметники + прийменники. Прийменник — найслабше місце: його й питають.</div>
+    <table>
+      <tr><td class="word">mad about / on</td><td>шаленіти від, бути фанатом
+        <span class="ex">My little brother is <mark class="hl">mad about</mark> skateboarding.</span><span class="tr">Мій молодший брат шаленіє від скейтбордингу.</span></td></tr>
+      <tr><td class="word">popular with / among</td><td>популярний серед
+        <span class="ex">This cycling club is very <mark class="hl">popular with</mark> teenagers.</span><span class="tr">Цей велоклуб дуже популярний серед підлітків.</span></td></tr>
+      <tr><td class="word">(have) a talent for</td><td>(мати) талант до
+        <span class="ex">She <mark class="hl">has a real talent for</mark> photography.</span><span class="tr">Вона має справжній талант до фотографії.</span></td></tr>
+      <tr><td class="word">afraid of heights</td><td>боятися висоти
+        <span class="ex">I could never try rock climbing — I'm <mark class="hl">afraid of heights</mark>.</span><span class="tr">Я ніколи не зміг би зайнятися скелелазінням — боюся висоти.</span></td></tr>
+    </table>
+    <div class="trap"><b>⚠️ Пастка:</b> українською «популярний <u>серед</u>» — хочеться сказати <i>between</i> чи <i>of</i>. Англійською правильно: <b>popular with/among</b>. І ще: «боятися висоти» = afraid of height<b>s</b> — лише множина!</div>
+  </div>
+
+  <!-- ================= ODD ONE OUT ================= -->
+  <div class="part part-anchor" id="odd">🎯 Odd One Out — розминка: знайдіть слово, яке НЕ поєднується</div>
+
+  <div class="odd-box">
+    <p style="font-family:Arial,sans-serif;font-size:14.5px;color:var(--muted);margin:0"><b>Як грати:</b> у кожному ряді три дієслова поєднуються з ключовим словом, а одне — ні. Клацніть <b>зайве</b> слово. Правильна відповідь стане зеленою, а решта — сірою (це ті, що поєднуються!).</p>
+    <div id="oddList"></div>
+    <div class="odd-score" id="oddScore">Знайдено зайвих: 0 / 8</div>
+  </div>
+
+  <!-- ================= ТРЕНАЖЕР: 14 ОДИНИЧНИХ РЕЧЕНЬ ================= -->
+  <div class="part part-anchor" id="part1">✏️ Тренажер — завдання 1–14 (одиничні речення)</div>
+
+  <div class="instr">
+    <p><span class="en">For questions (1–14) choose the correct answer (A, B, C or D).</span></p>
+    <details>
+      <summary>📋 Стратегія: як працювати з колокаціями на НМТ</summary>
+      <ol class="steps">
+        <li><b>Знайдіть «ключове» слово біля пропуску.</b> Якщо поруч best, chance, time, turn, pleasure — це завдання на колокацію, а не на граматику.</li>
+        <li><b>Не перекладайте з української!</b> «Робити все можливе» ≠ make — правильно <b>do</b> your best. Кальки — головна зброя дистракторів.</li>
+        <li><b>Прочитайте всю фразу цілком</b>: «made the ___ of it» → make the best of; «just ___ time for» → in time. Часто підказка стоїть ПІСЛЯ пропуску (for, of, doing).</li>
+        <li><b>Перевірте прийменник у самому реченні.</b> «pleasure ___ growing» — після пропуску герундій, отже шукаємо пару: take pleasure <b>in</b> doing.</li>
+      </ol>
+      <div class="tip"><b>Залік іде за першу спробу.</b> Помилилися — перечитайте рамку «⚠️ Пастка» під завданням: там формула, як надалі розрізняти ці вирази.</div>
+    </details>
+  </div>
+
+  <div id="singles"></div>
+
+  <!-- ================= ТЕКСТ 1 ================= -->
+  <div class="part part-anchor" id="text1">📰 Текст 1 — завдання 1–7 (формат НМТ)</div>
+
+  <div class="instr">
+    <p><span class="en">Read the text below. For questions (1–7) choose the correct answer (A, B, C or D).</span></p>
+    <p>Усі пропуски — колокації з довідника. Шукайте підказки <b>до</b> і <b>після</b> пропуску: прийменники (with, in, for) і герундій (playing, explaining) вирішують усе.</p>
+  </div>
+
+  <div class="gtext">
+    <h3>The Board Games Café</h3>
+    <p>When a board games café opened in our town last spring, nobody expected much of it — but within a month it had become hugely popular <select class="gap" data-block="t1" data-gap="1"></select> local teenagers. The owner, a former maths teacher, takes great pleasure <select class="gap" data-block="t1" data-gap="2"></select> explaining the rules of new games to beginners, and his enthusiasm is catching. The evening tournaments always start exactly <select class="gap" data-block="t1" data-gap="3"></select> time — at six o'clock sharp, not a minute later.</p>
+    <div class="expl" id="expl-t1-1"></div><div class="expl" id="expl-t1-2"></div><div class="expl" id="expl-t1-3"></div>
+
+    <p>Last Saturday the weather was dreadful, so instead of our usual bike ride we made the <select class="gap" data-block="t1" data-gap="4"></select> of the rainy day and spent the whole afternoon <select class="gap" data-block="t1" data-gap="5"></select> cards in the café. There were six of us, so we took it in <select class="gap" data-block="t1" data-gap="6"></select> to choose which game to play next. Next month the café is sending a team to the regional championship — and winning it would be the chance of a <select class="gap" data-block="t1" data-gap="7"></select>.</p>
+    <div class="expl" id="expl-t1-4"></div><div class="expl" id="expl-t1-5"></div><div class="expl" id="expl-t1-6"></div><div class="expl" id="expl-t1-7"></div>
+  </div>
+
+  <!-- ================= ТЕКСТ 2 ================= -->
+  <div class="part part-anchor" id="text2">📰 Текст 2 — завдання 8–14 (формат НМТ)</div>
+
+  <div class="instr">
+    <p><span class="en">Read the text below. For questions (8–14) choose the correct answer (A, B, C or D).</span></p>
+    <p>Другий текст — про шаховий клуб. Тут зібрані прийменники (about, on, from, at) і фрази з time — найчастіші пастки НМТ.</p>
+  </div>
+
+  <div class="gtext">
+    <h3>More Than Just a Game</h3>
+    <p>Twelve-year-old Sofia joined her school chess club two years ago, and within a few months she was the best <select class="gap" data-block="t2" data-gap="8"></select> solving chess puzzles in the whole school. Soon half her class were mad <select class="gap" data-block="t2" data-gap="9"></select> the game too. Her coach noticed her progress and decided to take a chance <select class="gap" data-block="t2" data-gap="10"></select> her, entering her for the county championship.</p>
+    <div class="expl" id="expl-t2-8"></div><div class="expl" id="expl-t2-9"></div><div class="expl" id="expl-t2-10"></div>
+
+    <p>On the day of the final, the team bus broke down on the motorway, but luckily they arrived just <select class="gap" data-block="t2" data-gap="11"></select> time for the first round. Sofia won all her games. These days she gets real pleasure <select class="gap" data-block="t2" data-gap="12"></select> teaching the younger children the opening moves. Her advice to beginners is simple: “Take your <select class="gap" data-block="t2" data-gap="13"></select> — never rush a move.” And if you have never played chess before, her message to you is: just have a <select class="gap" data-block="t2" data-gap="14"></select>!</p>
+    <div class="expl" id="expl-t2-11"></div><div class="expl" id="expl-t2-12"></div><div class="expl" id="expl-t2-13"></div><div class="expl" id="expl-t2-14"></div>
+  </div>
+
+  <!-- ================= ERROR CLINIC ================= -->
+  <div class="part part-anchor" id="clinic">🔁 Error Clinic — ваші помилки для повторення</div>
+
+  <div class="clinic">
+    <h2>Error Clinic</h2>
+    <p style="font-family:Arial,sans-serif;font-size:14.5px;color:var(--muted);margin:0 0 10px">Тут автоматично збираються всі завдання, де ви помилилися хоча б раз. Перечитайте правило, потім натисніть «Спробувати знову» — і пройдіть модуль ще раз.</p>
+    <div id="clinicList"><span class="clinic-empty">✓ Поки що помилок немає. Чудово!</span></div>
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="resetBtn">Спробувати знову</button>
+    <a class="btn back" href="modul-1-3.html">← Модуль 1.3</a>
+    <a class="btn" href="../index.html">Комплекс 1 завершено · На головну →</a>
+    <span id="score">Розв’язано: 0 / 28</span>
+  </div>
+
+</div>
+<script>
+/* ================= ODD ONE OUT ================= */
+const ODD_ROUNDS = [
+  {noun:'best', opts:['do','try','give','make'], odd:'make',
+   note:'✓ do your best · try your best · give your best — усі існують. А make your best — типова калька з «робити все можливе». НЕ існує.'},
+  {noun:'time', opts:['spend','waste','do','save'], odd:'do',
+   note:'✓ spend time doing · waste time · save time. Do time існує лише як сленг «відбувати термін у в\'язниці» — тут зайве.'},
+  {noun:'a chance', opts:['take','make','have','stand'], odd:'make',
+   note:'✓ take a chance · have a chance · stand a chance (мати шанси). Make a chance — не існує.'},
+  {noun:'pleasure', opts:['take','do','get','give'], odd:'do',
+   note:'✓ take pleasure in · get pleasure from · give pleasure. Do pleasure — не існує.'},
+  {noun:'exercise', opts:['do','make','take','get'], odd:'make',
+   note:'✓ do exercise · take exercise · get some exercise. Make exercise — не існує.'},
+  {noun:'a club', opts:['join','start','do','form'], odd:'do',
+   note:'✓ join a club · start a club · form a club. Do a club — не існує.'},
+  {noun:'a competition', opts:['enter','do','win','organise'], odd:'do',
+   note:'✓ enter a competition · win a competition · organise a competition. Do a competition — не існує.'},
+  {noun:'a talent', opts:['have','show','make','discover'], odd:'make',
+   note:'✓ have a talent · show a talent · discover a talent. Make a talent — не існує.'}
+];
+(function buildOdd(){
+  const box = document.getElementById('oddList');
+  let found = 0;
+  ODD_ROUNDS.forEach((r,i)=>{
+    const div = document.createElement('div');
+    div.className = 'odd-round';
+    const q = document.createElement('div');
+    q.className = 'odd-q';
+    q.innerHTML = `<b>${i+1}.</b> Яке дієслово НЕ поєднується з <b>«${r.noun}»</b>?`;
+    div.appendChild(q);
+    const optsBox = document.createElement('div');
+    optsBox.className = 'odd-opts';
+    const note = document.createElement('div');
+    note.className = 'odd-note';
+    note.textContent = r.note;
+    r.opts.forEach(word=>{
+      const b = document.createElement('button');
+      b.className = 'odd-btn';
+      b.textContent = word + ' ' + r.noun;
+      b.onclick = ()=>{
+        if(div.dataset.done) return;
+        if(word === r.odd){
+          div.dataset.done = '1';
+          b.classList.add('hit');
+          optsBox.querySelectorAll('.odd-btn').forEach(o=>{ if(o!==b) o.classList.add('keep'); });
+          note.classList.add('show');
+          found++;
+          const sc = document.getElementById('oddScore');
+          sc.textContent = `Знайдено зайвих: ${found} / 8`;
+          if(found === 8){ sc.textContent = '✓ Усі 8 зайвих знайдено! Переходьте до тренажера.'; sc.classList.add('good'); }
+        } else {
+          b.classList.remove('err'); void b.offsetWidth;
+          b.classList.add('err');
+          setTimeout(()=>b.classList.remove('err'), 400);
+        }
+      };
+      optsBox.appendChild(b);
+    });
+    div.appendChild(optsBox);
+    div.appendChild(note);
+    box.appendChild(div);
+  });
+})();
+</script>
+<script>
+/* ================= ДАНІ: 14 ОДИНИЧНИХ РЕЧЕНЬ ================= */
+const SINGLES = [
+{id:'s1', ref:'ref-a', tag:'do your best', sent:'I don\'t expect to win — I\'ll just do my ___.',
+ opts:[['A','best'],['B','better'],['C','good'],['D','most']], ans:'A',
+ why:'<b>do your best</b> = старатися з усіх сил. «Don\'t expect to win» — просто викладаюся на максимум.',
+ no:[['better','do your better — не існує; better — порівняльний ступінь, тут не пасує'],
+     ['good','do your good — калька з української; такої фрази немає'],
+     ['most','do your most — не існує (можна: do the most you can, але це інша конструкція)']],
+ trap:'«Робити все можливе» англійською = <b>DO</b> your best. Дієслово make тут — улюблений дистрактор НМТ.'},
+{id:'s2', ref:'ref-a', tag:'make the best of', sent:'The weather was awful, but we made the ___ of it and visited three museums anyway.',
+ opts:[['A','well'],['B','good'],['C','best'],['D','fine']], ans:'C',
+ why:'<b>make the best of sth</b> = витягти максимум з поганої ситуації. «Weather was awful» + «visited three museums anyway» — саме цей зміст.',
+ no:[['well','make the well of — не існує'],
+     ['good','make the good of — не існує'],
+     ['fine','make the fine of — не існує']],
+ trap:'<b>do</b> your best (старатися) і <b>make the best of</b> (знайти позитив у поганому) — різні дієслова в різних виразах. НМТ ставить їх поруч.'},
+{id:'s3', ref:'ref-a', tag:'on time', sent:'The 9.03 train left exactly ___ time, as always.',
+ opts:[['A','in'],['B','on'],['C','at'],['D','by']], ans:'B',
+ why:'<b>on time</b> = точно за розкладом. «Exactly» і «as always» — маркери розкладу, тому on.',
+ no:[['in','in time = встигнути ДО події (in time for the train); тут потяг сам йде за розкладом'],
+     ['at','at time — не існує'],
+     ['by','by time — не існує в цьому значенні']],
+ trap:'<b>on time</b> = за розкладом (нуль запізнень). <b>in time</b> = встигнути. Точний час (9.03, exactly) → <b>on</b>.'},
+{id:'s4', ref:'ref-a', tag:'in time', sent:'Luckily, we arrived at the stadium just ___ time for the kick-off.',
+ opts:[['A','on'],['B','at'],['C','in'],['D','by']], ans:'C',
+ why:'<b>in time (for)</b> = встигнути до події. «Luckily» + «for the kick-off» — ледве встигли.',
+ no:[['on','on time = за розкладом; автобуси з удачею не «за розкладом», тут ми ВСТИГЛИ'],
+     ['at','at time — не існує'],
+     ['by','by time — не вживається з for']],
+ trap:'Формула: <b>in time FOR + подія</b> (for the kick-off, for the meeting). Бачите for після пропуску — беріть <b>in</b>.'},
+{id:'s5', ref:'ref-a', tag:'chance of a lifetime', sent:'This is the chance of a ___ — you\'ll never get an offer like this again.',
+ opts:[['A','living'],['B','live'],['C','life'],['D','lifetime']], ans:'D',
+ why:'<b>the chance of a lifetime</b> = нагода, яка буває раз у житті. «Never again» — підказка.',
+ no:[['living','living = засоби до існування (earn a living); у цю фразу не входить'],
+     ['live','live — прикметник «живий» (live concert) або дієслово; граматично не пасує'],
+     ['life','chance of a life — не існує; сталий вираз саме з lifetime']],
+ trap:'Сталий вираз вчиться цілком: the chance of a <b>lifetime</b> (одне слово!).'},
+{id:'s6', ref:'ref-b', tag:'have a go', sent:'I\'d never tried rock climbing before, but I decided to have a ___.',
+ opts:[['A','go'],['B','look'],['C','step'],['D','wish']], ans:'A',
+ why:'<b>have a go (at)</b> = спробувати щось нове. «Never tried before» — перша спроба.',
+ no:[['look','have a look = поглянути; не про «спробувати себе»'],
+     ['step','have a step — не існує'],
+     ['wish','have a wish — не існує (make a wish — загадати бажання)']],
+ trap:'<b>have a go</b> = спробувати. У грі «your go» = твій хід. НМТ любить обидва значення go.'},
+{id:'s7', ref:'ref-c', tag:'mad about', sent:'All my classmates are mad ___ this new video game.',
+ opts:[['A','with'],['B','for'],['C','about'],['D','of']], ans:'C',
+ why:'<b>mad about/on sth</b> = шаленіти від чогось. Контекст — захоплення грою.',
+ no:[['with','mad with sb = злий на когось (mad with rage); не про захоплення'],
+     ['for','mad for — не вживається в цьому значенні'],
+     ['of','mad of — не існує']],
+ trap:'«Шаленіти від» = mad <b>about</b>. Запам\'ятайте разом із crazy about, keen on — уся трійця з різними прийменниками.'},
+{id:'s8', ref:'ref-b', tag:'take pleasure in', sent:'My grandfather takes great pleasure ___ growing roses.',
+ opts:[['A','in'],['B','of'],['C','with'],['D','at']], ans:'A',
+ why:'<b>take pleasure in doing</b> = отримувати задоволення, роблячи щось. Після пропуску герундій growing — пара «in + -ing».',
+ no:[['of','pleasure of — граматично можливо в інших структурах, але не з take'],
+     ['with','take pleasure with — не існує'],
+     ['at','take pleasure at — не існує']],
+ trap:'<b>take</b> pleasure <b>in</b> doing, але <b>get</b> pleasure <b>from</b> doing. Прийменник залежить від дієслова!'},
+{id:'s9', ref:'ref-c', tag:'popular with', sent:'This café is very popular ___ teenagers.',
+ opts:[['A','for'],['B','with'],['C','between'],['D','at']], ans:'B',
+ why:'<b>popular with/among</b> = популярний серед. Teenagers — група людей, які люблять це місце.',
+ no:[['for','popular for = відомий ЧОМОСЬ (popular for its desserts); тут після пропуску ЛЮДИ, а не причина'],
+     ['between','калька з української «серед»; between — лише про ДВОХ і не про популярність'],
+     ['at','popular at — не існує']],
+ trap:'Українське «серед» штовхає до between — це пастка! Popular <b>with</b> + люди: popular with students/tourists.'},
+{id:'s10', ref:'ref-c', tag:'a talent for', sent:'She\'s always had a real talent ___ languages.',
+ opts:[['A','at'],['B','for'],['C','in'],['D','of']], ans:'B',
+ why:'<b>have a talent for sth/doing</b> = мати талант до. Сталий вираз із for.',
+ no:[['at','good at = добре вміти; але з talent іде for: a talent for languages'],
+     ['in','talent in — не вживається'],
+     ['of','talent of — не вживається']],
+ trap:'Плутанина через good <b>at</b>! Але «талант до» = talent <b>for</b>. Дві різні конструкції — два прийменники.'},
+{id:'s11', ref:'ref-b', tag:'take turns', sent:'In our house we take ___ to cook dinner — today it\'s my brother.',
+ opts:[['A','chances'],['B','goes'],['C','places'],['D','turns']], ans:'D',
+ why:'<b>take turns to do</b> = робити по черзі. «Today it\'s my brother» — значить учора був хтось інший.',
+ no:[['chances','take chances = ризикувати; не про чергування'],
+     ['goes','take goes — не існує (your go = твій хід, але без take)'],
+     ['places','take places — не існує (take place = відбуватися, без множини й без такого змісту)']],
+ trap:'<b>take turns to do / at doing</b> = по черзі. Додайте it in: <b>take it in turns</b> — те саме.'},
+{id:'s12', ref:'ref-a', tag:'spend time doing', sent:'I spent the whole afternoon ___ my bike.',
+ opts:[['A','repairing'],['B','to repair'],['C','repair'],['D','repaired']], ans:'A',
+ why:'<b>spend time doing sth</b> — після spend (time) завжди герундій: spent the afternoon <b>repairing</b>.',
+ no:[['to repair','інфінітив після spend time не вживається'],
+     ['repair','базова форма тут неможлива'],
+     ['repaired','минулий час не пасує за конструкцією']],
+ trap:'Формула: <b>spend + time/money + V-ing</b>. Це вже граматика + колокація водночас — класика НМТ.'},
+{id:'s13', ref:'ref-a', tag:'high time', sent:'It\'s high ___ you started training — the competition is in two weeks!',
+ opts:[['A','hour'],['B','moment'],['C','point'],['D','time']], ans:'D',
+ why:'<b>It\'s high time</b> = давно вже пора. Після нього дієслово йде в Past Simple (started), хоча зміст — про теперішнє.',
+ no:[['hour','high hour — не існує'],
+     ['moment','high moment — не існує (можна: at this moment)'],
+     ['point','high point = кульмінація; інше значення']],
+ trap:'<b>It\'s high time + Past Simple</b>: It\'s high time you <b>started</b> (не start!). Пастка у формі дієслова після виразу.'},
+{id:'s14', ref:'ref-c', tag:'afraid of heights', sent:'I could never go on the London Eye — I\'m afraid of ___.',
+ opts:[['A','highs'],['B','the high'],['C','heights'],['D','the heights']], ans:'C',
+ why:'<b>afraid of heights</b> = боятися висоти. Сталий вираз лише у множині і БЕЗ артикля.',
+ no:[['highs','high = максимум, «кайф»; heights ≠ highs'],
+     ['the high','граматично не пасує'],
+     ['the heights','зайвий артикль; сталий вираз без the']],
+ trap:'«Висота» тут лише множина: height<b>s</b>. І без артикля: afraid of heights.'}
+];
+</script>
+<script>
+/* ================= ДАНІ: ТЕКСТ 1 ================= */
+const TEXT1 = {
+  1:{ans:'B', word:'with',
+     opts:[['A','between'],['B','with'],['C','for'],['D','at']],
+     quote:'…it had become hugely popular <mark class="q">with</mark> local teenagers.',
+     why:'<b>popular with</b> = популярний серед (людей). Teenagers — група людей, отже with.',
+     no:[['between','калька з «серед»; between — про двох, і з popular не вживається'],
+         ['for','popular for + причина (popular for its desserts); тут люди, а не причина'],
+         ['at','popular at — не існує']],
+     trap:'«Популярний серед» = popular <b>with/among</b>. Українське «серед» НЕ перекладається як between!'},
+  2:{ans:'B', word:'in',
+     opts:[['A','of'],['B','in'],['C','from'],['D','with']],
+     quote:'The owner… takes great pleasure <mark class="q">in</mark> explaining the rules of new games to beginners…',
+     why:'<b>take pleasure in doing</b> = отримувати задоволення, роблячи щось. Після пропуску — герундій explaining.',
+     no:[['of','з take pleasure не поєднується'],
+         ['from','from існує, але з GET: get pleasure from. Дієслово тут — takes, отже in'],
+         ['with','take pleasure with — не існує']],
+     trap:'<b>take</b> pleasure <b>in</b> · <b>get</b> pleasure <b>from</b>. Дивіться на дієслово перед пропуском — воно обирає прийменник.'},
+  3:{ans:'C', word:'on',
+     opts:[['A','in'],['B','at'],['C','on'],['D','by']],
+     quote:'The evening tournaments always start exactly <mark class="q">on</mark> time — at six o\'clock sharp, not a minute later.',
+     why:'<b>on time</b> = точно за розкладом. «Exactly», «six o\'clock sharp», «not a minute later» — усе про точність.',
+     no:[['in','in time = встигнути до події; тут турніри йдуть ЗА РОЗКЛАДОМ'],
+         ['at','at time — не існує'],
+         ['by','by time — не існує']],
+     trap:'Exactly + конкретна година → <b>on time</b>. Just + for + подія → <b>in time</b> (див. текст 2, пропуск 11!).'},
+  4:{ans:'C', word:'best',
+     opts:[['A','good'],['B','well'],['C','best'],['D','fine']],
+     quote:'…we made the <mark class="q">best</mark> of the rainy day…',
+     why:'<b>make the best of</b> = витягти максимум із поганої ситуації. Дощ зірвав плани, але день не пропав.',
+     no:[['good','make the good of — не існує'],
+         ['well','make the well of — не існує'],
+         ['fine','make the fine of — не існує']],
+     trap:'Погана ситуація + «але ми все одно…» → <b>made the best of it</b>. А «старатися» було б do our best — інше дієслово!'},
+  5:{ans:'A', word:'playing',
+     opts:[['A','playing'],['B','to play'],['C','play'],['D','played']],
+     quote:'…and spent the whole afternoon <mark class="q">playing</mark> cards in the café.',
+     why:'<b>spend time doing</b> — після spent (the whole afternoon) лише герундій: playing.',
+     no:[['to play','інфінітив після spend time не вживається'],
+         ['play','базова форма неможлива'],
+         ['played','минулий час не пасує за конструкцією']],
+     trap:'Формула <b>spend + time + V-ing</b>: spent the afternoon playing/repairing/practising. Граматичний пропуск у лексичному тексті — типовий НМТ.'},
+  6:{ans:'B', word:'turns',
+     opts:[['A','goes'],['B','turns'],['C','chances'],['D','times']],
+     quote:'There were six of us, so we took it in <mark class="q">turns</mark> to choose which game to play next.',
+     why:'<b>take it in turns to do</b> = робити по черзі. «There were six of us» — шестеро, отже по черзі.',
+     no:[['goes','take it in goes — не існує'],
+         ['chances','take chances = ризикувати; не про чергування'],
+         ['times','take it in times — не існує']],
+     trap:'<b>take it in turns</b> = по черзі. It і in уже стоять у реченні — лишається turns.'},
+  7:{ans:'D', word:'lifetime',
+     opts:[['A','life'],['B','living'],['C','live'],['D','lifetime']],
+     quote:'…winning it would be the chance of a <mark class="q">lifetime</mark>.',
+     why:'<b>the chance of a lifetime</b> = нагода, яка буває раз у житті.',
+     no:[['life','chance of a life — не існує; сталий вираз з lifetime'],
+         ['living','living = заробіток (earn a living)'],
+         ['live','граматично не пасує']],
+     trap:'Сталий вираз — одне слово: life<b>time</b>. Вчіть цілком: the chance of a lifetime.'}
+};
+
+/* ================= ДАНІ: ТЕКСТ 2 ================= */
+const TEXT2 = {
+  8:{ans:'B', word:'at',
+     opts:[['A','for'],['B','at'],['C','in'],['D','of']],
+     quote:'…she was the best <mark class="q">at</mark> solving chess puzzles in the whole school.',
+     why:'<b>the best at sth/doing</b> = найкращий у чомусь. Після пропуску герундій solving — пара «at + -ing».',
+     no:[['for','the best for — не про уміння'],
+         ['in','the best in + місце/група (the best in the class); з -ing іде at'],
+         ['of','the best of — не вживається тут']],
+     trap:'<b>good at</b> і <b>the best at</b> — один прийменник. А от talent — з <b>for</b> (a talent for). Не плутайте пару!'},
+  9:{ans:'D', word:'about',
+     opts:[['A','with'],['B','for'],['C','of'],['D','about']],
+     quote:'Soon half her class were mad <mark class="q">about</mark> the game too.',
+     why:'<b>mad about sth</b> = шаленіти від чогось. Контекст — масове захоплення шахами.',
+     no:[['with','mad with = злий (mad with rage)'],
+         ['for','mad for — не вживається в цьому значенні'],
+         ['of','mad of — не існує']],
+     trap:'Захоплення = mad <b>about</b> / crazy <b>about</b> / keen <b>on</b>. Три синоніми — три різні прийменники.'},
+  10:{ans:'C', word:'on',
+     opts:[['A','in'],['B','at'],['C','on'],['D','for']],
+     quote:'Her coach… decided to take a chance <mark class="q">on</mark> her, entering her for the county championship.',
+     why:'<b>take a chance on sb</b> = ризикнути і довіритися комусь. Тренер ризикнув поставити дитину на чемпіонат.',
+     no:[['in','take a chance in — не існує'],
+         ['at','take a chance at — не вживається'],
+         ['for','take a chance for — не існує']],
+     trap:'<b>take a chance ON sb/sth</b> — прийменник on обов\'язковий, коли далі йде той, на кого ризикують.'},
+  11:{ans:'B', word:'in',
+     opts:[['A','on'],['B','in'],['C','at'],['D','by']],
+     quote:'…the team bus broke down on the motorway, but luckily they arrived just <mark class="q">in</mark> time for the first round.',
+     why:'<b>in time for</b> = встигли до. Автобус зламався, але luckily — усе встигли. Маркер: for the first round.',
+     no:[['on','on time = за розкладом; автобус ламався — про розклад мови нема, ми ВСТИГЛИ'],
+         ['at','at time — не існує'],
+         ['by','by time — не вживається з for']],
+     trap:'Бачите <b>for + подія</b> після пропуску → <b>in</b> time. Бачите «за розкладом, sharp» → <b>on</b> time.'},
+  12:{ans:'B', word:'from',
+     opts:[['A','in'],['B','from'],['C','of'],['D','with']],
+     quote:'These days she gets real pleasure <mark class="q">from</mark> teaching the younger children the opening moves.',
+     why:'<b>get pleasure from doing</b> = отримувати задоволення від. Дієслово тут gets — отже from.',
+     no:[['in','in існує, але з TAKE: take pleasure in. Тут gets, отже from'],
+         ['of','get pleasure of — не існує'],
+         ['with','get pleasure with — не існує']],
+     trap:'Дзеркало пропуска 2 з тексту 1: <b>take</b> → in, <b>get</b> → from. НМТ перевіряє, чи бачите ви дієслово.'},
+  13:{ans:'D', word:'time',
+     opts:[['A','hour'],['B','go'],['C','moment'],['D','time']],
+     quote:'«Take your <mark class="q">time</mark> — never rush a move.»',
+     why:'<b>take your time</b> = не поспішати. «Never rush a move» — пряма підказка.',
+     no:[['hour','take your hour — не існує'],
+         ['go','take your go — не існує (можна: it\'s your go, але без take)'],
+         ['moment','take your moment — не сталий вираз']],
+     trap:'<b>Take your time</b> — цілком, з time. І зверніть увагу: take <b>your</b> time — з присвійним.'},
+  14:{ans:'D', word:'go',
+     opts:[['A','look'],['B','step'],['C','wish'],['D','go']],
+     quote:'And if you have never played chess before, her message to you is: just have a <mark class="q">go</mark>!',
+     why:'<b>have a go</b> = спробувати. «Never played before» — запрошення спробувати.',
+     no:[['look','have a look = поглянути; не про спробу'],
+         ['step','have a step — не існує'],
+         ['wish','have a wish — не існує (make a wish = загадати бажання)']],
+     trap:'<b>have a go</b> = спробувати щось нове. Фінальне запрошення у тексті про хобі — майже завжди have a go.'}
+};
+
+/* ================= РУШІЙ ================= */
+const TOTAL = SINGLES.length + Object.keys(TEXT1).length + Object.keys(TEXT2).length;
+const attempts = {};
+const solved = {};
+const mistakeIds = [];
+
+const singlesBox = document.getElementById('singles');
+SINGLES.forEach((q,i)=>{
+  const div = document.createElement('div');
+  div.className = 'q';
+  div.innerHTML = `
+    <div class="q-top">
+      <span class="q-num">Завдання ${i+1} з 14</span>
+      <span class="q-tag">${q.tag}</span>
+    </div>
+    <div class="sent">${q.sent.replace('___',`<select class="gap" data-block="s" data-gap="${q.id}"></select>`)}
+      <a href="#${q.ref}" style="font-family:Arial,sans-serif;font-size:12.5px;color:var(--blue);text-decoration:none;margin-left:8px" title="Відкрити довідник">📖 довідник</a>
+    </div>
+    <div class="expl" id="expl-s-${q.id}"></div>`;
+  singlesBox.appendChild(div);
+});
+
+function buildGap(sel){
+  const block = sel.dataset.block, id = sel.dataset.gap;
+  let opts;
+  if(block==='s') opts = SINGLES.find(q=>q.id===id).opts;
+  else opts = (block==='t1'?TEXT1:TEXT2)[id].opts;
+  sel.innerHTML='';
+  const ph=document.createElement('option'); ph.value=''; ph.textContent='(оберіть)';
+  sel.appendChild(ph);
+  opts.forEach(([L,w])=>{
+    const o=document.createElement('option'); o.value=L; o.textContent=`${L} ${w}`;
+    sel.appendChild(o);
+  });
+}
+
+function getData(block,id){
+  if(block==='s') return SINGLES.find(q=>q.id===id);
+  return (block==='t1'?TEXT1:TEXT2)[id];
+}
+
+function explId(block,id){ return `expl-${block}-${id}`; }
+
+document.querySelectorAll('select.gap').forEach(sel=>{
+  buildGap(sel);
+  sel.addEventListener('change', ()=>{
+    const block=sel.dataset.block, id=sel.dataset.gap;
+    const key = block+'-'+id;
+    if(solved[key]) return;
+    const d = getData(block,id);
+    if(!sel.value){ sel.classList.remove('bad'); return; }
+    if(sel.value === d.ans){
+      solved[key]=true;
+      sel.classList.remove('bad'); sel.classList.add('ok');
+      sel.disabled = true;
+      const word = d.opts.find(o=>o[0]===sel.value)[1];
+      sel.querySelector(`option[value="${sel.value}"]`).textContent = word;
+      const ex = document.getElementById(explId(block,id));
+      let noRows = d.no.map(([w,why])=>`<tr><td class="no">✗ ${w}</td><td>${why}</td></tr>`).join('');
+      let quoteRow = d.quote ? `<span class="lbl">📌 Речення з правильним словом</span><div class="quote">${d.quote}</div>` : '';
+      ex.innerHTML = `
+        <div class="ans-line">✓ Правильно: ${sel.value} (${d.word || word})</div>
+        ${quoteRow}
+        <p class="note">${d.why}</p>
+        <span class="lbl">🚫 Чому НЕ підходять інші варіанти</span>
+        <table>${noRows}</table>
+        <div class="trap"><b>⚠️ Пастка:</b> ${d.trap}</div>`;
+      ex.classList.add('show');
+      refreshScore();
+    } else {
+      attempts[key]=(attempts[key]||0)+1;
+      if(!mistakeIds.includes(key)) mistakeIds.push(key);
+      sel.classList.remove('bad'); void sel.offsetWidth;
+      sel.classList.add('bad');
+      renderClinic();
+    }
+  });
+});
+
+function refreshScore(){
+  const solvedCount = Object.keys(solved).length;
+  let first = 0;
+  for(const k in solved) if((attempts[k]||0)===0) first++;
+  const sc = document.getElementById('score');
+  if(solvedCount < TOTAL){
+    sc.textContent = `Розв’язано: ${solvedCount} / ${TOTAL}`;
+    sc.className = '';
+  } else {
+    sc.textContent = `Результат: ${first} / ${TOTAL} з першої спроби`;
+    sc.className = first>=TOTAL*0.85?'good':first>=TOTAL*0.6?'mid':'low';
+  }
+}
+
+function renderClinic(){
+  const box = document.getElementById('clinicList');
+  if(!mistakeIds.length){
+    box.innerHTML = '<span class="clinic-empty">✓ Поки що помилок немає. Чудово!</span>';
+    return;
+  }
+  box.innerHTML = mistakeIds.map(key=>{
+    const [block,id] = key.split('-');
+    const d = getData(block,id);
+    const label = block==='s' ? `Завдання ${SINGLES.findIndex(q=>q.id===id)+1}` : `Текст ${block==='t1'?'1':'2'}, пропуск ${id}`;
+    const sent = d.sent ? d.sent.replace('___','<b>___</b>') : d.quote;
+    return `<div class="clinic-item">
+      <b>${label}</b> — <span class="sent-wrong">${sent}</span>
+      <span class="rule-line">💡 ${d.trap.replace(/<b>|<\/b>/g,'')}</span>
+    </div>`;
+  }).join('');
+}
+
+document.getElementById('resetBtn').onclick = ()=>{
+  for(const k in attempts) delete attempts[k];
+  for(const k in solved) delete solved[k];
+  mistakeIds.length = 0;
+  document.querySelectorAll('select.gap').forEach(sel=>{
+    sel.disabled=false; sel.classList.remove('ok','bad');
+    buildGap(sel);
+  });
+  document.querySelectorAll('.expl').forEach(e=>{e.className='expl'; e.innerHTML='';});
+  renderClinic();
+  refreshScore();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+refreshScore();
+</script>
+</body>
+</html>
